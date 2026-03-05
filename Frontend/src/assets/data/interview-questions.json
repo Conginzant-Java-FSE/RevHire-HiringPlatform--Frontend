@@ -1,0 +1,729 @@
+{
+    "roles": {
+        "Software Engineer": [
+            {
+                "id": "r_se_1",
+                "question": "What is the difference between a process and a thread?",
+                "hint": "Memory execution context, resource sharing.",
+                "difficulty": "BASIC",
+                "answer": "A process is an independent program in execution with its own dedicated memory space, file handles, and system resources. Threads are lightweight units of execution that live within a process and share the same memory space and resources. Because threads share memory, communication between them is fast but requires synchronization to avoid data corruption. Processes are isolated — a crash in one does not affect others — but inter-process communication (IPC) is more expensive. For example, a browser uses separate processes per tab for isolation, but each tab may use multiple threads for rendering, networking, and scripting."
+            },
+            {
+                "id": "r_se_2",
+                "question": "Explain the concept of Inversion of Control (IoC).",
+                "hint": "Removing the responsibility of object creation from the class.",
+                "difficulty": "MODERATE",
+                "answer": "Inversion of Control is a design principle where the control of object creation and dependency management is transferred from the class itself to an external container or framework. Instead of a class instantiating its own dependencies (e.g., new DatabaseService()), they are injected from outside — this is called Dependency Injection, the most common form of IoC. This makes classes loosely coupled, easier to test (you can inject mocks), and easier to swap implementations. Frameworks like Spring (Java) and Angular heavily rely on IoC containers to wire components together at runtime."
+            },
+            {
+                "id": "r_se_3",
+                "question": "How do you handle race conditions in high-concurrency systems?",
+                "hint": "Mutexes, semaphores, atomic operations.",
+                "difficulty": "ADVANCED",
+                "answer": "A race condition occurs when two or more threads access shared data simultaneously and the outcome depends on the order of execution. Strategies to handle them include: (1) Mutexes/Locks — only one thread can hold the lock and access the critical section at a time. (2) Semaphores — control access to a resource pool with a counter. (3) Atomic operations — hardware-level instructions (e.g., compare-and-swap) that are inherently thread-safe, used in lock-free data structures. (4) Immutability — using immutable data eliminates the risk entirely. (5) Thread-local storage — each thread gets its own copy of the variable. In distributed systems, optimistic locking with versioning or distributed locks (e.g., Redis Redlock) are commonly used. The best approach depends on contention level and throughput requirements."
+            },
+            {
+                "id": "r_se_4",
+                "question": "Describe the main components of a RESTful API.",
+                "hint": "Resources, HTTP methods, headers, status codes.",
+                "difficulty": "BASIC",
+                "answer": "A RESTful API is built on six constraints: statelessness, client-server architecture, cacheability, uniform interface, layered system, and optionally code on demand. The core components are: (1) Resources — everything is a resource identified by a URI (e.g., /users/42). (2) HTTP Methods — GET (read), POST (create), PUT/PATCH (update), DELETE (remove). (3) HTTP Headers — carry metadata like Content-Type, Authorization, and Accept. (4) Status Codes — communicate outcomes (200 OK, 201 Created, 400 Bad Request, 401 Unauthorized, 404 Not Found, 500 Internal Server Error). (5) Representations — resources are returned in formats like JSON or XML. A well-designed REST API is intuitive, consistent, and self-descriptive."
+            },
+            {
+                "id": "r_se_5",
+                "question": "What are SOLID principles and why are they important?",
+                "hint": "Maintainability and scalability through design patterns.",
+                "difficulty": "MODERATE",
+                "answer": "SOLID is an acronym for five object-oriented design principles that promote maintainable, scalable code. (S) Single Responsibility — a class should have only one reason to change. (O) Open/Closed — classes should be open for extension but closed for modification. (L) Liskov Substitution — subclasses should be replaceable for their base classes without breaking behaviour. (I) Interface Segregation — clients should not be forced to depend on interfaces they don't use; prefer many small interfaces over one large one. (D) Dependency Inversion — depend on abstractions, not concrete implementations. These principles reduce coupling, improve testability, and make codebases easier to extend without introducing regressions."
+            },
+            {
+                "id": "r_se_6",
+                "question": "Explain how a distributed database maintains consistency across nodes.",
+                "hint": "Paxos, Raft, eventual consistency, quorum.",
+                "difficulty": "ADVANCED",
+                "answer": "Distributed databases use consensus algorithms and replication strategies to maintain consistency. Paxos and Raft are leader-based consensus protocols where a majority quorum must agree before a write is committed — this ensures strong consistency. Quorum reads/writes (e.g., in Cassandra) require a configurable number of nodes to acknowledge an operation. Two-Phase Commit (2PC) coordinates transactions across nodes but can block on coordinator failure. Eventually consistent systems (like DynamoDB in its default mode) allow temporary divergence and use techniques like vector clocks, conflict-free replicated data types (CRDTs), and reconciliation to converge. The trade-off is defined by the CAP theorem: you must choose between consistency and availability during a network partition."
+            },
+            {
+                "id": "r_se_7",
+                "question": "What is the difference between SQL and NoSQL databases?",
+                "hint": "Schema vs Schemaless, Horizontal vs Vertical scaling.",
+                "difficulty": "BASIC",
+                "answer": "SQL databases (e.g., PostgreSQL, MySQL) are relational, use structured schemas with tables and foreign keys, support ACID transactions, and scale vertically. They excel at complex queries, joins, and data integrity. NoSQL databases (e.g., MongoDB, Cassandra, Redis) are non-relational, schema-flexible, and designed to scale horizontally across many nodes. They come in several types: document stores, key-value stores, wide-column stores, and graph databases. NoSQL sacrifices some consistency guarantees (BASE model) for high availability and partition tolerance. The right choice depends on the data model, query patterns, and scalability needs — neither is universally superior."
+            },
+            {
+                "id": "r_se_8",
+                "question": "Explain JVM Memory Model (Heap vs Stack).",
+                "hint": "Where objects live vs where local variables live.",
+                "difficulty": "MODERATE",
+                "answer": "The JVM divides memory into several regions. The Stack stores method call frames, local primitive variables, and object references. Each thread has its own stack, and frames are pushed/popped with each method call — it is fast and automatically managed. The Heap is a shared memory area where all objects (instances) are allocated. It is managed by the Garbage Collector, which reclaims memory from objects with no live references. The Heap is further divided into Young Generation (Eden + Survivor spaces for short-lived objects), Old/Tenured Generation (long-lived objects), and (in older JVMs) PermGen/Metaspace for class metadata and static variables. Understanding this model is key to diagnosing OutOfMemoryErrors and tuning GC performance."
+            },
+            {
+                "id": "r_se_9",
+                "question": "Design a system that can handle 1 million concurrent websocket connections.",
+                "hint": "Load balancing, sticky sessions, horizontal scaling.",
+                "difficulty": "ADVANCED",
+                "answer": "Key considerations: (1) Horizontal scaling — distribute connections across multiple WebSocket servers. Each modern server can handle ~50k–100k connections, so ~10–20 nodes are needed. (2) Load balancing — use a Layer 4 load balancer (e.g., HAProxy, AWS NLB) with sticky sessions (consistent hashing by client ID) so a client always connects to the same server. (3) Async I/O — use event-driven frameworks (Node.js, Netty, Vert.x) that handle many connections on few threads using non-blocking I/O. (4) Message broker — for broadcasting or routing messages between servers, use Redis Pub/Sub or Kafka. (5) Connection lifecycle management — heartbeats, timeouts, and graceful reconnect strategies. (6) Infrastructure — use auto-scaling groups, health checks, and a CDN/edge layer (e.g., Cloudflare) for geographic proximity. Monitor with metrics on connection count, message throughput, and latency."
+            },
+            {
+                "id": "r_se_10",
+                "question": "What is Git rebase vs merge?",
+                "hint": "Rewriting history vs creating a merge commit.",
+                "difficulty": "BASIC",
+                "answer": "Both integrate changes from one branch into another but differ in how history is recorded. Merge creates a new 'merge commit' that joins the two branch histories, preserving the full context of when branches diverged and were reunited — history is non-linear but accurate. Rebase rewrites commits from your branch on top of another, creating a linear history as if the work had always started from the latest point. This produces a cleaner log but rewrites commit SHAs. Rule of thumb: never rebase shared/public branches as it forces everyone to reconcile diverged history. Use merge for shared branches and rebase for cleaning up local feature branches before merging via a pull request."
+            },
+            {
+                "id": "r_se_11",
+                "question": "Explain the difference between deep copy and shallow copy.",
+                "hint": "Copying references vs copying values recursively.",
+                "difficulty": "BASIC",
+                "answer": "A shallow copy creates a new object but copies only the top-level references of the original. If the original contains nested objects, both the original and the copy point to the same nested objects — modifying the nested object through the copy affects the original. A deep copy recursively copies all nested objects, creating fully independent duplicates. For example, cloning a list with shallow copy gives a new list object, but its elements are still shared references. Deep copy is needed when you want complete independence between the original and the copy. In Java, this can be done via serialization or manual recursive copy; in JavaScript, structuredClone() provides a deep copy."
+            },
+            {
+                "id": "r_se_12",
+                "question": "What is a deadlock and how can you detect it in production?",
+                "hint": "Cyclic dependency of resources, thread dumps.",
+                "difficulty": "MODERATE",
+                "answer": "A deadlock occurs when two or more threads are permanently blocked, each waiting for a resource held by the other, forming a circular dependency. Four conditions must hold simultaneously (Coffman conditions): mutual exclusion, hold and wait, no preemption, and circular wait. In production, detection methods include: (1) Thread dumps — captured via kill -3 (Java), jstack, or VisualVM; the dump shows threads in BLOCKED state with a circular dependency visible. (2) APM tools — tools like Datadog, Dynatrace, or New Relic can detect blocked thread patterns. (3) Watchdog threads — monitor critical operations for timeouts. Prevention strategies include lock ordering (always acquire locks in the same order), using try-lock with timeouts, and preferring higher-level concurrency constructs like java.util.concurrent over raw synchronized blocks."
+            },
+            {
+                "id": "r_se_13",
+                "question": "Explain the concept of Microservices vs Monolith.",
+                "hint": "Deployment independence vs simplified complexity.",
+                "difficulty": "BASIC",
+                "answer": "A monolithic architecture packages all application functionality — UI, business logic, and data access — into a single deployable unit. It is simpler to develop, test, and deploy initially, but as it grows it becomes difficult to scale specific components, deploy independently, or work on in large teams without conflicts. Microservices split the application into small, independently deployable services, each owning its own data and communicating via APIs or messaging. Benefits include independent scaling, technology flexibility, and team autonomy. However, they introduce operational complexity: distributed tracing, service discovery, network latency, eventual consistency, and complex deployment pipelines. Microservices are best suited for large teams and systems with distinct, scalable domains."
+            },
+            {
+                "id": "r_se_14",
+                "question": "How does Docker differ from a Virtual Machine?",
+                "hint": "Guest OS vs shared kernel.",
+                "difficulty": "MODERATE",
+                "answer": "Virtual Machines (VMs) run on a hypervisor that emulates physical hardware. Each VM includes a full guest OS, making them isolated but heavyweight — typically hundreds of MBs to GBs in size with slow startup times. Docker containers, by contrast, share the host OS kernel and isolate only the process and filesystem using Linux namespaces and cgroups. They are lightweight (MBs), start in seconds, and are highly portable. The trade-off is that containers offer weaker isolation than VMs — since they share the kernel, a kernel vulnerability could affect all containers on a host. VMs are preferred for strong isolation (e.g., multi-tenant cloud), while containers excel at consistent, fast, and efficient application packaging and deployment."
+            },
+            {
+                "id": "r_se_15",
+                "question": "What is the difference between TCP and UDP?",
+                "hint": "Handshake/Ordering vs Fire-and-forget.",
+                "difficulty": "BASIC",
+                "answer": "TCP (Transmission Control Protocol) is connection-oriented and provides reliable, ordered, and error-checked delivery. It uses a three-way handshake to establish a connection and handles retransmissions, flow control, and congestion control. This makes it ideal for use cases where data integrity matters — HTTP/HTTPS, file transfers, email. UDP (User Datagram Protocol) is connectionless and sends packets (datagrams) without establishing a connection or guaranteeing delivery, ordering, or error recovery. This makes it faster and lower-latency, ideal for use cases where speed matters more than perfect reliability — video streaming, online gaming, DNS queries, and VoIP. Applications can build their own reliability layer on top of UDP when needed (e.g., QUIC/HTTP3)."
+            },
+            {
+                "id": "r_se_16",
+                "question": "Explain the CAP theorem.",
+                "hint": "Consistency, Availability, Partition tolerance - pick two.",
+                "difficulty": "MODERATE",
+                "answer": "The CAP theorem states that a distributed system can only guarantee two of three properties simultaneously during a network partition. Consistency (C) — every read receives the most recent write or an error. Availability (A) — every request receives a response (not necessarily the latest data). Partition Tolerance (P) — the system continues operating even when network partitions cause some nodes to be unreachable. Since network partitions are inevitable in real distributed systems, the real trade-off is between C and A during a partition. CP systems (e.g., HBase, ZooKeeper) prioritize consistency and may return errors when partitioned. AP systems (e.g., Cassandra, CouchDB) stay available but may return stale data. Modern systems often offer tunable consistency to allow trade-offs per operation."
+            },
+            {
+                "id": "r_se_17",
+                "question": "Describe how Hashing works and what is a collision.",
+                "hint": "Mapping data to fixed-size values, collision resolution strategies.",
+                "difficulty": "MODERATE",
+                "answer": "A hash function maps input data of arbitrary size to a fixed-size output (hash/digest). It is used in hash tables for O(1) average-case lookups, in cryptography (SHA-256), and for data integrity checks. A collision occurs when two different inputs produce the same hash output. In hash tables, collisions are resolved using: (1) Chaining — each bucket holds a linked list of entries with the same hash. (2) Open Addressing — probe other buckets (linear, quadratic, or double hashing) to find an empty slot. A good hash function minimises collisions by distributing outputs uniformly. In cryptographic contexts, collision resistance is critical — MD5 and SHA-1 are considered broken due to known collision attacks, whereas SHA-256 remains secure."
+            },
+            {
+                "id": "r_se_18",
+                "question": "What is the Big O complexity of searching in a Balanced Binary Search Tree?",
+                "hint": "O(log n).",
+                "difficulty": "BASIC",
+                "answer": "Searching in a Balanced Binary Search Tree (e.g., AVL Tree, Red-Black Tree) has a time complexity of O(log n), where n is the number of nodes. At each step, the search eliminates half the remaining nodes by comparing the target value with the current node and moving left (if smaller) or right (if larger). The tree's balance property (heights of left and right subtrees differ by at most 1) guarantees the tree height stays at O(log n), preventing worst-case O(n) degradation that occurs in an unbalanced BST (which degrades to a linked list). Self-balancing trees like AVL and Red-Black Trees automatically rebalance after insertions and deletions to maintain this guarantee."
+            },
+            {
+                "id": "r_se_19",
+                "question": "Explain how JWT (JSON Web Token) works for authentication.",
+                "hint": "Header, Payload, Signature.",
+                "difficulty": "MODERATE",
+                "answer": "A JWT is a compact, URL-safe token used to securely transmit claims between parties. It consists of three Base64URL-encoded parts separated by dots: (1) Header — specifies the token type (JWT) and the signing algorithm (e.g., HS256 or RS256). (2) Payload — contains claims: user ID, roles, expiry (exp), issued-at (iat), etc. Note: the payload is encoded, not encrypted, so it should not contain sensitive secrets. (3) Signature — created by signing the encoded header and payload with a secret (HMAC) or private key (RSA/ECDSA). The server verifies the signature on each request without needing to query a session store, making JWT stateless. Tokens are typically short-lived and accompanied by a refresh token for obtaining new access tokens without re-authentication."
+            },
+            {
+                "id": "r_se_20",
+                "question": "What is the difference between Functional and Object-Oriented programming?",
+                "hint": "Immutability vs State management.",
+                "difficulty": "MODERATE",
+                "answer": "Object-Oriented Programming (OOP) organises code around objects — encapsulated entities that combine state (fields) and behaviour (methods). It uses inheritance, polymorphism, and encapsulation to model real-world concepts. State is mutable and changes over time. Functional Programming (FP) treats computation as the evaluation of mathematical functions. It emphasises immutability (data is never modified in place), pure functions (no side effects — same input always produces same output), and first-class/higher-order functions. FP makes code easier to reason about, test, and parallelise since there is no shared mutable state. Modern languages like Kotlin, Scala, and JavaScript support both paradigms. In practice, most systems blend the two: OOP for modelling domain entities, FP for data transformation pipelines."
+            }
+        ],
+        "Frontend Developer": [
+            {
+                "id": "r_fe_1",
+                "question": "What is the difference between localstorage and sessionstorage?",
+                "hint": "Persistence across browser restarts.",
+                "difficulty": "BASIC",
+                "answer": "Both are Web Storage APIs that store key-value pairs in the browser, but they differ in lifetime and scope. localStorage persists indefinitely until explicitly cleared by JavaScript or the user — data survives browser restarts and tab closures. sessionStorage is scoped to the browser tab (session) and is cleared when that tab is closed. Both are limited to ~5MB, are synchronous, store only strings, and are accessible only by the same origin. Neither should be used for sensitive data (tokens, passwords) as they are accessible via JavaScript and vulnerable to XSS. For authentication tokens, HttpOnly cookies are preferred as they are inaccessible to scripts."
+            },
+            {
+                "id": "r_fe_2",
+                "question": "Explain CSS Box Model.",
+                "hint": "Margin, border, padding, content.",
+                "difficulty": "BASIC",
+                "answer": "The CSS Box Model defines how every HTML element is rendered as a rectangular box composed of four layers from inside out: Content (the actual text/image area), Padding (transparent space between content and the border), Border (a visible or invisible edge around the padding), and Margin (transparent space outside the border, separating the element from its neighbours). By default (box-sizing: content-box), width and height apply only to the content area — padding and border are added on top. Setting box-sizing: border-box includes padding and border within the declared width/height, making layout calculations more intuitive. Understanding the box model is fundamental to mastering CSS layout and debugging spacing issues."
+            },
+            {
+                "id": "r_fe_3",
+                "question": "What is a closure in JavaScript?",
+                "hint": "A function bundled with its lexical environment.",
+                "difficulty": "MODERATE",
+                "answer": "A closure is a function that retains access to its outer (enclosing) function's variables even after the outer function has finished executing. This is possible because JavaScript functions carry a reference to their lexical scope — the environment in which they were defined, not where they are called. Closures are fundamental to JavaScript patterns like data encapsulation (creating private variables), factory functions, event handlers, and callbacks. A classic example is a counter factory: function makeCounter() { let count = 0; return () => ++count; } — each call to makeCounter() produces a new closure with its own independent count variable. Closures are also the reason for the well-known loop-with-setTimeout gotcha when using var instead of let."
+            },
+            {
+                "id": "r_fe_4",
+                "question": "Explain the Virtual DOM and how it improves performance.",
+                "hint": "Minimizing direct DOM manipulations through diffing.",
+                "difficulty": "MODERATE",
+                "answer": "The Virtual DOM (VDOM) is an in-memory, lightweight JavaScript representation of the actual browser DOM. When state changes, React (or other VDOM-based frameworks) re-renders the VDOM tree, then diffs it against the previous VDOM snapshot using a reconciliation algorithm. Only the minimal set of real DOM mutations required to reflect the changes is then applied in a batch. Direct DOM manipulation is slow because it can trigger layout recalculations and repaints. By batching and minimising DOM writes, the VDOM approach improves perceived performance. It also enables a declarative programming model — developers describe what the UI should look like for a given state, and the framework handles the how."
+            },
+            {
+                "id": "r_fe_5",
+                "question": "How do you optimize initial load time for a large SPA?",
+                "hint": "Code splitting, tree shaking, lazy loading.",
+                "difficulty": "ADVANCED",
+                "answer": "Multiple strategies work in tandem: (1) Code Splitting — using dynamic import() to split the bundle into route-level or component-level chunks that are only loaded on demand. (2) Tree Shaking — bundlers (Webpack, Vite) eliminate dead code by statically analysing ES module imports. (3) Lazy Loading — defer loading non-critical components and images (loading='lazy') until they are needed. (4) Preloading/Prefetching — use <link rel='preload'> for critical assets and rel='prefetch' for likely future navigation. (5) Asset optimisation — compress images (WebP, AVIF), minify JS/CSS, and use Brotli/gzip compression on the server. (6) CDN and caching — serve static assets from a CDN with long cache-control headers and content-hash filenames for cache busting. (7) Server-Side Rendering (SSR) or Static Site Generation (SSG) — deliver pre-rendered HTML for fast First Contentful Paint (FCP). Monitor with Core Web Vitals (LCP, FID, CLS)."
+            },
+            {
+                "id": "r_fe_6",
+                "question": "Describe the difference between Flexbox and CSS Grid.",
+                "hint": "1D vs 2D layout systems.",
+                "difficulty": "BASIC",
+                "answer": "Flexbox is a one-dimensional layout system — it distributes items along a single axis (either row or column) and is best for components where items need to align or distribute space within a row or column, like navigation bars, card rows, or centering content. CSS Grid is a two-dimensional layout system — it controls both rows and columns simultaneously and is ideal for page-level layouts, dashboard grids, and any design requiring elements to align across both axes. A common best practice is to use Grid for the overall page structure and Flexbox for the alignment within individual components. They can also be nested: a Grid cell can contain a Flex container."
+            },
+            {
+                "id": "r_fe_7",
+                "question": "What is event bubbling and capturing?",
+                "hint": "Propagating events up or down the DOM tree.",
+                "difficulty": "BASIC",
+                "answer": "When a DOM event is triggered (e.g., a click), it travels through the DOM in two phases. Capturing (trickling down) — the event travels from the document root down to the target element. Bubbling (bubbling up) — after reaching the target, the event propagates back up through ancestor elements. By default, most event listeners (addEventListener) fire in the bubbling phase. Capturing listeners can be attached by passing { capture: true }. Event delegation exploits bubbling: instead of attaching listeners to many child elements, attach one listener to the parent and use event.target to identify the source. event.stopPropagation() halts further propagation, and event.preventDefault() prevents the browser's default action (e.g., form submission or link navigation)."
+            },
+            {
+                "id": "r_fe_8",
+                "question": "Explain the concept of Progressive Web Apps (PWA).",
+                "hint": "Service workers, manifest.json, offline capabilities.",
+                "difficulty": "MODERATE",
+                "answer": "A Progressive Web App (PWA) is a web application that uses modern browser APIs to deliver app-like experiences including offline access, push notifications, and home screen installation. Core components: (1) Service Worker — a background script acting as a network proxy that caches assets and API responses, enabling offline functionality and faster loads. It follows a lifecycle: install, activate, fetch. (2) Web App Manifest (manifest.json) — a JSON file describing the app name, icons, theme colour, and display mode (standalone, fullscreen), enabling 'Add to Home Screen'. (3) HTTPS — required for service workers for security. PWAs bridge the gap between web and native apps: they are discoverable, linkable, installable, and work offline, without requiring app store distribution."
+            },
+            {
+                "id": "r_fe_9",
+                "question": "What are Web Sockets and when would you use them?",
+                "hint": "Full-duplex real-time communication.",
+                "difficulty": "MODERATE",
+                "answer": "WebSockets provide a persistent, full-duplex communication channel over a single TCP connection, allowing both the client and server to send messages to each other at any time without the overhead of repeated HTTP request/response cycles. The connection is established via an HTTP upgrade handshake. Use cases: real-time chat applications, live sports scores or stock tickers, collaborative editing (Google Docs-style), multiplayer games, and live notifications. Compared to polling (repeated HTTP requests) or long-polling (keeping HTTP request open), WebSockets are far more efficient for high-frequency bidirectional updates. For one-directional server-to-client streams, Server-Sent Events (SSE) are a simpler alternative. For unreliable networks, consider libraries like Socket.io which add reconnection and fallback mechanisms."
+            },
+            {
+                "id": "r_fe_10",
+                "question": "How does React Fiber or Angular's Ivy engine work?",
+                "hint": "Incremental rendering and improved compilation.",
+                "difficulty": "ADVANCED",
+                "answer": "React Fiber (introduced in React 16) is a complete rewrite of React's reconciliation engine. It converts the rendering work into a linked list of 'fibers' (units of work) that can be paused, prioritised, reused, or aborted. This enables Concurrent Mode features: React can interrupt non-urgent renders to handle high-priority updates (e.g., user input), schedule work via requestIdleCallback, and enable time-slicing. This significantly improves responsiveness in complex UIs. Angular's Ivy is the modern compilation and rendering engine (replacing View Engine). It uses 'locality' — each component is compiled independently without needing global analysis — resulting in faster build times, smaller bundle sizes via tree-shaking of unused Angular features, better debugging (component functions are inspectable), and improved type-checking in templates."
+            }
+        ],
+        "Data Analyst": [
+            {
+                "id": "r_da_1",
+                "question": "What is the difference between Mean, Median, and Mode?",
+                "hint": "Average vs Central value vs Frequency.",
+                "difficulty": "BASIC",
+                "answer": "These are three measures of central tendency. Mean is the arithmetic average — sum all values and divide by the count. It is sensitive to outliers; a single extreme value can skew it significantly. Median is the middle value when data is sorted. It is robust to outliers and preferred for skewed distributions (e.g., income data). Mode is the most frequently occurring value. It is the only measure applicable to categorical data (e.g., most common product category). Example: for the dataset [1, 2, 2, 3, 100] — Mean ≈ 21.6, Median = 2, Mode = 2. The median and mode better represent the typical value here because the outlier (100) inflates the mean."
+            },
+            {
+                "id": "r_da_2",
+                "question": "Explain the difference between a Join and a Union in SQL.",
+                "hint": "Combining columns vs combining rows.",
+                "difficulty": "BASIC",
+                "answer": "A JOIN combines columns from two or more tables based on a related key. Types include INNER JOIN (only matching rows), LEFT/RIGHT OUTER JOIN (all rows from one table plus matches from the other), and FULL OUTER JOIN (all rows from both). A UNION combines rows from two or more SELECT statements vertically, stacking result sets on top of each other. UNION requires both queries to have the same number of columns and compatible data types. UNION removes duplicate rows; UNION ALL keeps them. In short: JOIN adds more columns (horizontal expansion), while UNION adds more rows (vertical expansion)."
+            },
+            {
+                "id": "r_da_3",
+                "question": "What is p-value in statistics?",
+                "hint": "Probability of observing results as extreme as the test results.",
+                "difficulty": "MODERATE",
+                "answer": "The p-value is the probability of observing a test statistic as extreme as, or more extreme than, the one calculated from the sample data, assuming the null hypothesis is true. A low p-value (typically < 0.05) suggests the observed result is unlikely under the null hypothesis, leading to its rejection in favour of the alternative hypothesis. For example, if you test whether a drug has no effect and get p = 0.02, there is only a 2% chance of seeing these results by random chance alone — evidence against the null hypothesis. Important caveats: p-value does not measure the probability that the null hypothesis is true, nor the effect size or practical significance. It should be interpreted alongside confidence intervals and effect size metrics."
+            },
+            {
+                "id": "r_da_4",
+                "question": "What is Overfitting and how do you prevent it?",
+                "hint": "Model too close to training data, regularization, cross-validation.",
+                "difficulty": "MODERATE",
+                "answer": "Overfitting occurs when a model learns the training data too well — including its noise and random fluctuations — and therefore performs poorly on unseen data. It manifests as high training accuracy but low validation/test accuracy. Prevention strategies: (1) More training data — reduces the chance that noise patterns dominate. (2) Cross-validation (k-fold) — evaluates generalisation by testing on multiple held-out subsets. (3) Regularisation — L1 (Lasso) shrinks coefficients to zero (feature selection), L2 (Ridge) penalises large coefficients, Dropout randomly deactivates neurons during training in neural networks. (4) Early stopping — halt training when validation loss stops improving. (5) Simpler models — reduce model complexity (fewer layers, lower polynomial degree). (6) Feature selection/reduction — remove irrelevant or redundant features."
+            },
+            {
+                "id": "r_da_5",
+                "question": "Explain the difference between Supervised and Unsupervised learning.",
+                "hint": "Feedback loop vs pattern discovery.",
+                "difficulty": "BASIC",
+                "answer": "In Supervised Learning, the model is trained on labelled data — each input has a known correct output. The model learns a mapping from inputs to outputs and is evaluated on its prediction accuracy. Examples: classification (spam detection, image recognition) and regression (house price prediction). In Unsupervised Learning, the model works with unlabelled data and discovers hidden patterns or structure without explicit guidance. Examples: clustering (K-Means groups similar customers), dimensionality reduction (PCA), and anomaly detection. Semi-supervised learning uses a small amount of labelled data combined with large unlabelled datasets. Reinforcement learning is a third paradigm where an agent learns by receiving rewards or penalties based on its actions in an environment."
+            },
+            {
+                "id": "r_da_6",
+                "question": "Describe CAP theorem in the context of Big Data.",
+                "hint": "Consistency, Availability, Partition tolerance.",
+                "difficulty": "MODERATE",
+                "answer": "In Big Data distributed systems, the CAP theorem states you can guarantee at most two of: Consistency (all nodes return the same, latest data), Availability (every request receives a response), and Partition Tolerance (the system functions despite network failures separating nodes). Since network partitions are unavoidable at scale, you must choose between consistency and availability during a partition. HDFS and HBase prioritise CP — writes must be acknowledged by a quorum, so operations may fail during partition. Cassandra and DynamoDB prioritise AP — they remain available and return potentially stale data, reconciling inconsistencies later. Real-world Big Data pipelines often use AP stores for ingestion and CP stores for critical reporting, accepting eventual consistency where appropriate."
+            },
+            {
+                "id": "r_da_7",
+                "question": "How would you handle missing values in a dataset?",
+                "hint": "Imputation, deletion, prediction.",
+                "difficulty": "BASIC",
+                "answer": "The approach depends on the type (MCAR, MAR, MNAR) and extent of missingness. (1) Deletion — listwise deletion removes entire rows with missing values; column deletion removes features missing above a threshold (e.g., >50%). Safe only if data is MCAR and missingness is low. (2) Mean/Median/Mode imputation — fill with the column's central tendency. Simple but can reduce variance and distort distributions. (3) Forward/Backward fill — used in time series data where adjacent values are related. (4) Model-based imputation — use regression, KNN, or MICE (Multiple Imputation by Chained Equations) to predict missing values from other features. (5) Indicator variable — add a binary flag column indicating missingness; the pattern of missing data can itself be informative. Always analyse missing data patterns before deciding."
+            },
+            {
+                "id": "r_da_8",
+                "question": "What is a Confusion Matrix?",
+                "hint": "True Positives, False Positives, etc.",
+                "difficulty": "MODERATE",
+                "answer": "A confusion matrix is a table used to evaluate the performance of a classification model by comparing predicted labels against actual labels. For a binary classifier it has four cells: True Positive (TP) — correctly predicted positive; True Negative (TN) — correctly predicted negative; False Positive (FP) — predicted positive but actually negative (Type I error); False Negative (FN) — predicted negative but actually positive (Type II error). From these, key metrics are derived: Accuracy = (TP+TN)/(TP+TN+FP+FN); Precision = TP/(TP+FP) — of all positive predictions, how many were correct; Recall (Sensitivity) = TP/(TP+FN) — of all actual positives, how many were caught; F1 Score = harmonic mean of precision and recall. The choice of metric depends on the problem — in fraud detection, high recall is critical even at the cost of precision."
+            },
+            {
+                "id": "r_da_9",
+                "question": "Explain Principal Component Analysis (PCA).",
+                "hint": "Dimensionality reduction while preserving variance.",
+                "difficulty": "ADVANCED",
+                "answer": "PCA is a linear dimensionality reduction technique that transforms a high-dimensional dataset into a lower-dimensional space while retaining as much variance as possible. It works by: (1) Standardising the data (zero mean, unit variance). (2) Computing the covariance matrix to capture how features co-vary. (3) Computing eigenvectors (principal components) and eigenvalues — the eigenvectors define the directions of maximum variance; eigenvalues indicate the magnitude of variance along each direction. (4) Sorting components by eigenvalue descending and selecting the top k components. (5) Projecting the original data onto the selected components. PCA is used for noise reduction, visualisation (reducing to 2D/3D), and preprocessing before feeding data into models that struggle with high dimensionality (curse of dimensionality). Note: PCA finds linear combinations — it cannot capture non-linear relationships (use t-SNE or UMAP for non-linear reduction)."
+            },
+            {
+                "id": "r_da_10",
+                "question": "What is the difference between Correlation and Causation?",
+                "hint": "Relationship vs Direct influence.",
+                "difficulty": "BASIC",
+                "answer": "Correlation measures the statistical relationship between two variables — when one changes, the other tends to change in a predictable direction. A Pearson correlation coefficient of +1 means a perfect positive linear relationship, -1 a perfect negative one, and 0 means no linear relationship. Causation means a change in one variable directly causes a change in another. The key principle: correlation does not imply causation. A classic example: ice cream sales and drowning rates are positively correlated — both rise in summer — but ice cream does not cause drowning; hot weather is a confounding variable. Establishing causation requires controlled experiments (randomised controlled trials), natural experiments, or causal inference methods like instrumental variables and difference-in-differences. This distinction is critical in data analysis to avoid drawing incorrect business conclusions."
+            }
+        ]
+    },
+    "skills": {
+        "Java": [
+            {
+                "id": "s_j_1",
+                "question": "What is the difference between ArrayList and LinkedList?",
+                "hint": "Performance in random access vs insertion.",
+                "difficulty": "BASIC",
+                "answer": "Both implement the List interface but use different underlying data structures. ArrayList is backed by a dynamic array — random access is O(1) since elements are indexed, but insertions/deletions in the middle are O(n) because subsequent elements must be shifted. LinkedList is backed by a doubly-linked list — insertions and deletions at known positions are O(1) since only pointers are updated, but random access is O(n) as it must traverse from the head. In practice, ArrayList outperforms LinkedList in most scenarios due to better CPU cache locality. Use LinkedList when you have frequent insertions/deletions at both ends (it also implements Deque) and rarely access elements by index."
+            },
+            {
+                "id": "s_j_2",
+                "question": "Explain Java Streams API.",
+                "hint": "Functional-style operations on collections.",
+                "difficulty": "MODERATE",
+                "answer": "The Streams API (Java 8+) enables functional-style, declarative processing of sequences of elements. A Stream is not a data structure — it is a pipeline of operations on a source (collections, arrays, I/O). Operations are divided into intermediate (lazy — not executed until a terminal operation is called) and terminal (eager — trigger the pipeline). Common intermediate operations: filter(), map(), flatMap(), distinct(), sorted(), limit(). Common terminal operations: collect(), forEach(), reduce(), count(), findFirst(). Streams support parallel processing via parallelStream(), leveraging the Fork/Join framework under the hood. Key benefits: concise, readable code; lazy evaluation avoids unnecessary computation; easy parallelism. Streams are single-use — once consumed, they cannot be reused."
+            },
+            {
+                "id": "s_j_3",
+                "question": "What is a Memory Leak in Java and how do you find it?",
+                "hint": "Unreferenced objects still in heap, Profilers.",
+                "difficulty": "ADVANCED",
+                "answer": "A memory leak in Java occurs when objects are no longer needed by the application but are still referenced, preventing the Garbage Collector from reclaiming them. Over time, heap usage grows until an OutOfMemoryError is thrown. Common causes: static collections that grow indefinitely, unclosed resources (connections, streams), listeners/callbacks not deregistered, ThreadLocal variables not removed, and improper equals/hashCode causing HashMap key duplication. Detection methods: (1) Heap dumps — captured via jmap or jcmd, then analysed in Eclipse MAT or VisualVM to find objects with unexpected retention paths. (2) Profilers — tools like JProfiler, YourKit, or Java Mission Control monitor live heap allocations and GC activity. (3) GC logs — enable with -Xlog:gc* to observe if Old Gen is growing despite GC cycles. (4) APM tools — Datadog, Dynatrace can alert on heap trends before crashes occur."
+            },
+            {
+                "id": "s_j_4",
+                "question": "What is the difference between Comparable and Comparator in Java?",
+                "hint": "Natural ordering vs custom ordering.",
+                "difficulty": "BASIC",
+                "answer": "Comparable is an interface implemented by a class to define its natural ordering. It has a single method compareTo(T o) and is used when the class itself knows how it should be sorted (e.g., Integer, String, Date). Collections.sort(list) uses this. Comparator is an external strategy interface for defining custom orderings without modifying the class. It defines compare(T o1, T o2) and can be passed to Collections.sort(list, comparator) or List.sort(). Use Comparator when: you need multiple sort orders for the same class, you cannot modify the class (third-party), or you want to compose orderings (Comparator.comparing().thenComparing()). In Java 8+, Comparators can be written as lambda expressions for brevity."
+            },
+            {
+                "id": "s_j_5",
+                "question": "Explain the Java Memory Model and the role of the 'volatile' keyword.",
+                "hint": "Thread visibility, happens-before relationship.",
+                "difficulty": "MODERATE",
+                "answer": "The Java Memory Model (JMM) defines how threads interact through memory. Each thread may have a local CPU cache of variables; without synchronisation, changes made by one thread may not be visible to another. The volatile keyword guarantees visibility — reads and writes to a volatile variable always go directly to main memory, bypassing the CPU cache. It also establishes a happens-before relationship: a write to a volatile variable happens-before any subsequent read of that variable by another thread. However, volatile does not guarantee atomicity — a compound operation like count++ (read-modify-write) is not thread-safe even on a volatile variable. For atomicity, use AtomicInteger or synchronised blocks. volatile is suitable for simple flags and status indicators (e.g., a boolean running flag for a worker thread)."
+            },
+            {
+                "id": "s_j_6",
+                "question": "What are Java's checked vs unchecked exceptions?",
+                "hint": "Compile-time enforcement vs runtime exceptions.",
+                "difficulty": "BASIC",
+                "answer": "Java exceptions are divided into two categories. Checked exceptions (subclasses of Exception excluding RuntimeException) must be either caught with a try-catch block or declared in the method signature using throws. The compiler enforces this. They represent recoverable conditions that the caller should handle (e.g., IOException, SQLException). Unchecked exceptions (subclasses of RuntimeException and Error) do not need to be declared or caught. They typically represent programming errors (NullPointerException, IndexOutOfBoundsException, IllegalArgumentException) or unrecoverable JVM conditions (OutOfMemoryError). Best practice: use checked exceptions for recoverable, expected failures that the caller can meaningfully handle; use unchecked exceptions for programming errors. Avoid using exceptions for control flow, as it is expensive and unclear."
+            },
+            {
+                "id": "s_j_7",
+                "question": "What is the difference between HashMap and ConcurrentHashMap?",
+                "hint": "Thread safety and locking granularity.",
+                "difficulty": "MODERATE",
+                "answer": "HashMap is not thread-safe — concurrent modifications from multiple threads can cause data corruption or infinite loops during rehashing. ConcurrentHashMap is a thread-safe variant designed for high-concurrency use. In Java 8+, it uses a combination of fine-grained synchronisation (synchronised blocks on individual buckets/bins rather than the whole map) and lock-free algorithms (CAS operations) to allow concurrent reads with no locking and concurrent writes on different segments without contention. This makes it far more scalable than the older Hashtable or Collections.synchronizedMap() wrappers which lock the entire map on every operation. Note: ConcurrentHashMap does not allow null keys or values, unlike HashMap."
+            },
+            {
+                "id": "s_j_8",
+                "question": "Explain how Garbage Collection works in the JVM.",
+                "hint": "Generational GC, GC roots, reachability.",
+                "difficulty": "ADVANCED",
+                "answer": "The JVM's Garbage Collector automatically reclaims heap memory occupied by objects that are no longer reachable from GC roots (active threads, static variables, JNI references). The heap is divided generationally based on the observation that most objects die young. Young Generation (Eden + two Survivor spaces) — new objects are allocated here; Minor GC is triggered when Eden fills up. Surviving objects are promoted between Survivor spaces (tracked by age counter) and eventually moved to Old/Tenured Generation after reaching a threshold. Major/Full GC collects the Old Generation, which is more expensive. Modern JVMs offer multiple GC algorithms: Serial GC (single-threaded), Parallel GC (throughput-oriented), G1 GC (default in Java 9+, predictable pause times), ZGC and Shenandoah (ultra-low latency, concurrent collection with pauses <1ms). Choose based on throughput vs latency requirements."
+            },
+            {
+                "id": "s_j_9",
+                "question": "What is Java Reflection and when should it be used?",
+                "hint": "Inspecting classes at runtime.",
+                "difficulty": "ADVANCED",
+                "answer": "Reflection is a powerful feature in Java that allows an executing Java program to examine or 'introspect' upon itself, and manipulate internal properties of the program. For example, it's possible for a Java class to obtain the names of all its members and display them. Reflection is used by frameworks like Spring for dependency injection, Hibernate for object-relational mapping, and JUnit for discovering test methods. While powerful, it should be used sparingly as it bypasses compile-time type checking, can be slower than direct access, and can break encapsulation by accessing private members."
+            },
+            {
+                "id": "s_j_10",
+                "question": "Explain the difference between fail-fast and fail-safe iterators.",
+                "hint": "Concurrent modification handling.",
+                "difficulty": "MODERATE",
+                "answer": "Fail-fast iterators (e.g., ArrayList, HashMap) throw a ConcurrentModificationException if the collection is modified (added, removed, or updated) while iterating over it, except through the iterator's own remove() method. This is implemented using a modCount flag. Fail-safe iterators (e.g., CopyOnWriteArrayList, ConcurrentHashMap) operate on a clone or a consistent snapshot of the collection, allowing modifications during iteration without throwing exceptions. However, they may not reflect recent changes made after the iterator was created and typically involve higher memory overhead due to copying."
+            },
+            {
+                "id": "s_j_11",
+                "question": "What are Functional Interfaces and Lambda Expressions in Java?",
+                "hint": "SAM interface, anonymous functions.",
+                "difficulty": "BASIC",
+                "answer": "A Functional Interface is an interface that contains exactly one abstract method (Single Abstract Method or SAM). Examples include Runnable, Callable, and Comparator. They can optionally be marked with @FunctionalInterface. Lambda Expressions provide a clear and concise way to represent one-method interfaces using an expression. They allow you to treat functionality as a method argument, or code as data. For example, (a, b) -> a + b. Lambdas facilitate functional programming patterns in Java, especially when used with the Streams API."
+            },
+            {
+                "id": "s_j_12",
+                "question": "Describe the try-with-resources statement introduced in Java 7.",
+                "hint": "Automatic resource management.",
+                "difficulty": "BASIC",
+                "answer": "The try-with-resources statement is a try statement that declares one or more resources. A resource is an object that must be closed after the program is finished with it (e.g., BufferedReader, Connection). Any object that implements java.lang.AutoCloseable or java.io.Closeable can be used as a resource. The try-with-resources statement ensures that each resource is closed at the end of the statement, even if an exception occurs. This eliminates the need for explicit finally blocks and reduces the risk of resource leaks."
+            },
+            {
+                "id": "s_j_13",
+                "question": "What is the difference between Hibernate's get() and load() methods?",
+                "hint": "Eager vs Lazy fetching of entities.",
+                "difficulty": "MODERATE",
+                "answer": "get() always hits the database immediately and returns the real object (or null if not found). It is used when you are not sure if the object exists. load() returns a proxy (a placeholder) without hitting the database immediately. The database is only queried when a non-identifier property of the proxy is accessed. If the record does not exist in the database, load() will throw an ObjectNotFoundException when the proxy is initialized. Use load() when you are certain the object exists and you only need it to set a relationship in another entity."
+            }
+        ],
+        "Angular": [
+            {
+                "id": "s_a_1",
+                "question": "What are Angular Signals?",
+                "hint": "Reactive primitive for state management.",
+                "difficulty": "MODERATE",
+                "answer": "Angular Signals (introduced in Angular 16 as developer preview, stable in Angular 17+) are a new reactive primitive for fine-grained reactivity and state management. A Signal is a wrapper around a value that notifies consumers when that value changes. Types: signal() — creates a writable signal; computed() — derives a read-only signal from other signals (memoized, only recalculates when dependencies change); effect() — runs side effects whenever a signal it reads changes. Signals enable Angular to track dependencies at a granular level, enabling potential Zone.js-free change detection and more efficient re-rendering of only affected components. They are simpler to reason about than RxJS for synchronous state, and interoperate with Observables via toSignal() and toObservable() utilities."
+            },
+            {
+                "id": "s_a_2",
+                "question": "Explain the difference between an Observable and a Promise.",
+                "hint": "Cancellable, streams vs single value.",
+                "difficulty": "BASIC",
+                "answer": "A Promise represents a single future value and is eager — it starts executing immediately upon creation. It can emit only one resolved value or one rejection and cannot be cancelled. An Observable (from RxJS) represents a stream of zero or more values over time and is lazy — it does not execute until subscribed to. It can emit multiple values, supports cancellation via unsubscription, and provides a rich set of operators (map, filter, mergeMap, switchMap, etc.) for composing asynchronous logic. In Angular: Promises are used for simple one-off async operations. Observables are preferred for HTTP calls (cancellable), event streams, WebSocket data, and complex async workflows. HttpClient returns Observables. Always unsubscribe from long-lived Observables (or use async pipe, takeUntil, or takeUntilDestroyed) to prevent memory leaks."
+            },
+            {
+                "id": "s_a_3",
+                "question": "What is Change Detection in Angular and how does OnPush strategy work?",
+                "hint": "Zone.js, default vs OnPush CD strategy.",
+                "difficulty": "MODERATE",
+                "answer": "Angular's Change Detection (CD) checks component templates to sync them with the application state. By default, Angular uses Zone.js to monkey-patch async APIs (setTimeout, Promises, events) and trigger a CD cycle from the root down through the entire component tree after any async operation — this can be inefficient for large trees. The OnPush strategy optimises this by only checking a component when: (1) an @Input reference changes (object identity, not deep equality), (2) an event originates from within the component, (3) an async pipe completes, or (4) ChangeDetectorRef.markForCheck() is called manually. Components using Observables with the async pipe and immutable data naturally work well with OnPush, providing significant performance gains by skipping subtrees that cannot have changed."
+            },
+            {
+                "id": "s_a_4",
+                "question": "Explain Angular Dependency Injection and the difference between providedIn scopes.",
+                "hint": "Root vs module vs component scope.",
+                "difficulty": "MODERATE",
+                "answer": "Angular's Dependency Injection (DI) framework manages service instantiation and delivery to components and other services. Services are registered with providers that define their scope. providedIn: 'root' — registers the service as a singleton with the root injector; it is available application-wide and tree-shakable (removed from bundle if unused). providedIn: 'platform' — a single shared instance across multiple Angular apps on the same page. providedIn: SomeModule — the service is provided in a specific NgModule's injector; a new instance is created per lazy-loaded module. Component-level providers (providers array in @Component) create a new instance per component instance — useful for stateful services like form state or component-specific caches. Angular's injector hierarchy (element injectors → module injectors → root injector) allows fine-grained scoping."
+            },
+            {
+                "id": "s_a_5",
+                "question": "What are standalone components in Angular and why were they introduced?",
+                "hint": "NgModule-free architecture.",
+                "difficulty": "MODERATE",
+                "answer": "Standalone components (stable since Angular 15) are components, directives, and pipes that declare their own dependencies directly via the imports array in their decorator, without needing to belong to an NgModule. Before standalone, all components had to be declared in an NgModule and shared via module imports/exports — this created boilerplate, circular dependency risks, and made lazy loading verbose. Standalone simplifies the mental model: a component is self-contained and can directly import other standalone components, pipes, and modules it needs. The new standalone-first application bootstrap (bootstrapApplication) eliminates AppModule entirely. Benefits: reduced boilerplate, better tree-shaking, more explicit dependency graphs, simpler lazy loading (loadComponent()), and alignment with modern web component patterns. Angular 17+ defaults to standalone components in the CLI."
+            },
+            {
+                "id": "s_a_6",
+                "question": "What is RxJS switchMap and how does it differ from mergeMap and concatMap?",
+                "hint": "Cancellation vs concurrency vs sequential.",
+                "difficulty": "ADVANCED",
+                "answer": "These are higher-order mapping operators that flatten an Observable of Observables, but differ in how they handle concurrency. switchMap — cancels the previous inner Observable when a new outer value arrives. Ideal for search-as-you-type: if the user types faster than API responds, stale requests are cancelled. mergeMap (flatMap) — subscribes to all inner Observables concurrently without cancelling previous ones. Order of results is not guaranteed. Use for independent parallel operations (e.g., uploading multiple files simultaneously). concatMap — subscribes to inner Observables sequentially, waiting for each to complete before starting the next. Order is preserved. Use when order matters or operations must not overlap (e.g., sequential API mutations). exhaustMap — ignores new outer values while a current inner Observable is active. Use to prevent duplicate submissions (e.g., a save button that ignores clicks while a save is in progress)."
+            },
+            {
+                "id": "s_a_7",
+                "question": "What are Angular Route Guards and how do they work?",
+                "hint": "Controlling navigation access.",
+                "difficulty": "BASIC",
+                "answer": "Route guards are interfaces that tell the router whether or not it should allow navigation to a requested route. They make this decision by looking for a true or false return value from a class which implements a given guard interface. There are five different types of guards: CanActivate (mediates navigation to a route), CanActivateChild (mediates navigation to a child route), CanDeactivate (mediates navigation away from the current route), CanLoad (mediates navigation to a feature module loaded asynchronously), and Resolve (performs route data retrieval before route activation). Guards are useful for authentication, authorization, and ensuring data is loaded before revealing a component."
+            },
+            {
+                "id": "s_a_8",
+                "question": "Explain Angular HTTP Interceptors.",
+                "hint": "Transforming requests and responses.",
+                "difficulty": "MODERATE",
+                "answer": "HTTP Interceptors are a way to intercept and modify HTTP requests and responses globally. They are useful for tasks such as adding authentication headers (like JWT), logging, error handling, or showing a loading spinner during network requests. Interceptors are implemented as services that implement the HttpInterceptor interface. Multiple interceptors can be chained together, forming a pipeline where each interceptor can either process the request itself or pass it to the next one in the chain using the next.handle() method."
+            },
+            {
+                "id": "s_a_9",
+                "question": "What is Content Projection in Angular (ng-content)?",
+                "hint": "Inserting external content into components.",
+                "difficulty": "BASIC",
+                "answer": "Content projection is a pattern in which you insert, or project, the content you want to use inside another component. Use the <ng-content> tag in your component's template as a placeholder for the external content. This makes your components more reusable and flexible. You can also use multi-slot content projection by using the 'select' attribute on the <ng-content> tag to target specific elements or CSS selectors from the projected content (e.g., <ng-content select='header'></ng-content>)."
+            },
+            {
+                "id": "s_a_10",
+                "question": "Explain the difference between ViewChild and ContentChild.",
+                "hint": "Accessing children in template vs projected content.",
+                "difficulty": "MODERATE",
+                "answer": "ViewChild and ContentChild are decorators used to query and access child components or elements. ViewChild is used to access children that are part of the component's own template (view). It becomes available after the ngAfterViewInit lifecycle hook. ContentChild is used to access children that are projected into the component via <ng-content> (shadow DOM). It becomes available after the ngAfterContentInit lifecycle hook. Both can be used to call methods or access properties of child components directly from the parent."
+            },
+            {
+                "id": "s_a_11",
+                "question": "What is Angular Universal and what are its benefits?",
+                "hint": "Server-Side Rendering (SSR).",
+                "difficulty": "ADVANCED",
+                "answer": "Angular Universal is the technology that enables Server-Side Rendering (SSR) in Angular. Instead of the browser downloading and rendering the entire app from scratch (CSR), the server pre-renders the HTML for a specific route and sends it to the client. Benefits include: (1) Improved SEO: Search engine crawlers can easily read the pre-rendered content. (2) Better Performance: Users see the page content almost immediately (First Contentful Paint), which is especially important for mobile users or slow connections. (3) Social Media Preview: Enables social media platforms to generate rich previews when a link to your app is shared."
+            }
+        ],
+        "React": [
+            {
+                "id": "s_r_1",
+                "question": "What is the difference between useEffect and useLayoutEffect?",
+                "hint": "Paint timing and DOM reads.",
+                "difficulty": "MODERATE",
+                "answer": "Both hooks accept a function and a dependency array and run it as a side effect, but they differ in when they fire relative to the browser's paint cycle. useEffect runs asynchronously after the browser has painted — it does not block the visual update, making it suitable for most side effects: data fetching, subscriptions, logging, and timers. useLayoutEffect runs synchronously after all DOM mutations but before the browser paints — it blocks the paint until complete. Use it when you need to read or mutate the DOM layout before the user sees the result (e.g., measuring element dimensions for tooltip positioning, preventing flickering when synchronously updating styles). Since useLayoutEffect blocks painting, misuse can hurt performance. On the server (SSR), useLayoutEffect issues a warning; use useEffect or conditionally apply it."
+            },
+            {
+                "id": "s_r_2",
+                "question": "Explain React's reconciliation algorithm and the importance of keys.",
+                "hint": "Tree diffing, component identity.",
+                "difficulty": "MODERATE",
+                "answer": "React's reconciliation algorithm (powered by Fiber) diffs the new Virtual DOM tree against the previous one to compute the minimal set of real DOM mutations. It uses two heuristics for O(n) diffing: (1) Elements of different types produce entirely different trees — React destroys the old tree and builds a new one. (2) When rendering lists, React uses keys to identify which items changed, were added, or removed. Without keys, React compares children by index — reordering items causes every element to re-render and potentially corrupts component state. With stable, unique keys (ideally record IDs, not array indices), React can reorder DOM nodes efficiently without re-rendering. Using index as a key is safe only for static, non-reorderable lists. Keys must be unique among siblings but not globally."
+            },
+            {
+                "id": "s_r_3",
+                "question": "What is React Context and when should you avoid it for state management?",
+                "hint": "Prop drilling, re-render overhead.",
+                "difficulty": "MODERATE",
+                "answer": "React Context provides a way to pass data through the component tree without prop drilling — any component inside the Provider can consume the context value. It is ideal for low-frequency, global data: authenticated user, theme, locale, or feature flags. However, Context has a critical performance characteristic: when the context value changes, every consumer component re-renders, regardless of which part of the value it uses. This makes it unsuitable for high-frequency state updates (e.g., form inputs, mouse position, counters) in large trees. Solutions: split contexts by concern (UserContext, ThemeContext), memoize context values with useMemo, or use external state managers (Zustand, Redux Toolkit, Jotai) which provide selective subscriptions so components only re-render when the specific slice they care about changes."
+            },
+            {
+                "id": "s_r_4",
+                "question": "What are React Server Components and how do they differ from Client Components?",
+                "hint": "Zero bundle size, async rendering, no interactivity.",
+                "difficulty": "ADVANCED",
+                "answer": "React Server Components (RSC, stable in Next.js App Router) are components that render exclusively on the server. They have zero impact on the JavaScript bundle size — their code is never shipped to the client. They can directly access server resources (databases, file systems, secrets) without APIs, and can be async. They are ideal for data-fetching-heavy parts of the UI. Their limitation: they cannot use browser APIs, event handlers, or state/effect hooks. Client Components ('use client' directive) render on the client (and can also be server-side pre-rendered for initial HTML). They support interactivity, hooks, and browser APIs. The mental model: use Server Components by default for static, data-driven rendering; drop down to Client Components only at the leaves of the tree where interactivity is needed. This minimises the client JavaScript bundle."
+            },
+            {
+                "id": "s_r_5",
+                "question": "What is the purpose of React.memo and when should it be used?",
+                "hint": "Higher-order component for memoization.",
+                "difficulty": "MODERATE",
+                "answer": "React.memo is a higher-order component that memoizes a functional component. It prevents unnecessary re-renders by performing a shallow comparison of the component's props. If the props haven't changed, React skips rendering the component and reuses the last rendered result. Use it for components that render often with the same props and are computationally expensive. However, avoid overusing it for simple components, as the comparison logic itself carries a small overhead."
+            },
+            {
+                "id": "s_r_6",
+                "question": "Explain the useMemo and useCallback hooks.",
+                "hint": "Memoizing values and functions.",
+                "difficulty": "MODERATE",
+                "answer": "useMemo and useCallback are hooks used for memoization to optimize performance. useMemo returns a memoized value, recalculating it only when one of its dependencies changes. It's useful for expensive calculations. useCallback returns a memoized version of a callback function that only changes if one of the dependencies has changed. It's particularly useful when passing callbacks to optimized child components that rely on reference equality to prevent unnecessary renders (like those wrapped in React.memo)."
+            },
+            {
+                "id": "s_r_7",
+                "question": "What are React Portals and why are they used?",
+                "hint": "Rendering children outside the parent DOM hierarchy.",
+                "difficulty": "MODERATE",
+                "answer": "Portals provide a first-class way to render children into a DOM node that exists outside the DOM hierarchy of the parent component. use ReactDOM.createPortal(child, container). Common use cases include modals, tooltips, and floating menus, where you need to break out of a parent's 'overflow: hidden' or 'z-index' constraints while still maintaining the React component tree's event bubbling and context features."
+            },
+            {
+                "id": "s_r_8",
+                "question": "Describe the state management pattern using useReducer.",
+                "hint": "Handling complex state logic.",
+                "difficulty": "MODERATE",
+                "answer": "useReducer is a hook used for managing complex state logic in functional components, similar to how Redux works. It takes a reducer function (state, action) => newState and an initial state. Using useReducer is often preferred over multiple useState calls when the next state depends on the previous one or when state transitions are complex. It promotes a more predictable state management pattern by centralizing state updates in a single function."
+            },
+            {
+                "id": "s_r_9",
+                "question": "What is the difference between Controlled and Uncontrolled components?",
+                "hint": "Handling form data in React.",
+                "difficulty": "BASIC",
+                "answer": "In a controlled component, form data is handled by a React component's state. The input's value is driven by the state, and changes are handled by callbacks like onChange. In an uncontrolled component, form data is handled by the DOM itself. You use 'refs' to pull field values from the DOM when needed. Controlled components are generally recommended as they allow for easier validation, conditional disabling of buttons, and enforcing specific input formats."
+            }
+        ],
+        "Python": [
+            {
+                "id": "s_py_1",
+                "question": "What is the GIL (Global Interpreter Lock) in Python?",
+                "hint": "Thread safety, multi-core limitations.",
+                "difficulty": "MODERATE",
+                "answer": "The Global Interpreter Lock (GIL) is a mutex in CPython (the reference Python implementation) that allows only one thread to execute Python bytecode at a time, even on multi-core machines. It exists to protect Python's memory management (reference counting) from race conditions. Implications: CPU-bound tasks (computation) do not benefit from Python's threading — threads take turns rather than run in parallel. I/O-bound tasks (network, disk) do benefit since threads release the GIL while waiting for I/O. Workarounds for CPU-bound parallelism: (1) multiprocessing module — separate processes each have their own GIL, enabling true parallelism. (2) C extensions (NumPy, Pandas) release the GIL during computation. (3) asyncio — single-threaded cooperative concurrency for I/O-bound work. Note: Python 3.13 is introducing experimental no-GIL mode."
+            },
+            {
+                "id": "s_py_2",
+                "question": "Explain Python's list comprehension vs generator expressions.",
+                "hint": "Eager vs lazy evaluation, memory.",
+                "difficulty": "BASIC",
+                "answer": "A list comprehension [x*2 for x in range(1000)] eagerly evaluates and stores all elements in memory immediately, returning a list. It is fast for small-to-medium datasets and when you need to access elements multiple times or know the length. A generator expression (x*2 for x in range(1000)) is lazy — it produces values one at a time on demand without storing the entire sequence in memory. It returns a generator object. Use generators for large or infinite sequences to conserve memory (e.g., reading a large file line by line), or when you only need to iterate once. Generators can be used anywhere an iterable is expected. To consume a generator multiple times, you must either convert it to a list or recreate it, since generators are single-pass."
+            },
+            {
+                "id": "s_py_3",
+                "question": "What are Python decorators and how do they work?",
+                "hint": "Higher-order functions, wrapping behaviour.",
+                "difficulty": "MODERATE",
+                "answer": "A decorator is a higher-order function that takes a function (or class) as input, wraps it with additional behaviour, and returns the wrapped function. The @decorator syntax is syntactic sugar for func = decorator(func). They are used for cross-cutting concerns: logging, authentication, caching (@functools.lru_cache), rate limiting, retries, and timing. A decorator typically uses functools.wraps to preserve the original function's metadata (__name__, __doc__). Decorators can also accept arguments by adding an extra layer of nesting (a decorator factory). Class decorators work similarly, receiving the class and returning a modified version. Python's standard library includes several built-in decorators: @staticmethod, @classmethod, @property, and @functools.lru_cache."
+            },
+            {
+                "id": "s_py_4",
+                "question": "Explain the concept of Duck Typing in Python.",
+                "hint": "Behavior-based typing vs content-based typing.",
+                "difficulty": "BASIC",
+                "answer": "Duck typing is a concept in dynamic languages where the type or the class of an object is less important than the methods it defines. When you use duck typing, you do not check a types at all. Instead, you check for the presence of a given method or attribute. The name comes from the phrase: 'If it looks like a duck, swims like a duck, and quacks like a duck, then it probably is a duck.' This allows for great flexibility and polymorphism without formal inheritance."
+            },
+            {
+                "id": "s_py_5",
+                "question": "What are Context Managers and the 'with' statement in Python?",
+                "hint": "Resource management using __enter__ and __exit__.",
+                "difficulty": "BASIC",
+                "answer": "Context managers allow you to allocate and release resources exactly when you want to. The most widely used example is the 'with' statement. For example, when opening a file: with open('test.txt', 'w') as f: f.write('Hello'). The context manager ensures the file is closed automatically. You can create your own context managers by defining a class with __enter__() and __exit__() methods, or by using the @contextmanager decorator from the contextlib module."
+            },
+            {
+                "id": "s_py_6",
+                "question": "What is the difference between a shallow copy and a deep copy in Python?",
+                "hint": "Using the 'copy' module.",
+                "difficulty": "BASIC",
+                "answer": "A shallow copy (copy.copy()) creates a new object but inserts references into it to the objects found in the original. If the original object contains nested mutable objects, changes to those nested objects will be reflected in both. A deep copy (copy.deepcopy()) recursively creates new objects for all objects found in the original, making the copy fully independent. Deep copy is slower and uses more memory but is necessary when you need true isolation between original and copy."
+            },
+            {
+                "id": "s_py_7",
+                "question": "Explain how Argument Parsing works in Python using 'argparse'.",
+                "hint": "Handling command-line arguments.",
+                "difficulty": "BASIC",
+                "answer": "The 'argparse' module makes it easy to write user-friendly command-line interfaces. You start by creating an ArgumentParser object, then use add_argument() to define the expected arguments (positional or optional). The parse_args() method then processes the sys.argv and returns an object containing the argument values. It also automatically generates help and usage messages and issues errors when users give the program invalid arguments."
+            },
+            {
+                "id": "s_py_8",
+                "question": "What are Python Metaclasses?",
+                "hint": "Classes that create classes.",
+                "difficulty": "ADVANCED",
+                "answer": "A metaclass in Python is a class whose instances are classes. Just as a class defines how an instance of the class behaves, a metaclass defines how a class itself behaves. By default, Python uses 'type' as the metaclass for all classes. You can create a custom metaclass by inheriting from 'type' and overriding methods like __new__ or __init__. Metaclasses are used for high-level tasks like class validation, automatic attribute addition, or implementing singleton patterns at the class level. They are powerful but '99% of users should never use them,' as simpler alternatives like class decorators usually suffice."
+            }
+        ]
+    },
+    "hr": [
+        {
+            "id": "hr_1",
+            "question": "Tell me about yourself.",
+            "hint": "Focus on your professional journey and key achievements.",
+            "difficulty": "BASIC",
+            "answer": "Structure your answer using the Present-Past-Future framework. Start with your current role and key responsibilities, briefly highlight your career progression and one or two notable achievements that are relevant to this role, then connect to why you are excited about this opportunity. Keep it to 90–120 seconds. Example structure: 'I'm currently a [role] at [company], where I [key responsibility and impact]. Before that, I [previous experience highlight]. I'm particularly proud of [specific achievement]. I'm now looking for [what you want next], which is exactly what drew me to this role at [company].' Avoid reciting your full CV — the interviewer has that. This question is about narrative, relevance, and communication style."
+        },
+        {
+            "id": "hr_2",
+            "question": "What are your greatest professional strengths?",
+            "hint": "Use the STAR method to provide examples.",
+            "difficulty": "BASIC",
+            "answer": "Choose two or three strengths that are directly relevant to the role. For each, provide a brief concrete example using the STAR method (Situation, Task, Action, Result) to make it credible rather than a generic claim. For example, if you say 'I'm a strong problem-solver,' immediately back it with: 'For instance, at [company] our deployment pipeline was causing 2-hour delays. I investigated, identified a redundant step in the CI configuration, refactored it, and reduced deployment time by 70%.' This shows rather than tells. Choose strengths aligned with the job description — if the role requires collaboration, highlight teamwork over individual output."
+        },
+        {
+            "id": "hr_3",
+            "question": "What is your greatest weakness?",
+            "hint": "Be honest and focus on how you are improving.",
+            "difficulty": "MODERATE",
+            "answer": "The best answers are genuine — interviewers can tell when candidates deflect with non-answers like 'I'm a perfectionist' without any substance. Choose a real weakness that is not a core competency of the role, and follow it immediately with the specific steps you have taken to address it. Structure: 'One area I've been actively working on is [weakness]. In the past, this meant [specific impact]. I recognised this and have since [concrete action — course, habit, system, feedback loop]. For example, [specific improvement or recent outcome].' This demonstrates self-awareness, accountability, and a growth mindset — qualities interviewers value highly."
+        },
+        {
+            "id": "hr_4",
+            "question": "Why do you want to work for this company?",
+            "hint": "Research the company mission and values beforehand.",
+            "difficulty": "BASIC",
+            "answer": "Strong answers connect three things: (1) Specific company knowledge — reference something concrete: their product, mission, a recent initiative, their engineering culture, a blog post, or their approach to a problem space. This signals genuine interest over generic job-hunting. (2) Role fit — explain how the role aligns with your skills and career direction. (3) Values alignment — connect your own values or working style to what the company stands for. Avoid generic statements like 'it's a great company with growth opportunities.' A strong answer sounds like: 'I've been following [company]'s work on [specific product/initiative]. I'm particularly drawn to [specific reason], and given my background in [X], I see a direct opportunity to contribute by [Y].'"
+        },
+        {
+            "id": "hr_5",
+            "question": "Where do you see yourself in five years?",
+            "hint": "Align your career goals with companies growth.",
+            "difficulty": "MODERATE",
+            "answer": "Interviewers ask this to assess ambition, retention likelihood, and whether your goals align with the role. You do not need a rigid plan — show directional clarity. Focus on skills and impact rather than job titles. A strong answer: 'In five years, I see myself having deepened my expertise in [relevant technical or domain area], ideally having taken on more ownership — whether that's leading a team or driving larger architectural decisions. I want to be in a place where I've made a meaningful impact. I think [company] is genuinely the right environment for that because [specific reason connecting their growth trajectory to yours].' Avoid answers that suggest you plan to leave quickly or that you are laser-focused on a specific position that might not exist."
+        },
+        {
+            "id": "hr_6",
+            "question": "Describe a conflict you had with a coworker and how you resolved it.",
+            "hint": "Focus on resolution and professionalism.",
+            "difficulty": "MODERATE",
+            "answer": "Use the STAR method and choose a real, professional example — a genuine disagreement over approach or priorities, not a personality clash. The key is to demonstrate emotional intelligence, communication skills, and a focus on the shared goal. Structure: Situation — briefly describe the context and what the disagreement was about. Task — what was at stake and your responsibility. Action — how you handled it: initiated a direct 1:1 conversation, listened to understand their perspective, found common ground, or escalated appropriately when needed. Result — what was resolved and what you both learned or what improved. Show that you can disagree professionally, advocate for your position with data or reasoning, and move forward constructively. Avoid making the colleague the villain."
+        },
+        {
+            "id": "hr_7",
+            "question": "What is your leadership style?",
+            "hint": "Servant leadership, democratic, delegative.",
+            "difficulty": "MODERATE",
+            "answer": "Avoid claiming a single fixed style — effective leaders adapt based on context, team maturity, and urgency. Describe your primary default style and when you shift. For example: 'My default is a coaching/collaborative style — I prefer to involve the team in decisions, set clear goals and context, and give people ownership of the how. I've found this builds stronger buy-in and helps people grow. That said, in time-sensitive incidents or when a team member is new to a task, I shift to a more directive approach — clear instructions, close check-ins. I also believe in servant leadership: my job is to remove blockers and create conditions where my team can do their best work.' Ground it in a specific example of a team outcome or someone you helped develop."
+        },
+        {
+            "id": "hr_8",
+            "question": "Why did you leave your last job?",
+            "hint": "Stay positive, focus on growth opportunities.",
+            "difficulty": "BASIC",
+            "answer": "Always frame your answer positively and forward-looking — never speak negatively about a former employer, manager, or team, as this raises red flags about professionalism. Acceptable and honest reasons include: seeking a new challenge or growth opportunity, the role or company direction shifted away from your interests, limited advancement path, wanting to work in a different domain or tech stack, or a life circumstance (relocation, company shutdown). Frame it as being pulled toward something rather than pushed away. Example: 'I had a great experience at [company] and learned a lot. I've reached a point where I'm ready for a bigger challenge — specifically [what you want next]. When I came across this role, it felt like the right fit because [specific reason].' If you were laid off, say so clearly — it carries no stigma."
+        },
+        {
+            "id": "hr_9",
+            "question": "What kind of work environment do you thrive in?",
+            "hint": "Collaborative, remote, fast-paced.",
+            "difficulty": "BASIC",
+            "answer": "Be honest — the goal is mutual fit. Describe the environment where you do your best work with specifics: collaboration style, communication norms, feedback culture, structure vs autonomy, pace, and remote vs in-person preferences. Example: 'I thrive in environments where there is a strong culture of direct feedback and psychological safety — where people are comfortable raising concerns early. I work well with high autonomy as long as there is alignment on goals and outcomes. I've worked well in both fast-paced startup environments and more structured teams, but I prefer the former when building new products. I also value async-friendly cultures for deep work, while still having regular touchpoints for collaboration.' If you know the company's culture from research, connect your preferences to what you have seen from their team or values."
+        },
+        {
+            "id": "hr_10",
+            "question": "How do you handle high-pressure situations or tight deadlines?",
+            "hint": "Prioritization, time management, communication.",
+            "difficulty": "MODERATE",
+            "answer": "Structure your answer around a real example and the strategies you use. Key behaviours interviewers look for: staying calm and methodical rather than reactive; breaking the problem into prioritised tasks; clear communication with stakeholders about scope, timeline, and risks; and knowing when to ask for help or escalate. Example: 'When I'm under pressure, my first step is to take ten minutes to map out what needs to happen and what can be deprioritised or cut. I communicate proactively with stakeholders — I'd rather surface a risk early than deliver a surprise. [Specific example: we had a production incident two hours before a major release — I triaged the issue, delegated the fix, communicated status every 20 minutes, and we shipped with a 90-minute delay.] I've learned that clear, calm communication is the biggest differentiator in high-pressure situations.'"
+        },
+        {
+            "id": "hr_11",
+            "question": "What are your salary expectations?",
+            "hint": "Research market rates for your role and experience.",
+            "difficulty": "BASIC",
+            "answer": "Research beforehand using sites like Glassdoor, Levels.fyi, LinkedIn Salary, and industry surveys for your specific role, level, and location. It is generally advisable to let the company make the first offer if possible, or provide a range rather than a fixed number. Be prepared to justify your range. Example: 'Based on my research for this role and level in [city/market], and given my [X years of experience and specific skills], I'm looking in the range of [lower bound] to [upper bound]. That said, I'm open to discussing the full compensation package — base, equity, and benefits — to understand the complete picture.' Avoid saying you'll accept anything, as it signals lack of self-awareness. Know your walk-away number and be willing to negotiate respectfully."
+        },
+        {
+            "id": "hr_12",
+            "question": "Describe a time you failed and what you learned from it.",
+            "hint": "Accountability and growth mindset.",
+            "difficulty": "MODERATE",
+            "answer": "Choose a genuine failure — not a humble-brag disguised as a failure. Interviewers are assessing accountability, resilience, and whether you extract real lessons. Structure: What was the situation and what did you attempt? What went wrong and what was your role in that failure (own it clearly)? What did it cost (team, project, relationship)? What did you specifically learn and what did you do differently as a result? Example: 'Early in my career I underestimated the complexity of a migration and gave the team an optimistic two-week estimate. We missed it by three weeks, which delayed a customer-facing feature. I took ownership with my manager and the stakeholders. What I learned: always factor in unknowns, add a buffer for dependencies, and communicate scope risks before committing. I now use [specific practice — spike tasks, estimation with ranges] consistently.'"
+        },
+        {
+            "id": "hr_13",
+            "question": "How do you prioritize your daily tasks?",
+            "hint": "Eisenhower matrix, To-do lists, Agile tools.",
+            "difficulty": "BASIC",
+            "answer": "Describe a concrete system you actually use, not just a theoretical framework. Strong candidates demonstrate structure, flexibility, and alignment with team goals. Example: 'I start each morning with a quick review of my task list, Jira board, and any overnight messages. I distinguish between urgent/important and important/not-urgent tasks — the latter often drive the most long-term value but get crowded out. I time-block deep work for the morning when I'm most focused, and keep meetings and async communication to the afternoon. I review weekly to ensure my tasks are still aligned with the sprint or quarterly goals. When everything feels urgent, I ask: what is the highest-impact thing I can complete today that unblocks others or moves the key metric?' Mention any tools you use: Jira, Notion, Linear, Todoist."
+        },
+        {
+            "id": "hr_14",
+            "question": "What motivates you at work?",
+            "hint": "Continuous learning, solving problems, impact.",
+            "difficulty": "BASIC",
+            "answer": "Be genuine — interviewers can detect rehearsed answers. Strong motivators that resonate well: solving hard technical problems, seeing tangible impact on users or customers, continuous learning and mastery, collaborating with talented people, ownership and autonomy, building something meaningful, or helping others grow. Connect your stated motivators to the role. Example: 'I'm most motivated by working on problems where there is genuine ambiguity — where the answer isn't obvious and requires creative thinking. I also get a lot of energy from seeing something I built directly improve how users work. That connection between the technical work and real-world impact is what keeps me engaged. This role appeals to me because [specific connection to role/company mission].'"
+        },
+        {
+            "id": "hr_15",
+            "question": "Do you have any questions for us?",
+            "hint": "Company culture, team structure, growth paths.",
+            "difficulty": "BASIC",
+            "answer": "Always have questions prepared — not having any signals low interest. Focus on questions that give you genuine signal about fit and show you have done research. Strong question categories: (1) Role clarity — 'What does success look like in this role at 6 months and 12 months?' (2) Team and culture — 'How does the team handle disagreements on technical decisions?' or 'How do you support professional development?' (3) Challenges — 'What is the biggest challenge the team is facing right now?' (4) Company direction — 'How does this role contribute to the broader company goals this year?' (5) Process — 'Can you walk me through what a typical sprint or project lifecycle looks like?' Avoid questions about salary (save for later), time off, or anything easily answered by the website. Prepare 4–5 questions so you have options based on what was already discussed."
+        },
+        {
+            "id": "hr_16",
+            "question": "How would your former manager describe you in three words?",
+            "hint": "Reliable, proactive, collaborative.",
+            "difficulty": "BASIC",
+            "answer": "Choose three words that are genuine, specific to your working style, and relevant to the role — and briefly justify each with a real behavioural example to make it credible. Example: 'I think they would say reliable, curious, and direct. Reliable because I have a strong track record of delivering on commitments — if I say I'll have something done by Thursday, it's done by Thursday. Curious because I ask a lot of questions and often go beyond the immediate task to understand the broader system, which has led to catching issues upstream more than once. Direct because I give clear, honest feedback and communicate blockers early rather than quietly struggling.' Avoid generic adjectives like 'hardworking' or 'team player' without concrete backing."
+        },
+        {
+            "id": "hr_17",
+            "question": "What does customer success mean to you?",
+            "hint": "Value delivery and solving user pain points.",
+            "difficulty": "MODERATE",
+            "answer": "Customer success means that the customer achieves the specific outcome they were trying to accomplish by using your product — not just that they are technically using it. Frame your answer around outcomes, not features. Key dimensions: understanding the customer's actual goal (not just their stated request), removing friction between them and that goal, proactively identifying when they might struggle before they raise a ticket, and measuring success by their outcomes (retention, activation, task completion) rather than your outputs (features shipped). Example: 'To me, customer success means the customer got what they actually needed — not just what they asked for. My job is to understand the problem behind the request, deliver something that genuinely solves it, and make sure they can use it effectively. The metric that matters is whether their problem is gone, not whether the feature is live.'"
+        },
+        {
+            "id": "hr_18",
+            "question": "How do you stay updated with industry trends?",
+            "hint": "Blogs, newsletters, podcasts, side projects.",
+            "difficulty": "BASIC",
+            "answer": "Give a genuine, specific answer — name actual sources you use rather than speaking in generalities. A credible answer might include: technical newsletters (TLDR, Bytes, Pointer), blogs (engineering blogs from companies like Netflix, Stripe, Cloudflare), podcasts (Lex Fridman, Software Engineering Daily, The Changelog), Twitter/X or LinkedIn followed individuals, conference talks (QCon, Strange Loop, re:Invent, I/O), documentation for new framework releases, and most importantly — side projects or open-source contributions where you try new tools hands-on. Example: 'I read a few curated newsletters — TLDR and Pointer — and follow engineering blogs from companies building at scale. I also try to build small side projects to get hands-on experience with new tools rather than just reading about them. That's how I picked up [specific technology].'"
+        },
+        {
+            "id": "hr_19",
+            "question": "Tell me about a time you had to learn a new technology quickly.",
+            "hint": "Agility and self-driven learning.",
+            "difficulty": "MODERATE",
+            "answer": "Use the STAR method and focus on your learning process and the outcome. Interviewers want to see: how you approach the unknown, the resources you use, how quickly you can become productive, and how you apply learning under time pressure. Example: 'At [company], we decided to migrate our data pipeline to Apache Kafka and I had no prior experience with it. I had two weeks before we needed a working prototype. I started with the official documentation and a hands-on tutorial, then built a small local prototype to test the core concepts. I also reached out to a former colleague who had used Kafka in production for a one-hour call. By week two, I had a working proof of concept and presented it to the team. The migration went live six weeks later. What I learned from the experience: focus on the core 20% of a technology that handles 80% of the use cases first, then expand.'"
+        },
+        {
+            "id": "hr_20",
+            "question": "Why should we hire you over other candidates?",
+            "hint": "Unique combination of skills and passion.",
+            "difficulty": "BASIC",
+            "answer": "This is your 60-second pitch. Do not be falsely modest or vague. Structure: (1) Identify the core need of the role from the job description. (2) State clearly how your specific background meets that need. (3) Add a differentiator — something specific about your experience, skills, or perspective that is unlikely to be common among candidates. Example: 'You're looking for someone who can [core need from JD]. I bring [X years] of direct experience doing exactly that — specifically [concrete example or outcome]. What makes my background a little different is [unique combination: e.g., I've worked both on the product side and the infrastructure side, so I can bridge those conversations naturally]. I'm also genuinely excited about the problem [company] is solving — not just the role — and I think that matters for long-term contribution.' Be confident, specific, and back every claim with evidence."
+        }
+    ]
+}

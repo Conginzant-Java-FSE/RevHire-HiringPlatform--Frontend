@@ -1,0 +1,175 @@
+<div class="home-container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-badge animate-fade-in">🚀 Trusted by 10,000+ Companies</div>
+            <h1 class="hero-title animate-slide-in">
+                Find Your <span class="text-gradient">Dream Job</span> <br>
+                Without the Stress.
+            </h1>
+            <p class="hero-desc animate-fade-in">
+                The most intuitive platform for tech talent and forward-thinking companies.
+                RevHire connects you with opportunities that match your potential.
+            </p>
+
+            <div class="search-box-wrapper animate-fade-in">
+                <div class="hero-search-bar">
+                    <div class="search-input">
+                        <i class="bi bi-search"></i>
+                        <input type="text" [(ngModel)]="searchKeyword" placeholder="Job title, keywords, or company">
+                    </div>
+                    <div class="location-input">
+                        <i class="bi bi-geo-alt"></i>
+                        <input type="text" [(ngModel)]="searchLocation" placeholder="City or Remote">
+                    </div>
+                    <button class="btn-search" (click)="search()">Search Jobs</button>
+                </div>
+                <div class="popular-searches">
+                    <span>Popular:</span>
+                    @for (tag of popularTags; track tag) {
+                    <a href="javascript:void(0)" (click)="searchTag(tag)">{{ tag }}</a>
+                    }
+                </div>
+            </div>
+
+            <div class="hero-stats animate-fade-in">
+                @for (stat of stats; track stat.label) {
+                <div class="stat-item">
+                    <span class="stat-val">{{ stat.value }}</span>
+                    <span class="stat-lab">{{ stat.label }}</span>
+                </div>
+                @if (!$last) { <div class="stat-divider"></div> }
+                }
+            </div>
+        </div>
+
+        <div class="hero-visual animate-fade-in">
+            <div class="visual-card main-card">
+                <div class="card-header">
+                    <div class="dots"><span></span><span></span><span></span></div>
+                </div>
+                <div class="card-body resume-preview">
+                    <div class="resume-top">
+                        <div class="resume-name">Aarav Sharma</div>
+                        <div class="resume-role">Frontend Developer</div>
+                    </div>
+                    <div class="resume-section">
+                        <div class="resume-label">Experience</div>
+                        <div class="resume-line line-lg"></div>
+                        <!-- <div class="resume-line line-md"></div> -->
+                    </div>
+                    <div class="resume-section">
+                        <div class="resume-label">Skills</div>
+                        <div class="resume-chips">
+                            <span>Angular</span>
+                            <span>TypeScript</span>
+                            <span>UI/UX</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="visual-card stat-card-floating">
+                <div class="floating-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                <div class="floating-data">
+                    <span>Success Rate</span>
+                    <b>94%</b>
+                </div>
+            </div>
+            <div class="visual-card user-card-floating">
+                <div class="floating-user">JD</div>
+                <div class="floating-data">
+                    <span>John Doe</span>
+                    <b>Hired!</b>
+                </div>
+            </div>
+            <div class="hero-blob"></div>
+        </div>
+    </section>
+
+    <!-- Featured Jobs Section -->
+    <section class="featured-section">
+        <div class="section-header-flex">
+            <div>
+                <h2 class="section-title">Recent Opportunities</h2>
+                <p class="section-desc">The latest roles from top-tier tech companies.</p>
+            </div>
+            <a routerLink="/jobs" class="btn-outline-custom">View All Jobs <i class="bi bi-arrow-right"></i></a>
+        </div>
+
+        @if (loading()) {
+        <div class="jobs-grid">
+            @for (i of [1,2,3,4,5,6]; track i) {
+            <div class="skeleton-card"></div>
+            }
+        </div>
+        } @else if (recentJobs().length > 0) {
+        <div class="jobs-grid">
+            @for (job of recentJobs(); track job.id) {
+            <app-job-card [job]="job" (saveToggle)="onSaveToggle($event)" />
+            }
+        </div>
+        } @else {
+        <div class="fallback-grid">
+            @for (item of fallbackOpportunities; track item.company + item.role) {
+            <div class="fallback-card">
+                <div class="fallback-header">
+                    <div class="fallback-logo">{{ item.company.charAt(0) }}</div>
+                    <div>
+                        <h3 class="fallback-role">{{ item.role }}</h3>
+                        <p class="fallback-company">{{ item.company }}</p>
+                    </div>
+                </div>
+                <div class="fallback-meta">
+                    <span><i class="bi bi-geo-alt"></i> {{ item.location }}</span>
+                    <span><i class="bi bi-briefcase"></i> {{ item.type }}</span>
+                </div>
+            </div>
+            }
+        </div>
+        }
+    </section>
+
+    <!-- Logo Cloud Section -->
+    <section class="logo-cloud-section animate-fade-in">
+        <div class="logo-cloud-container">
+            <p class="logo-cloud-title">Trusted by industry leaders worldwide</p>
+            <div class="logo-grid">
+                <div class="logo-item"><i class="bi bi-google"></i> <span>Google</span></div>
+                <div class="logo-item"><i class="bi bi-microsoft"></i> <span>Microsoft</span></div>
+                <div class="logo-item"><i class="bi bi-apple"></i> <span>Apple</span></div>
+                <div class="logo-item"><i class="bi bi-amazon"></i> <span>Amazon</span></div>
+                <div class="logo-item"><i class="bi bi-nvidia"></i> <span>NVIDIA</span></div>
+                <div class="logo-item"><i class="bi bi-meta"></i> <span>Meta</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="section-container">
+            <h2 class="section-title text-center">What Humans Say</h2>
+            <p class="section-desc text-center">Join thousands of professionals who have found their path via RevHire.
+            </p>
+
+            <div class="testimonial-wrapper mt-4">
+                <app-quote-carousel />
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <div class="section-container">
+            <h2 class="section-title text-center">Explore by Category</h2>
+            <div class="categories-grid mt-4">
+                @for (cat of categories; track cat.name) {
+                <div class="category-card" [routerLink]="['/jobs']" [queryParams]="{category: cat.value}">
+                    <div class="cat-icon">{{ cat.icon }}</div>
+                    <h3 class="cat-name">{{ cat.name }}</h3>
+                    <p class="cat-count">{{ cat.count }}+ Jobs</p>
+                </div>
+                }
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,437 @@
+
+> revhire-frontend@0.0.0 build
+> ng build
+
+- Building...
+
+Application bundle generation failed. [4.528 seconds]
+
+X [ERROR] NG9: Property 'applicantName' does not exist on type 'Application'. [plugin angular-compiler]
+
+    src/app/features/employer/job-applicants/job-applicants.html:66:54:
+      66 │ ...<div class="seeker-avatar">{{ app.applicantName.charAt(0) }}</div>
+         ╵                                      ~~~~~~~~~~~~~
+
+  Error occurs in the template of component JobApplicantsComponent.
+
+    src/app/features/employer/job-applicants/job-applicants.ts:16:17:
+      16 │     templateUrl: './job-applicants.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'applicantName' does not exist on type 'Application'. [plugin angular-compiler]
+
+    src/app/features/employer/job-applicants/job-applicants.html:68:56:
+      68 │ ...            <div class="seeker-name">{{ app.applicantName }}</div>
+         ╵                                                ~~~~~~~~~~~~~
+
+  Error occurs in the template of component JobApplicantsComponent.
+
+    src/app/features/employer/job-applicants/job-applicants.ts:16:17:
+      16 │     templateUrl: './job-applicants.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'applicantEmail' does not exist on type 'Application'. [plugin angular-compiler]
+
+    src/app/features/employer/job-applicants/job-applicants.html:71:88:
+      71 │ ...ail"><i class="bi bi-envelope"></i> {{ app.applicantEmail }}</div>
+         ╵                                               ~~~~~~~~~~~~~~
+
+  Error occurs in the template of component JobApplicantsComponent.
+
+    src/app/features/employer/job-applicants/job-applicants.ts:16:17:
+      16 │     templateUrl: './job-applicants.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'history' does not exist on type 'Application'. [plugin angular-compiler]
+
+    src/app/features/employer/job-applicants/job-applicants.html:77:29:
+      77 │                     @if (app.history && app.history.length > 0) {
+         ╵                              ~~~~~~~
+
+  Error occurs in the template of component JobApplicantsComponent.
+
+    src/app/features/employer/job-applicants/job-applicants.ts:16:17:
+      16 │     templateUrl: './job-applicants.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'history' does not exist on type 'Application'. [plugin angular-compiler]
+
+    src/app/features/employer/job-applicants/job-applicants.html:77:44:
+      77 │                     @if (app.history && app.history.length > 0) {
+         ╵                                             ~~~~~~~
+
+  Error occurs in the template of component JobApplicantsComponent.
+
+    src/app/features/employer/job-applicants/job-applicants.ts:16:17:
+      16 │     templateUrl: './job-applicants.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'history' does not exist on type 'Application'. [plugin angular-compiler]
+
+    src/app/features/employer/job-applicants/job-applicants.html:79:43:
+      79 │ ...         @for (entry of app.history; track entry.date; let last...
+         ╵                                ~~~~~~~
+
+  Error occurs in the template of component JobApplicantsComponent.
+
+    src/app/features/employer/job-applicants/job-applicants.ts:16:17:
+      16 │     templateUrl: './job-applicants.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'applicantId' does not exist on type 'Application'. [plugin angular-compiler]
+
+    src/app/features/employer/job-applicants/job-applicants.html:108:93:
+      108 │ ...resume" [class.saved]="isResumeSaved(app.applicantId, app.jobId)"
+          ╵                                             ~~~~~~~~~~~
+
+  Error occurs in the template of component JobApplicantsComponent.
+
+    src/app/features/employer/job-applicants/job-applicants.ts:16:17:
+      16 │     templateUrl: './job-applicants.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'applicantId' does not exist on type 'Application'. [plugin angular-compiler]
+
+    src/app/features/employer/job-applicants/job-applicants.html:110:59:
+      110 │ ...title]="isResumeSaved(app.applicantId, app.jobId) ? 'Remove sa...
+          ╵                              ~~~~~~~~~~~
+
+  Error occurs in the template of component JobApplicantsComponent.
+
+    src/app/features/employer/job-applicants/job-applicants.ts:16:17:
+      16 │     templateUrl: './job-applicants.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'applicantId' does not exist on type 'Application'. [plugin angular-compiler]
+
+    src/app/features/employer/job-applicants/job-applicants.html:111:90:
+      111 │ ...ass.bi-bookmark-fill]="isResumeSaved(app.applicantId, app.jobId)"
+          ╵                                             ~~~~~~~~~~~
+
+  Error occurs in the template of component JobApplicantsComponent.
+
+    src/app/features/employer/job-applicants/job-applicants.ts:16:17:
+      16 │     templateUrl: './job-applicants.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'applicantId' does not exist on type 'Application'. [plugin angular-compiler]
+
+    src/app/features/employer/job-applicants/job-applicants.html:112:76:
+      112 │ ...ss.bi-bookmark]="!isResumeSaved(app.applicantId, app.jobId)"></i>
+          ╵                                        ~~~~~~~~~~~
+
+  Error occurs in the template of component JobApplicantsComponent.
+
+    src/app/features/employer/job-applicants/job-applicants.ts:16:17:
+      16 │     templateUrl: './job-applicants.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'applicantId' does not exist on type 'Application'. [plugin angular-compiler]
+
+    src/app/features/employer/job-applicants/job-applicants.html:113:53:
+      113 │ ...     {{ isResumeSaved(app.applicantId, app.jobId) ? 'Saved' : ...
+          ╵                              ~~~~~~~~~~~
+
+  Error occurs in the template of component JobApplicantsComponent.
+
+    src/app/features/employer/job-applicants/job-applicants.ts:16:17:
+      16 │     templateUrl: './job-applicants.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'employerNotes' does not exist on type 'Application'. [plugin angular-compiler]
+
+    src/app/features/employer/job-applicants/job-applicants.html:129:35:
+      129 │ ...          [ngModel]="app.employerNotes || ''" (ngModelChange)=...
+          ╵                             ~~~~~~~~~~~~~
+
+  Error occurs in the template of component JobApplicantsComponent.
+
+    src/app/features/employer/job-applicants/job-applicants.ts:16:17:
+      16 │     templateUrl: './job-applicants.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG1: Property 'postedAt' does not exist on type 'Job'. Did you mean 'postedDate'? [plugin angular-compiler]
+
+    src/app/features/employer/manage-jobs/manage-jobs.html:39:71:
+      39 │ ..."cell-sub">Posted on {{ job.postedAt }} · {{ job.location }}</...
+         ╵                                ~~~~~~~~
+
+  Error occurs in the template of component ManageJobsComponent.
+
+    src/app/features/employer/manage-jobs/manage-jobs.ts:13:17:
+      13 │     templateUrl: './manage-jobs.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'applicantsCount' does not exist on type 'Job'. [plugin angular-compiler]
+
+    src/app/features/employer/manage-jobs/manage-jobs.html:44:65:
+      44 │ ...s="mini-stat"><b>{{ job.applicantsCount }}</b> <span>Total Apps...
+         ╵                            ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component ManageJobsComponent.
+
+    src/app/features/employer/manage-jobs/manage-jobs.ts:13:17:
+      13 │     templateUrl: './manage-jobs.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'applicantsCount' does not exist on type 'Job'. [plugin angular-compiler]
+
+    src/app/features/employer/manage-jobs/manage-jobs.html:45:76:
+      45 │ ...ass="mini-stat"><b>{{ Math.floor(job.applicantsCount * 0.2) }}</b>
+         ╵                                         ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component ManageJobsComponent.
+
+    src/app/features/employer/manage-jobs/manage-jobs.ts:13:17:
+      13 │     templateUrl: './manage-jobs.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG1: Property 'postedAt' does not exist on type 'Job'. Did you mean 'postedDate'? [plugin angular-compiler]
+
+    src/app/features/employer/manage-jobs/manage-jobs.html:78:59:
+      78 │ ..."cell-sub">Posted on {{ job.postedAt }} · {{ job.location }}</...
+         ╵                                ~~~~~~~~
+
+  Error occurs in the template of component ManageJobsComponent.
+
+    src/app/features/employer/manage-jobs/manage-jobs.ts:13:17:
+      13 │     templateUrl: './manage-jobs.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'applicantsCount' does not exist on type 'Job'. [plugin angular-compiler]
+
+    src/app/features/employer/manage-jobs/manage-jobs.html:80:34:
+      80 │                         <b>{{ job.applicantsCount }}</b> Applicants
+         ╵                                   ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component ManageJobsComponent.
+
+    src/app/features/employer/manage-jobs/manage-jobs.ts:13:17:
+      13 │     templateUrl: './manage-jobs.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'companyLogo' does not exist on type 'Job'. [plugin angular-compiler]
+
+    src/app/features/job-detail/job-detail.html:8:55:
+      8 │ ...        <div class="company-logo-xl">{{ job()!.companyLogo }}</div>
+        ╵                                                   ~~~~~~~~~~~
+
+  Error occurs in the template of component JobDetailComponent.
+
+    src/app/features/job-detail/job-detail.ts:16:17:
+      16 │     templateUrl: './job-detail.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'type' does not exist on type 'Job'. [plugin angular-compiler]
+
+    src/app/features/job-detail/job-detail.html:11:57:
+      11 │ ...  <span class="tag-type">{{ job()!.type.replace('_',' ') }}</span>
+         ╵                                       ~~~~
+
+  Error occurs in the template of component JobDetailComponent.
+
+    src/app/features/job-detail/job-detail.ts:16:17:
+      16 │     templateUrl: './job-detail.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG1: Property 'company' does not exist on type 'Job'. Did you mean 'companyId'? [plugin angular-compiler]
+
+    src/app/features/job-detail/job-detail.html:14:60:
+      14 │ ...          <div class="job-company-name">{{ job()!.company }}</div>
+         ╵                                                      ~~~~~~~
+
+  Error occurs in the template of component JobDetailComponent.
+
+    src/app/features/job-detail/job-detail.ts:16:17:
+      16 │     templateUrl: './job-detail.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'applicantsCount' does not exist on type 'Job'. [plugin angular-compiler]
+
+    src/app/features/job-detail/job-detail.html:17:74:
+      17 │ ...i-people-fill"></i> {{ job()!.applicantsCount }} applicants</span>
+         ╵                                  ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component JobDetailComponent.
+
+    src/app/features/job-detail/job-detail.ts:16:17:
+      16 │     templateUrl: './job-detail.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG1: Property 'postedAt' does not exist on type 'Job'. Did you mean 'postedDate'? [plugin angular-compiler]
+
+    src/app/features/job-detail/job-detail.html:18:79:
+      18 │ ...i class="bi bi-calendar2"></i> Posted {{ job()!.postedAt }}</span>
+         ╵                                                    ~~~~~~~~
+
+  Error occurs in the template of component JobDetailComponent.
+
+    src/app/features/job-detail/job-detail.ts:16:17:
+      16 │     templateUrl: './job-detail.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'min' does not exist on type 'string'. [plugin angular-compiler]
+
+    src/app/features/job-detail/job-detail.html:26:66:
+      26 │ ...alary-value">\${{ (job()!.salary.min/1000).toFixed(0) }}K – \${{
+         ╵                                     ~~~
+
+  Error occurs in the template of component JobDetailComponent.
+
+    src/app/features/job-detail/job-detail.ts:16:17:
+      16 │     templateUrl: './job-detail.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'max' does not exist on type 'string'. [plugin angular-compiler]
+
+    src/app/features/job-detail/job-detail.html:27:39:
+      27 │ ...               (job()!.salary.max/1000).toFixed(0) }}K / year</...
+         ╵                                  ~~~
+
+  Error occurs in the template of component JobDetailComponent.
+
+    src/app/features/job-detail/job-detail.ts:16:17:
+      16 │     templateUrl: './job-detail.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'type' does not exist on type 'Job'. [plugin angular-compiler]
+
+    src/app/features/job-detail/job-detail.html:109:60:
+      109 │ ...   <div class="oi-value">{{ job()!.type.replace('_',' ') }}</div>
+          ╵                                       ~~~~
+
+  Error occurs in the template of component JobDetailComponent.
+
+    src/app/features/job-detail/job-detail.ts:16:17:
+      16 │     templateUrl: './job-detail.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'experienceLevel' does not exist on type 'Job'. [plugin angular-compiler]
+
+    src/app/features/job-detail/job-detail.html:115:60:
+      115 │ ...         <div class="oi-value">{{ job()!.experienceLevel }}</div>
+          ╵                                             ~~~~~~~~~~~~~~~
+
+  Error occurs in the template of component JobDetailComponent.
+
+    src/app/features/job-detail/job-detail.ts:16:17:
+      16 │     templateUrl: './job-detail.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'min' does not exist on type 'string'. [plugin angular-compiler]
+
+    src/app/features/job-detail/job-detail.html:127:70:
+      127 │ ...="oi-value">\${{ (job()!.salary.min/1000).toFixed(0) }}K – \${{
+          ╵                                    ~~~
+
+  Error occurs in the template of component JobDetailComponent.
+
+    src/app/features/job-detail/job-detail.ts:16:17:
+      16 │     templateUrl: './job-detail.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'max' does not exist on type 'string'. [plugin angular-compiler]
+
+    src/app/features/job-detail/job-detail.html:128:47:
+      128 │ ...                    (job()!.salary.max/1000).toFixed(0) }}K</div>
+          ╵                                       ~~~
+
+  Error occurs in the template of component JobDetailComponent.
+
+    src/app/features/job-detail/job-detail.ts:16:17:
+      16 │     templateUrl: './job-detail.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'category' does not exist on type 'Job'. [plugin angular-compiler]
+
+    src/app/features/job-detail/job-detail.html:134:60:
+      134 │ ...                <div class="oi-value">{{ job()!.category }}</div>
+          ╵                                                    ~~~~~~~~
+
+  Error occurs in the template of component JobDetailComponent.
+
+    src/app/features/job-detail/job-detail.ts:16:17:
+      16 │     templateUrl: './job-detail.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'companyLogo' does not exist on type 'Job'. [plugin angular-compiler]
+
+    src/app/features/job-detail/job-detail.html:149:59:
+      149 │ ...      <div class="company-logo-md">{{ job()!.companyLogo }}</div>
+          ╵                                                 ~~~~~~~~~~~
+
+  Error occurs in the template of component JobDetailComponent.
+
+    src/app/features/job-detail/job-detail.ts:16:17:
+      16 │     templateUrl: './job-detail.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG1: Property 'company' does not exist on type 'Job'. Did you mean 'companyId'? [plugin angular-compiler]
+
+    src/app/features/job-detail/job-detail.html:150:60:
+      150 │ ...         <div class="company-name-big">{{ job()!.company }}</div>
+          ╵                                                     ~~~~~~~
+
+  Error occurs in the template of component JobDetailComponent.
+
+    src/app/features/job-detail/job-detail.ts:16:17:
+      16 │     templateUrl: './job-detail.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG1: Property 'company' does not exist on type 'Job'. Did you mean 'companyId'? [plugin angular-compiler]
+
+    src/app/features/job-detail/job-detail.html:175:51:
+      175 │                 <p>{{ job()!.title }} at {{ job()!.company }}</p>
+          ╵                                                    ~~~~~~~
+
+  Error occurs in the template of component JobDetailComponent.
+
+    src/app/features/job-detail/job-detail.ts:16:17:
+      16 │     templateUrl: './job-detail.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~
+
+
+X [ERROR] NG9: Property 'companyLogo' does not exist on type 'Job'. [plugin angular-compiler]
+
+    src/app/features/seeker/dashboard/seeker-dashboard.html:65:52:
+      65 │ ...          <div class="company-logo-sm">{{ job.companyLogo }}</div>
+         ╵                                                  ~~~~~~~~~~~
+
+  Error occurs in the template of component SeekerDashboardComponent.
+
+    src/app/features/seeker/dashboard/seeker-dashboard.ts:16:17:
+      16 │     templateUrl: './seeker-dashboard.html',
+         ╵                  ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+

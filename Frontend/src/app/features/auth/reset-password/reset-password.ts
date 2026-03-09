@@ -27,6 +27,9 @@ export class ResetPasswordComponent implements OnInit {
     showConfirmPwd = false;
     errorMsg = '';
     token = '';
+    email = '';
+    otpSubmitted = false;
+    otpStep = true;
 
     form = this.fb.group({
         newPassword: ['', [Validators.required, Validators.minLength(8)]],
@@ -37,15 +40,31 @@ export class ResetPasswordComponent implements OnInit {
 
     ngOnInit(): void {
         this.token = this.route.snapshot.queryParamMap.get('token') || '';
-        if (!this.token) {
-            this.errorMsg = 'Invalid or missing reset token.';
+        this.email = this.route.snapshot.queryParamMap.get('email') || '';
+        // Backward compatibility: if reset link token is present, skip OTP step.
+        this.otpStep = !this.token;
+    }
+
+    onVerifyOtp(rawOtp: string): void {
+        this.otpSubmitted = true;
+        this.errorMsg = '';
+        const enteredOtp = (rawOtp || '').trim();
+        if (enteredOtp.length !== 6) {
+            this.errorMsg = 'Enter a valid 6-digit OTP.';
+            return;
         }
+        this.token = enteredOtp;
+        this.otpStep = false;
     }
 
     onSubmit(): void {
         this.submitted = true;
         this.errorMsg = '';
 
+        if (this.otpStep) {
+            this.errorMsg = 'Please verify OTP first.';
+            return;
+        }
         if (!this.token) {
             this.errorMsg = 'Invalid or missing reset token.';
             return;

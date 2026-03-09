@@ -22,15 +22,47 @@
             <select class="form-select-custom" [ngModel]="selectedCategory()"
                 (ngModelChange)="selectedCategory.set($event); fetchQuestions()">
                 <option value="" disabled>Select a Role to practice...</option>
-                @for (role of roles(); track role) {
+                <optgroup label="Technology">
+                @for (role of technologyRoles(); track role) {
                 <option [value]="role">{{ role }}</option>
                 }
+                </optgroup>
+                <optgroup label="Design">
+                @for (role of designDisplayRoles(); track role) {
+                <option [value]="role">{{ role }}</option>
+                }
+                </optgroup>
+                <optgroup label="Finance">
+                @for (role of financeDisplayRoles(); track role) {
+                <option [value]="role">{{ role }}</option>
+                }
+                </optgroup>
+                <optgroup label="Marketing">
+                @for (role of marketingDisplayRoles(); track role) {
+                <option [value]="role">{{ role }}</option>
+                }
+                </optgroup>
+                <optgroup label="HealthCare">
+                @for (role of healthCareDisplayRoles(); track role) {
+                <option [value]="role">{{ role }}</option>
+                }
+                </optgroup>
+                <optgroup label="Operations">
+                @for (role of operationsDisplayRoles(); track role) {
+                <option [value]="role">{{ role }}</option>
+                }
+                </optgroup>
+                <optgroup label="Sales">
+                @for (role of salesDisplayRoles(); track role) {
+                <option [value]="role">{{ role }}</option>
+                }
+                </optgroup>
             </select>
             } @else if (selectedType() === 'SKILL') {
             <select class="form-select-custom" [ngModel]="selectedCategory()"
                 (ngModelChange)="selectedCategory.set($event); fetchQuestions()">
                 <option value="" disabled>Select a Skill to practice...</option>
-                @for (skill of skills(); track skill) {
+                @for (skill of displaySkills(); track skill) {
                 <option [value]="skill">{{ skill }}</option>
                 }
             </select>

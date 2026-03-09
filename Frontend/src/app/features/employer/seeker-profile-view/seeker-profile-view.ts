@@ -18,6 +18,7 @@ export class SeekerProfileViewComponent implements OnInit {
 
     loading = signal(true);
     profile = signal<any | null>(null);
+    seekerId = signal<number | null>(null);
 
     ngOnInit(): void {
         const seekerId = Number(this.route.snapshot.paramMap.get('id'));
@@ -26,6 +27,7 @@ export class SeekerProfileViewComponent implements OnInit {
             this.toast.error('Invalid seeker id');
             return;
         }
+        this.seekerId.set(seekerId);
 
         this.seekerService.getProfileById(seekerId).subscribe({
             next: (res) => {
@@ -49,5 +51,22 @@ export class SeekerProfileViewComponent implements OnInit {
             return p.skills.split(',').map((x: string) => x.trim()).filter(Boolean);
         }
         return [];
+    }
+
+    profileImage(): string | null {
+        const p = this.profile();
+        if (!p) return null;
+
+        const raw = (p.avatar || p.profileImage || p.profileImageUrl || p.imageUrl || '').toString().trim();
+        const fromStorage = this.seekerId() ? localStorage.getItem(`revhire_avatar_${this.seekerId()}`) : '';
+        const value = (raw || fromStorage || '').toString().trim();
+        if (!value) return null;
+
+        if (value.startsWith('data:image/') || value.startsWith('http://') || value.startsWith('https://') || value.startsWith('blob:')) {
+            return value;
+        }
+
+        // Support backend returning plain base64 without data URI prefix.
+        return `data:image/jpeg;base64,${value}`;
     }
 }

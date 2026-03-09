@@ -1,5 +1,5 @@
 import { Component, inject, signal, OnInit } from '@angular/core';
-import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { AbstractControl, FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { NgClass } from '@angular/common';
 import { AuthService } from '../../../core/services/auth.service';
 import { ToastService } from '../../../core/services/toast.service';
@@ -30,6 +30,9 @@ export class SeekerProfileComponent implements OnInit {
     showDeleteModal = signal(false);
     avatarPreview = signal<string | null>(null);
     resumeUploadedAt = signal<number | null>(null);
+    showOldPassword = signal(false);
+    showNewPassword = signal(false);
+    showConfirmPassword = signal(false);
 
     profileForm = this.fb.group({
         name: ['', Validators.required],
@@ -43,7 +46,7 @@ export class SeekerProfileComponent implements OnInit {
         oldPassword: ['', Validators.required],
         newPassword: ['', [Validators.required, Validators.minLength(8)]],
         confirmPassword: ['', Validators.required]
-    });
+    }, { validators: this.passwordsMatchValidator });
 
     get f() { return this.profileForm.controls; }
     get sf() { return this.securityForm.controls; }
@@ -145,13 +148,12 @@ export class SeekerProfileComponent implements OnInit {
     }
 
     changePassword(): void {
-        if (this.securityForm.invalid) return;
-        if (this.sf['oldPassword'].value === this.sf['newPassword'].value) {
-            this.toast.error('New password must be different from current password');
+        if (this.securityForm.invalid) {
+            this.securityForm.markAllAsTouched();
             return;
         }
-        if (this.sf['newPassword'].value !== this.sf['confirmPassword'].value) {
-            this.toast.error('Passwords do not match');
+        if (this.sf['oldPassword'].value === this.sf['newPassword'].value) {
+            this.toast.error('New password must be different from current password');
             return;
         }
         this.saving.set(true);
@@ -186,6 +188,18 @@ export class SeekerProfileComponent implements OnInit {
                 console.error('Password update error:', err);
             }
         });
+    }
+
+    isPasswordMismatch(): boolean {
+        return !!this.securityForm.errors?.['mismatch'] &&
+            (this.sf['confirmPassword'].touched || this.sf['confirmPassword'].dirty);
+    }
+
+    private passwordsMatchValidator(control: AbstractControl) {
+        const newPassword = control.get('newPassword')?.value;
+        const confirmPassword = control.get('confirmPassword')?.value;
+        if (!newPassword || !confirmPassword) return null;
+        return newPassword === confirmPassword ? null : { mismatch: true };
     }
 
     deleteAccount(): void {

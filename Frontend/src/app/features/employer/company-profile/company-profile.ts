@@ -50,7 +50,14 @@ export class CompanyProfileComponent implements OnInit {
             if (company) {
                 this.company.set(company);
                 const resolvedEmail = this.resolveEmail(company, user?.email || '');
-                this.companyForm.patchValue({ ...company, userEmail: resolvedEmail });
+                const persistedSize = this.getPersistedCompanySize(company.id);
+                this.companyForm.patchValue({
+                    ...company,
+                    size: (company.size as any)?.toString?.() || persistedSize || '',
+                    userEmail: resolvedEmail,
+                    userName: company.userName || user?.name || '',
+                    userPhone: company.userPhone || user?.phone || ''
+                });
                 if (this.companyForm.valid) {
                     this.authService.updateProfileStatus(true);
                 }
@@ -128,22 +135,50 @@ export class CompanyProfileComponent implements OnInit {
         this.saving.set(true);
         this.ls.start();
 
-        const email = (this.companyForm.getRawValue().userEmail || this.resolveEmail(this.company(), this.authService.currentUser()?.email || '')).trim();
-        const payload = {
-            ...(this.company() || {}),
-            ...this.companyForm.getRawValue(),
-            email,
-            userEmail: email
-        } as Company;
+        const raw = this.companyForm.getRawValue();
+        const email = (raw.userEmail || this.resolveEmail(this.company(), this.authService.currentUser()?.email || '')).trim();
 
-        this.companyService.updateCompany(payload).subscribe({
+        // Send only backend-relevant fields to avoid 400 from unknown/invalid properties.
+        const payload: Partial<Company> = {
+            ...(this.company()?.id ? { id: this.company()!.id } : {}),
+            name: (raw.name || '').trim(),
+            description: (raw.description || '').trim(),
+            industry: (raw.industry || '').trim(),
+            website: (raw.website || '').trim(),
+            location: (raw.location || '').trim(),
+            size: (raw.size || '').trim(),
+            userName: (raw.userName || '').trim(),
+            userPhone: (raw.userPhone || '').trim() || undefined,
+            email,
+            phone: (raw.userPhone || '').trim() || undefined
+        };
+
+        const request$ = this.company()?.id
+            ? this.companyService.updateCompanyById(this.company()!.id, payload as Company)
+            : this.companyService.updateCompany(payload as Company);
+
+        request$.subscribe({
             next: (updated) => {
                 this.ls.stop();
                 this.saving.set(false);
                 this.company.set(updated);
                 const resolvedEmail = this.resolveEmail(updated, email);
-                this.companyForm.patchValue({ ...updated, userEmail: resolvedEmail });
-                this.authService.updateCurrentUser({ email: resolvedEmail });
+                const effectiveSize = ((updated.size as any)?.toString?.() || (payload.size as string) || '').trim();
+                this.companyForm.patchValue({
+                    ...updated,
+                    size: effectiveSize,
+                    userEmail: resolvedEmail,
+                    userName: updated.userName || payload.userName || '',
+                    userPhone: updated.userPhone || payload.userPhone || ''
+                });
+                if (updated.id && effectiveSize) {
+                    this.persistCompanySize(updated.id, effectiveSize);
+                }
+                this.authService.updateCurrentUser({
+                    email: resolvedEmail,
+                    name: (payload.userName || this.authService.currentUser()?.name || '').toString(),
+                    phone: (payload.userPhone || this.authService.currentUser()?.phone || undefined)?.toString()
+                });
                 const message = this.selectedTab() === 'EMPLOYEE_PROFILE'
                     ? 'Employee profile updated!'
                     : 'Company profile updated!';
@@ -151,17 +186,30 @@ export class CompanyProfileComponent implements OnInit {
 
                 // Update auth status to indicate profile is complete
                 this.authService.updateProfileStatus(true);
-                this.router.navigateByUrl('/employer/dashboard');
             },
             error: (err) => {
                 this.ls.stop();
                 this.saving.set(false);
-                this.toast.error(err.message || 'Failed to update profile');
+                const msg = (typeof err?.error === 'string' ? err.error : err?.error?.message) || err?.message || 'Failed to update profile';
+                this.toast.error(msg);
             }
         });
     }
 
     private resolveEmail(company: Partial<Company> | null, fallback: string): string {
         return (company?.userEmail || company?.email || fallback || '').trim();
+    }
+
+    private getCompanySizeStorageKey(companyId: number): string {
+        return `revhire_company_size_${companyId}`;
+    }
+
+    private persistCompanySize(companyId: number, size: string): void {
+        localStorage.setItem(this.getCompanySizeStorageKey(companyId), size);
+    }
+
+    private getPersistedCompanySize(companyId?: number): string {
+        if (!companyId) return '';
+        return localStorage.getItem(this.getCompanySizeStorageKey(companyId)) || '';
     }
 }

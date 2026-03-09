@@ -58,7 +58,7 @@ export class NavbarComponent {
             }),
             switchMap(query => {
                 if (!query.trim()) return of([]);
-                return this.auth.isSeeker()
+                return this.shouldSearchJobs()
                     ? this.searchService.searchJobs(query)
                     : this.searchService.searchSeekers(query);
             })
@@ -71,12 +71,33 @@ export class NavbarComponent {
         });
     }
 
+    private shouldSearchJobs(): boolean {
+        return !this.auth.isEmployer() && !this.auth.isAdmin();
+    }
+
     toggleSearch(): void {
         this.searchExpanded.set(!this.searchExpanded());
         if (!this.searchExpanded()) {
             this.searchQuery.set('');
             this.searchResults.set([]);
         }
+    }
+
+    submitSearch(): void {
+        const query = this.searchQuery().trim();
+        if (!query) return;
+
+        this.searchExpanded.set(false);
+        this.searchResults.set([]);
+        this.router.navigate(['/jobs'], { queryParams: { keyword: query } });
+    }
+
+    onSearchButtonClick(): void {
+        if (this.searchExpanded() && this.searchQuery().trim()) {
+            this.submitSearch();
+            return;
+        }
+        this.toggleSearch();
     }
 
     onSearchInput(query: string): void {
@@ -89,7 +110,7 @@ export class NavbarComponent {
         this.searchQuery.set('');
         this.searchResults.set([]);
 
-        if (this.auth.isSeeker()) {
+        if (this.shouldSearchJobs()) {
             this.router.navigate(['/jobs', result.id]);
         } else {
             this.router.navigate(['/employer/seeker', result.id]);

@@ -3,7 +3,7 @@ import { Router, RouterLink, ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NgClass, TitleCasePipe } from '@angular/common';
 import { JobService } from '../../core/services/job.service';
-import { Job, JobFilter } from '../../core/models/job.model';
+import { Job } from '../../core/models/job.model';
 import { JobCardComponent } from '../../shared/components/job-card/job-card';
 import { ToastService } from '../../core/services/toast.service';
 
@@ -41,19 +41,20 @@ export class JobSearchComponent implements OnInit {
     ];
 
     categories = [
-        { value: 'TECHNOLOGY', label: 'Technology', icon: '💻' },
-        { value: 'DESIGN', label: 'Design', icon: '🎨' },
-        { value: 'FINANCE', label: 'Finance', icon: '📊' },
-        { value: 'MARKETING', label: 'Marketing', icon: '📣' },
-        { value: 'HEALTHCARE', label: 'Healthcare', icon: '🏥' },
-        { value: 'OPERATIONS', label: 'Operations', icon: '⚙️' },
+        { value: 'TECHNOLOGY', label: 'Technology', icon: '\uD83D\uDCBB' },
+        { value: 'DESIGN', label: 'Design', icon: '\uD83C\uDFA8' },
+        { value: 'FINANCE', label: 'Finance', icon: '\uD83D\uDCCA' },
+        { value: 'MARKETING', label: 'Marketing', icon: '\uD83D\uDCE3' },
+        { value: 'HEALTHCARE', label: 'Healthcare', icon: '\uD83C\uDFE5' },
+        { value: 'OPERATIONS', label: 'Operations', icon: '\u2699\uFE0F' },
+        { value: 'SALES', label: 'Sales', icon: '\uD83D\uDED2' },
     ];
 
     expLevels = [
-        { value: 'ENTRY', label: 'Entry Level (0 - 1 yrs)' },
-        { value: 'MID', label: 'Mid Level (1 - 3 yrs)' },
-        { value: 'SENIOR', label: 'Senior Level (3 - 5 yrs)' },
-        { value: 'LEAD', label: 'Lead / Manager (5+ yrs)' }
+        { value: 'ENTRY', label: 'Entry Level (0 - 2 yrs)' },
+        { value: 'MID', label: 'Mid Level (3 - 5 yrs)' },
+        { value: 'SENIOR', label: 'Senior Level (6 - 9 yrs)' },
+        { value: 'LEAD', label: 'Lead / Manager (10+ yrs)' }
     ];
 
     ngOnInit(): void {
@@ -67,45 +68,132 @@ export class JobSearchComponent implements OnInit {
 
     doSearch(): void {
         this.loading.set(true);
-
-        // Map experience levels to numerical years (max requirement)
-        let expYears: number | undefined = undefined;
-        if (this.selectedLevels.length > 0) {
-            const levels = this.selectedLevels.map(lvl => {
-                if (lvl === 'ENTRY') return 2;
-                if (lvl === 'MID') return 5;
-                if (lvl === 'SENIOR') return 10;
-                if (lvl === 'LEAD') return 20;
-                return 0;
-            });
-            expYears = Math.max(...levels);
-        }
-
-        const filter: JobFilter = {
-            keyword: this.keyword || undefined,
-            location: this.locationFilter || undefined,
-            category: (this.selectedCategory || undefined) as any,
-            types: this.selectedTypes.length > 0 ? (this.selectedTypes as any) : undefined,
-            experienceLevel: expYears,
-            salaryMin: this.salaryMin || undefined,
-        };
-
-        this.jobService.searchJobs(filter).subscribe({
+        this.jobService.getAllJobs().subscribe({
             next: (jobs) => {
-                this.allJobs.set(jobs);
-                this.filteredJobs.set(jobs);
+                const filtered = this.applyClientFilters(jobs || []);
+                this.allJobs.set(filtered);
+                this.filteredJobs.set(filtered);
                 this.sortJobs();
                 this.loading.set(false);
             },
-            error: (err) => {
+            error: () => {
                 this.toastService.error('Failed to load jobs');
                 this.loading.set(false);
             }
         });
     }
 
+    private applyClientFilters(jobs: Job[]): Job[] {
+        const keyword = this.keyword.trim().toLowerCase();
+        const location = this.locationFilter.trim().toLowerCase();
+
+        return jobs.filter(job => {
+            const title = (job.title || '').toLowerCase();
+            const company = (job.companyName || '').toLowerCase();
+            const jobLocation = (job.location || '').toLowerCase();
+
+            if (keyword && !(title.includes(keyword) || company.includes(keyword) || jobLocation.includes(keyword))) {
+                return false;
+            }
+
+            if (location && !jobLocation.includes(location)) {
+                return false;
+            }
+
+            if (this.selectedCategory) {
+                const selectedCategory = this.normalizeCategory(this.selectedCategory);
+                const jobCategory = this.resolveJobCategory(job);
+                if (selectedCategory !== jobCategory) {
+                    return false;
+                }
+            }
+
+            if (this.selectedTypes.length > 0 && !this.selectedTypes.includes(job.jobType)) {
+                return false;
+            }
+
+            if (this.selectedLevels.length > 0 && !this.matchesSelectedExperienceLevels(job.experienceYears || 0)) {
+                return false;
+            }
+
+            if (this.salaryMin > 0) {
+                const selectedAnnual = this.salaryMin * 12;
+                const salaryRange = this.extractSalaryAnnualRange(job.salary);
+                if (selectedAnnual < salaryRange.min || selectedAnnual > salaryRange.max) {
+                    return false;
+                }
+            }
+
+            return true;
+        });
+    }
+
+    private matchesSelectedExperienceLevels(years: number): boolean {
+        return this.selectedLevels.some(level => {
+            if (level === 'ENTRY') return years >= 0 && years <= 2;
+            if (level === 'MID') return years >= 3 && years <= 5;
+            if (level === 'SENIOR') return years >= 6 && years <= 9;
+            if (level === 'LEAD') return years >= 10;
+            return false;
+        });
+    }
+
+    private extractSalaryAnnualRange(salaryText: string): { min: number; max: number } {
+        const values = (salaryText || '').match(/\d+(\.\d+)?/g)?.map(v => Number(v)) || [];
+        if (values.length === 0) return { min: 0, max: Number.MAX_SAFE_INTEGER };
+
+        const normalizedAnnual = values.map(v => (v <= 200000 ? v * 12 : v));
+        if (normalizedAnnual.length === 1) {
+            return { min: normalizedAnnual[0], max: normalizedAnnual[0] };
+        }
+
+        return {
+            min: Math.min(...normalizedAnnual),
+            max: Math.max(...normalizedAnnual)
+        };
+    }
+
+    private normalizeCategory(value?: string): string {
+        if (!value) return '';
+        const normalized = value.toUpperCase().replace(/[^A-Z]/g, '');
+        const map: Record<string, string> = {
+            TECH: 'TECHNOLOGY',
+            TECHNOLOGY: 'TECHNOLOGY',
+            IT: 'TECHNOLOGY',
+            DESIGN: 'DESIGN',
+            FINANCE: 'FINANCE',
+            MARKETING: 'MARKETING',
+            HEALTHCARE: 'HEALTHCARE',
+            OPERATIONS: 'OPERATIONS',
+            EDUCATION: 'EDUCATION',
+            SALES: 'SALES'
+        };
+        return map[normalized] || normalized;
+    }
+
+    private resolveJobCategory(job: Job): string {
+        const direct = this.normalizeCategory(job.category);
+        if (direct) return direct;
+
+        const probe = `${job.title || ''} ${job.description || ''} ${(job.skills || []).join(' ')}`.toLowerCase();
+        if (/\b(design|ui|ux|figma)\b/.test(probe)) return 'DESIGN';
+        if (/\b(finance|account|bank|audit)\b/.test(probe)) return 'FINANCE';
+        if (/\b(marketing|seo|content|brand)\b/.test(probe)) return 'MARKETING';
+        if (/\b(health|medical|nurse|hospital)\b/.test(probe)) return 'HEALTHCARE';
+        if (/\b(operation|supply|logistics|process)\b/.test(probe)) return 'OPERATIONS';
+        if (/\b(teacher|education|trainer|curriculum)\b/.test(probe)) return 'EDUCATION';
+        if (/\b(sales|business development|bdm|inside sales)\b/.test(probe)) return 'SALES';
+        return 'TECHNOLOGY';
+    }
+
+    minSalaryLabel(): string {
+        if (!this.salaryMin) return '\u20B90 LPA';
+        const lpa = (this.salaryMin * 12) / 100000;
+        return `\u20B9${lpa.toFixed(1)} LPA`;
+    }
+
     sortJobs(): void {
-        let sorted = [...this.allJobs()];
+        const sorted = [...this.allJobs()];
         if (this.sortBy === 'recent') {
             sorted.sort((a, b) => new Date(b.postedDate).getTime() - new Date(a.postedDate).getTime());
         } else if (this.sortBy === 'salary_high') {
@@ -115,9 +203,6 @@ export class JobSearchComponent implements OnInit {
                 return salB - salA;
             });
         } else if (this.sortBy === 'applicants') {
-            // This would ideally be a back-end property, but if we have the applications list 
-            // or a count from the backend, we would use it here. 
-            // Mocking for now if property doesn't exist.
             sorted.sort((a, b) => (b as any).applicationCount - (a as any).applicationCount);
         }
         this.filteredJobs.set(sorted);

@@ -40,8 +40,19 @@ export class JobApplicantsComponent implements OnInit {
     appliedAfter = signal('');
     showFilters = signal(false);
 
-    experienceOptions = ['Entry', 'Junior', 'Mid', 'Senior', 'Lead', 'Manager'];
-    educationOptions = ['Bachelor', 'Master', 'PhD', 'Diploma', 'Certification'];
+    experienceOptions = [
+        'Entry Level (0 - 2 yrs)',
+        'Mid Level (3 - 5 yrs)',
+        'Senior Level (6 - 9 yrs)',
+        'Lead / Manager (10+ yrs)'
+    ];
+    educationOptions = [
+        'High School',
+        'Associate Degree',
+        "Bachelor's Degree",
+        "Master's Degree",
+        'PhD / Doctorate'
+    ];
 
     showExpMenu = signal(false);
     showEduMenu = signal(false);
@@ -133,8 +144,18 @@ export class JobApplicantsComponent implements OnInit {
         // Experience Filter (Multi-select)
         if (selectedExp.length > 0) {
             filtered = filtered.filter(a => {
-                const text = a.jobSeekerExperience?.toLowerCase() || '';
-                return selectedExp.some(exp => text.includes(exp.toLowerCase()));
+                const text = (a.jobSeekerExperience || '').toLowerCase();
+                const years = Number((a.jobSeekerExperience || '').match(/\d+/)?.[0] || '0');
+
+                return selectedExp.some(exp => {
+                    if (exp === 'Entry Level (0 - 2 yrs)') return years <= 2 || text.includes('entry');
+                    if (exp === 'Mid Level (3 - 5 yrs)') return (years >= 3 && years <= 5) || text.includes('mid');
+                    if (exp === 'Senior Level (6 - 9 yrs)') return (years >= 6 && years <= 9) || text.includes('senior');
+                    if (exp === 'Lead / Manager (10+ yrs)') {
+                        return years >= 10 || text.includes('lead') || text.includes('manager');
+                    }
+                    return false;
+                });
             });
         }
 

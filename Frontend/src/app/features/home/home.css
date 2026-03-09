@@ -512,6 +512,28 @@
     font-size: 2rem;
 }
 
+.company-logo-svg {
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+}
+
+.company-logo-img {
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.cognizant-wordmark {
+    font-size: 3rem;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: #111b6b;
+    font-weight: 500;
+    text-transform: lowercase;
+}
+
 /* Testimonials Section */
 .testimonials-section {
     padding: 80px 20px;

@@ -233,9 +233,33 @@ export class JobDetailComponent implements OnInit {
     }
 
     toggleSave(): void {
+        if (!this.authService.isAuthenticated()) {
+            this.router.navigate(['/login'], { queryParams: { returnUrl: this.router.url } });
+            return;
+        }
+
         this.jobService.toggleSave(this.job()!.id).subscribe(saved => {
             this.isSaved.set(saved);
             this.toast.info(saved ? 'Job saved to your list!' : 'Job removed from saved list.');
         });
+    }
+
+    formatSalaryDisplay(salaryText: string): string {
+        const raw = (salaryText || '').trim();
+        if (!raw) return '';
+
+        const values = raw.match(/\d+(\.\d+)?/g)?.map(v => Number(v)) || [];
+        if (values.length === 0) {
+            return raw.includes('₹') ? raw : `₹${raw}`;
+        }
+
+        const annualValues = values.map(v => (v <= 200000 ? v * 12 : v));
+        const lpaValues = annualValues.map(v => v / 100000);
+
+        if (lpaValues.length >= 2) {
+            return `₹${lpaValues[0].toFixed(1)} - ₹${lpaValues[1].toFixed(1)} LPA`;
+        }
+
+        return `₹${lpaValues[0].toFixed(1)} LPA`;
     }
 }

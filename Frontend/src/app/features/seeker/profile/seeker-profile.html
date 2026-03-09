@@ -183,19 +183,40 @@
       <form [formGroup]="securityForm" class="profile-form mt-4">
         <div class="form-group mb-3">
           <label class="form-label-custom">Current Password</label>
-          <input formControlName="oldPassword" type="password" class="form-control-custom" placeholder="••••••••">
+          <div class="password-field">
+            <input formControlName="oldPassword" [type]="showOldPassword() ? 'text' : 'password'" class="form-control-custom">
+            <button type="button" class="pwd-toggle-btn" (click)="showOldPassword.set(!showOldPassword())"
+              [attr.aria-label]="showOldPassword() ? 'Hide password' : 'Show password'">
+              <i class="bi" [ngClass]="showOldPassword() ? 'bi-eye-slash' : 'bi-eye'"></i>
+            </button>
+          </div>
         </div>
         <div class="form-grid">
           <div class="form-group">
             <label class="form-label-custom">New Password</label>
-            <input formControlName="newPassword" type="password" class="form-control-custom" placeholder="••••••••">
+            <div class="password-field">
+              <input formControlName="newPassword" [type]="showNewPassword() ? 'text' : 'password'" class="form-control-custom">
+              <button type="button" class="pwd-toggle-btn" (click)="showNewPassword.set(!showNewPassword())"
+                [attr.aria-label]="showNewPassword() ? 'Hide password' : 'Show password'">
+                <i class="bi" [ngClass]="showNewPassword() ? 'bi-eye-slash' : 'bi-eye'"></i>
+              </button>
+            </div>
             @if (sf['newPassword'].errors?.['minlength'] && sf['newPassword'].touched) {
             <div class="field-error">Min 8 characters required</div>
             }
           </div>
           <div class="form-group">
             <label class="form-label-custom">Confirm New Password</label>
-            <input formControlName="confirmPassword" type="password" class="form-control-custom" placeholder="••••••••">
+            <div class="password-field">
+              <input formControlName="confirmPassword" [type]="showConfirmPassword() ? 'text' : 'password'" class="form-control-custom">
+              <button type="button" class="pwd-toggle-btn" (click)="showConfirmPassword.set(!showConfirmPassword())"
+                [attr.aria-label]="showConfirmPassword() ? 'Hide password' : 'Show password'">
+                <i class="bi" [ngClass]="showConfirmPassword() ? 'bi-eye-slash' : 'bi-eye'"></i>
+              </button>
+            </div>
+            @if (isPasswordMismatch()) {
+            <div class="field-error">Does not match</div>
+            }
           </div>
         </div>
       </form>

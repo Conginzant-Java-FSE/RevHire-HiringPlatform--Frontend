@@ -3,6 +3,7 @@ import { FormBuilder, Validators, ReactiveFormsModule, FormArray, FormsModule, A
 import { Router, RouterLink, ActivatedRoute } from '@angular/router';
 import { NgClass } from '@angular/common';
 import { JobService } from '../../../core/services/job.service';
+import { CompanyService } from '../../../core/services/company.service';
 import { ToastService } from '../../../core/services/toast.service';
 import { LoadingService } from '../../../core/services/loading.service';
 import { AuthService } from '../../../core/services/auth.service';
@@ -17,6 +18,7 @@ import { AuthService } from '../../../core/services/auth.service';
 export class PostJobComponent implements OnInit {
     private fb = inject(FormBuilder);
     private jobService = inject(JobService);
+    private companyService = inject(CompanyService);
     private router = inject(Router);
     private route = inject(ActivatedRoute);
     private toast = inject(ToastService);
@@ -39,6 +41,7 @@ export class PostJobComponent implements OnInit {
     submitError = signal('');
     isEditMode = signal(false);
     jobId = signal<number | null>(null);
+    companyDisplayName = signal('Your Company');
 
     jobForm = this.fb.group({
         title: ['', Validators.required],
@@ -74,6 +77,17 @@ export class PostJobComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        const authCompany = this.auth.currentUser()?.companyName?.trim();
+        if (authCompany) this.companyDisplayName.set(authCompany);
+
+        this.companyService.getCompany().subscribe({
+            next: (company) => {
+                const name = company?.name?.trim();
+                if (name) this.companyDisplayName.set(name);
+            },
+            error: () => { }
+        });
+
         const id = this.route.snapshot.params['id'];
         if (id) {
             this.isEditMode.set(true);
@@ -99,9 +113,9 @@ export class PostJobComponent implements OnInit {
 
                 // Determine experienceLevel from experienceYears
                 let expLevel = 'MID';
-                if (job.experienceYears <= 1) expLevel = 'ENTRY';
-                else if (job.experienceYears >= 8) expLevel = 'LEAD';
-                else if (job.experienceYears >= 5) expLevel = 'SENIOR';
+                if (job.experienceYears <= 2) expLevel = 'ENTRY';
+                else if (job.experienceYears >= 10) expLevel = 'LEAD';
+                else if (job.experienceYears >= 6) expLevel = 'SENIOR';
 
                 // Handle description/resp/req splitting if possible, 
                 // or just put it all in description for now if it doesn't match pattern
@@ -212,10 +226,10 @@ export class PostJobComponent implements OnInit {
 
         let expYears = 0;
         switch (formValue.experienceLevel) {
-            case 'ENTRY': expYears = 1; break;
-            case 'MID': expYears = 3; break;
-            case 'SENIOR': expYears = 5; break;
-            case 'LEAD': expYears = 8; break;
+            case 'ENTRY': expYears = 2; break;
+            case 'MID': expYears = 5; break;
+            case 'SENIOR': expYears = 9; break;
+            case 'LEAD': expYears = 10; break;
         }
 
         // Skills (tags) go into `requirements` — the backend uses this field for skill mapping
@@ -241,7 +255,7 @@ export class PostJobComponent implements OnInit {
             openings: formValue.openings ?? 1,
             requirements: skillsCSV,   // backend uses this for skill/tag mapping
             category: formValue.category,
-            salary: (formValue.salaryMin && formValue.salaryMax) ? `$${formValue.salaryMin} - $${formValue.salaryMax}` : 'Competitive',
+            salary: (formValue.salaryMin && formValue.salaryMax) ? `₹${formValue.salaryMin} - ₹${formValue.salaryMax}` : 'Competitive',
             status: formValue.status || 'ACTIVE'
         };
 

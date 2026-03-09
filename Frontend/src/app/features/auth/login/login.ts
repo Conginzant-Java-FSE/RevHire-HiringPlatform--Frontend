@@ -88,8 +88,11 @@ export class LoginComponent implements OnInit {
             next: (res: any) => {
                 this.forgotMsg = typeof res === 'string'
                     ? res
-                    : (res?.message || 'If an account exists with that email, a reset token has been generated.');
-                this.toast.success('Password reset instructions sent.');
+                    : (res?.message || 'If an account exists with that email, reset instructions were sent.');
+                this.toast.success('Password reset request sent.');
+                this.router.navigate(['/reset-password'], {
+                    queryParams: { email: emailControl.value }
+                });
             },
             error: (err: any) => {
                 let msg = 'Failed to process forgot password request.';

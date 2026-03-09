@@ -7031,7 +7031,7 @@
                 "question": "What is REST API in Node.js?",
                 "hint": "HTTP-based client-server communication interface.",
                 "difficulty": "ADVANCED",
-                "answer": "A REST API is a web service that allows communication between clients and servers using HTTP methods such as GET, POST, PUT, and DELETE. Node.js is commonly used to build REST APIs because it efficiently handles multiple client requests."
+                "answer": "REST APIs are mainly used to send and receive data in JSON format between frontend and backend.A REST API is a web service that allows communication between clients and servers using HTTP methods such as GET, POST, PUT, and DELETE. Node.js is commonly used to build REST APIs because it efficiently handles multiple client requests."
             },
             {
                 "id": "s_node_18",
@@ -7187,7 +7187,7 @@
                 "question": "What is RxJS in Angular?",
                 "hint": "Observable library for async streams and events.",
                 "difficulty": "ADVANCED",
-                "answer": "RxJS (Reactive Extensions for JavaScript) is a library used for handling asynchronous data streams using Observables. Angular uses RxJS extensively for tasks such as HTTP requests, event handling, and state management. Observables allow developers to manage asynchronous operations more efficiently."
+                "answer": "RxJS (Reactive Extensions for JavaScript) is a library used in Angular for handling asynchronous data streams.RxJS (Reactive Extensions for JavaScript) is a library used for handling asynchronous data streams using Observables. Angular uses RxJS extensively for tasks such as HTTP requests, event handling, and state management. Observables allow developers to manage asynchronous operations more efficiently."
             },
             {
                 "id": "s_a_20",
@@ -7259,7 +7259,7 @@
                 "question": "What are React Hooks?",
                 "hint": "Functions enabling state/lifecycle in functional components.",
                 "difficulty": "MODERATE",
-                "answer": "Hooks are functions introduced in React that allow developers to use state and lifecycle features in functional components. Before hooks, these features were only available in class components. Hooks simplify code and improve reusability of logic. Examples include useState, useEffect, useContext, and useReducer."
+                "answer": "They were introduced in React 16.8. Hooks are functions introduced in React that allow developers to use state and lifecycle features in functional components. Before hooks, these features were only available in class components. Hooks simplify code and improve reusability of logic. Examples include useState, useEffect, useContext, and useReducer."
             },
             {
                 "id": "s_r_10",
@@ -7322,7 +7322,7 @@
                 "question": "What is Memoization in React?",
                 "hint": "Cache computations/components to avoid unnecessary re-renders.",
                 "difficulty": "ADVANCED",
-                "answer": "Memoization is a performance optimization technique used to prevent unnecessary component re-rendering. React provides tools such as React.memo and useMemo to cache computed values and improve application performance."
+                "answer": "React provides tools like React.memo, useMemo, and useCallback for memoization.Memoization is a performance optimization technique used to prevent unnecessary component re-rendering. React provides tools such as React.memo and useMemo to cache computed values and improve application performance."
             },
             {
                 "id": "s_r_19",
@@ -7373,7 +7373,7 @@
                 "question": "What are Context Managers and the 'with' statement in Python?",
                 "hint": "Resource management using __enter__ and __exit__.",
                 "difficulty": "BASIC",
-                "answer": "Context managers allow you to allocate and release resources exactly when you want to. The most widely used example is the 'with' statement. For example, when opening a file: with open('test.txt', 'w') as f: f.write('Hello'). The context manager ensures the file is closed automatically. You can create your own context managers by defining a class with __enter__() and __exit__() methods, or by using the @contextmanager decorator from the contextlib module."
+                "answer": "Context Managers in Python are objects that manage resources (like files, database connections) properly during execution.Context managers allow you to the allocate and release resources exactly when you want to. The most widely used example is the 'with' statement. For example, when opening a file: with open('test.txt', 'w') as f: f.write('Hello'). The context manager ensures the file is closed automatically. You can create your own context managers by defining a class with __enter__() and __exit__() methods, or by using the @contextmanager decorator from the contextlib module."
             },
             {
                 "id": "s_py_6",

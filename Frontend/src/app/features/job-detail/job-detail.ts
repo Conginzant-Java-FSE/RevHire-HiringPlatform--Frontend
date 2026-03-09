@@ -133,7 +133,6 @@ export class JobDetailComponent implements OnInit {
                 this.hasApplied.set(!!activeApplication);
             },
             error: () => {
-                // Fallback to old check if list endpoint fails for any reason.
                 this.appService.hasApplied(jobId).subscribe(applied => this.hasApplied.set(applied));
             }
         });

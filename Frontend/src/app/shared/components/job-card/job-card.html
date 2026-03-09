@@ -35,7 +35,7 @@
 
             <div class="card-footer-custom">
                 <div class="salary-box">
-                    <span class="salary-val">{{ job.salary }}</span>
+                    <span class="salary-val">{{ formatSalaryDisplay() }}</span>
                 </div>
                 @if (flat) {
                 <a [routerLink]="['/jobs', job.id]" class="btn-more-flat" (click)="$event.stopPropagation()">

@@ -85,11 +85,13 @@ export class AuthService {
     }
 
     private handleAuthResponse(res: AuthResponse): void {
+        const persistedAvatar = this.getPersistedAvatar(res.id);
         const user: User = {
             id: res.id,
             name: res.name,
             email: res.email,
             role: res.role,
+            avatar: persistedAvatar || undefined,
             createdAt: new Date().toISOString(),
             isProfileComplete: false // Default to false, components will update this
         };
@@ -150,5 +152,30 @@ export class AuthService {
         const updated: User = { ...user, ...patch };
         this._currentUser.set(updated);
         localStorage.setItem('revhire_user', JSON.stringify(updated));
+
+        // Persist avatar per user so it survives logout/login until explicitly removed.
+        if (Object.prototype.hasOwnProperty.call(patch, 'avatar')) {
+            if (patch.avatar) {
+                this.setPersistedAvatar(user.id, patch.avatar);
+            } else {
+                this.clearPersistedAvatar(user.id);
+            }
+        }
+    }
+
+    private getAvatarStorageKey(userId: number): string {
+        return `revhire_avatar_${userId}`;
+    }
+
+    private setPersistedAvatar(userId: number, avatar: string): void {
+        localStorage.setItem(this.getAvatarStorageKey(userId), avatar);
+    }
+
+    private getPersistedAvatar(userId: number): string | null {
+        return localStorage.getItem(this.getAvatarStorageKey(userId));
+    }
+
+    private clearPersistedAvatar(userId: number): void {
+        localStorage.removeItem(this.getAvatarStorageKey(userId));
     }
 }

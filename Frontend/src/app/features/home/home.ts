@@ -40,16 +40,14 @@ export class HomeComponent implements OnInit {
         { value: '24k+', label: 'Live Jobs' },
         { value: '10k+', label: 'Companies' },
         { value: '120k+', label: 'Candidates' }
-    ];
-    categories = [
-        { icon: '💻', name: 'Technology', value: 'TECHNOLOGY', count: 1240 },
-        { icon: '🎨', name: 'Design', value: 'DESIGN', count: 340 },
-        { icon: '📊', name: 'Finance', value: 'FINANCE', count: 520 },
-        { icon: '🏥', name: 'Healthcare', value: 'HEALTHCARE', count: 680 },
-        { icon: '📣', name: 'Marketing', value: 'MARKETING', count: 290 },
-        { icon: '🎓', name: 'Education', value: 'EDUCATION', count: 170 },
-        { icon: '⚙️', name: 'Operations', value: 'OPERATIONS', count: 420 },
-        { icon: '🛒', name: 'Sales', value: 'SALES', count: 380 },
+    ];    categories = [
+        { icon: '\uD83D\uDCBB', name: 'Technology', value: 'TECHNOLOGY', count: 1240 },
+        { icon: '\uD83C\uDFA8', name: 'Design', value: 'DESIGN', count: 340 },
+        { icon: '\uD83D\uDCCA', name: 'Finance', value: 'FINANCE', count: 520 },
+        { icon: '\uD83C\uDFE5', name: 'Healthcare', value: 'HEALTHCARE', count: 680 },
+        { icon: '\uD83D\uDCE3', name: 'Marketing', value: 'MARKETING', count: 290 },
+        { icon: '\u2699\uFE0F', name: 'Operations', value: 'OPERATIONS', count: 420 },
+        { icon: '\uD83D\uDED2', name: 'Sales', value: 'SALES', count: 380 },
     ];
 
     ngOnInit(): void {
@@ -81,6 +79,11 @@ export class HomeComponent implements OnInit {
     }
 
     onSaveToggle(jobId: number): void {
+        if (!this.authService.isAuthenticated()) {
+            this.router.navigate(['/login'], { queryParams: { returnUrl: '/' } });
+            return;
+        }
+
         this.jobService.toggleSave(jobId).subscribe({
             next: (isSaved) => {
                 this.toastService.success(isSaved ? 'Job saved to your bookmarks' : 'Job removed from bookmarks');
@@ -91,3 +94,4 @@ export class HomeComponent implements OnInit {
         });
     }
 }
+

@@ -19,6 +19,86 @@ export class InterviewPrepComponent implements OnInit {
 
     roles = signal<string[]>([]);
     skills = signal<string[]>([]);
+    techRoles: string[] = [
+        'DevOps Engineer',
+        'Cyber Security Analyst',
+        'Project Manager',
+        'UI/UX Designer',
+        'Game Developer',
+        'Networking Engineer',
+        'AI/ML Engineer'
+    ];
+    designRoles: string[] = [
+        'Product Designer',
+        'UX Designer',
+        'UI Designer',
+        'UX Researcher',
+        'UX Writer',
+        'Graphics Designer',
+        'Brand Designer'
+    ];
+    financeRoles: string[] = [
+        'Finance Analyst',
+        'Quantitative Analyst',
+        'Banking Financial Service',
+        'Financial Advisor',
+        'Accounting Manager'
+    ];
+    marketingRoles: string[] = [
+        'Marketing Manager',
+        'Digital Marketing Manager',
+        'Content Marketer',
+        'Social Media Manager',
+        'Market Research'
+    ];
+    healthCareRoles: string[] = [
+        'Medical AI Deployment',
+        'Medical Coding',
+        'Healthcare Administrator',
+        'Healthcare Data Analyst'
+    ];
+    operationsRoles: string[] = [
+        'IT Operation Manager',
+        'Operation Engineering',
+        'System Administrator',
+        'Database Administrator',
+        'Cloud Architect',
+        'Technical Support Specialist'
+    ];
+    salesRoles: string[] = [
+        'Sales Development Representative',
+        'Business Development Representative',
+        'Account Executive',
+        'Solution Consultant'
+    ];
+    additionalSkills: string[] = [
+        // Technology
+        'Java', 'Python', 'TypeScript', 'JavaScript', 'Angular', 'React', 'Node.js', 'Spring Boot',
+        'DevOps', 'Linux', 'Cloud Computing', 'AWS', 'Azure',
+        'Cyber Security', 'Network Security', 'AI/ML',
+        'Data Structures', 'System Design', 'SQL', 'NoSQL',
+
+        // Design
+        'Figma', 'UI Design', 'UX Design',
+        'Adobe XD', 'Photoshop', 'Branding', 'Graphic Design',
+
+        // Finance
+        'Financial Analysis', 'Excel', 'Risk Analysis',
+        'Accounting', 'Budgeting', 'Investment Analysis',
+
+        // Marketing
+        'Digital Marketing', 'SEO', 'SEM', 'Content Marketing',
+
+        // Healthcare
+        'Medical Coding', 'Healthcare Analytics', 'Healthcare Administration',
+
+        // Operations
+        'IT Operations', 'Cloud Architecture',
+        'Technical Support',
+
+        // Sales
+        'CRM'
+    ];
 
     selectedType = signal<'ROLE' | 'SKILL' | 'HR'>('ROLE');
     selectedCategory = signal<string>('');
@@ -66,6 +146,102 @@ export class InterviewPrepComponent implements OnInit {
     loadFilterOptions() {
         this.prepService.getAvailableRoles().subscribe(roles => this.roles.set(roles));
         this.prepService.getAvailableSkills().subscribe(skills => this.skills.set(skills));
+    }
+
+    technologyRoles(): string[] {
+        const excluded = new Set([
+            ...this.designRoles.map(r => r.toLowerCase()),
+            ...this.financeRoles.map(r => r.toLowerCase()),
+            ...this.marketingRoles.map(r => r.toLowerCase()),
+            ...this.healthCareRoles.map(r => r.toLowerCase()),
+            ...this.operationsRoles.map(r => r.toLowerCase()),
+            ...this.salesRoles.map(r => r.toLowerCase())
+        ]);
+        const merged = [...this.techRoles, ...this.roles().filter(r => !excluded.has(r.toLowerCase()))];
+        const seen = new Set<string>();
+        return merged.filter(role => {
+            const key = role.toLowerCase();
+            if (seen.has(key)) return false;
+            seen.add(key);
+            return true;
+        });
+    }
+
+    designDisplayRoles(): string[] {
+        const merged = [...this.designRoles];
+        const seen = new Set<string>();
+        return merged.filter(role => {
+            const key = role.toLowerCase();
+            if (seen.has(key)) return false;
+            seen.add(key);
+            return true;
+        });
+    }
+
+    financeDisplayRoles(): string[] {
+        const merged = [...this.financeRoles];
+        const seen = new Set<string>();
+        return merged.filter(role => {
+            const key = role.toLowerCase();
+            if (seen.has(key)) return false;
+            seen.add(key);
+            return true;
+        });
+    }
+
+    marketingDisplayRoles(): string[] {
+        const merged = [...this.marketingRoles];
+        const seen = new Set<string>();
+        return merged.filter(role => {
+            const key = role.toLowerCase();
+            if (seen.has(key)) return false;
+            seen.add(key);
+            return true;
+        });
+    }
+
+    healthCareDisplayRoles(): string[] {
+        const merged = [...this.healthCareRoles];
+        const seen = new Set<string>();
+        return merged.filter(role => {
+            const key = role.toLowerCase();
+            if (seen.has(key)) return false;
+            seen.add(key);
+            return true;
+        });
+    }
+
+    operationsDisplayRoles(): string[] {
+        const merged = [...this.operationsRoles];
+        const seen = new Set<string>();
+        return merged.filter(role => {
+            const key = role.toLowerCase();
+            if (seen.has(key)) return false;
+            seen.add(key);
+            return true;
+        });
+    }
+
+    salesDisplayRoles(): string[] {
+        const merged = [...this.salesRoles];
+        const seen = new Set<string>();
+        return merged.filter(role => {
+            const key = role.toLowerCase();
+            if (seen.has(key)) return false;
+            seen.add(key);
+            return true;
+        });
+    }
+
+    displaySkills(): string[] {
+        const merged = [...this.additionalSkills, ...this.skills()];
+        const seen = new Set<string>();
+        return merged.filter(skill => {
+            const key = skill.toLowerCase();
+            if (seen.has(key)) return false;
+            seen.add(key);
+            return true;
+        });
     }
 
     loadAppliedRoles() {

@@ -6,7 +6,7 @@ export const routes: Routes = [
     { path: '', loadComponent: () => import('./features/home/home').then(m => m.HomeComponent) },
     { path: 'jobs', loadComponent: () => import('./features/job-search/job-search').then(m => m.JobSearchComponent) },
     { path: 'jobs/:id', loadComponent: () => import('./features/job-detail/job-detail').then(m => m.JobDetailComponent) },
-    { path: 'companies/:id', loadComponent: () => import('./features/company-detail/company-detail').then(m => m.CompanyDetailComponent) },
+    { path: 'companies/:id', canActivate: [authGuard], loadComponent: () => import('./features/company-detail/company-detail').then(m => m.CompanyDetailComponent) },
 
     // Auth
     { path: 'login', canActivate: [guestGuard], loadComponent: () => import('./features/auth/login/login').then(m => m.LoginComponent) },

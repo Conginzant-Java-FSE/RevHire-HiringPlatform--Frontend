@@ -23,7 +23,7 @@
             <div class="job-hero-actions">
                 <div class="salary-display">
                     <div class="salary-label">Salary Range</div>
-                    <span class="salary-value">{{ job()!.salary }}</span>
+                    <span class="salary-value">{{ formatSalaryDisplay(job()!.salary) }}</span>
                 </div>
                 <div class="action-btns">
                     @if (hasApplied()) {
@@ -123,10 +123,10 @@
                             <div class="oi-value">{{ job()!.location }}</div>
                         </div>
                     </div>
-                    <div class="overview-item"><i class="bi bi-currency-dollar"></i>
+                    <div class="overview-item"><i class="bi bi-currency-rupee"></i>
                         <div>
                             <div class="oi-label">Salary</div>
-                            <div class="oi-value">{{ job()!.salary }}</div>
+                            <div class="oi-value">{{ formatSalaryDisplay(job()!.salary) }}</div>
                         </div>
                     </div>
                     <div class="overview-item"><i class="bi bi-calendar3"></i>
@@ -166,7 +166,9 @@
                 <p class="company-desc-short">{{ company()!.description | slice:0:120 }}...</p>
                 }
 
-                <a [routerLink]="['/companies', job()!.companyId]" class="btn-outline-custom full-width mt-3">
+                <a [routerLink]="authService.isAuthenticated() ? ['/companies', job()!.companyId] : ['/login']"
+                    [queryParams]="authService.isAuthenticated() ? null : { returnUrl: '/companies/' + job()!.companyId }"
+                    class="btn-outline-custom full-width mt-3">
                     View Company Profile
                 </a>
             </div>

@@ -29,8 +29,9 @@
             <div class="search-wrapper" (mouseleave)="searchExpanded() && !searchQuery() && toggleSearch()">
                 <div class="search-container" [class.expanded]="searchExpanded()">
                     <input type="text" class="search-input" placeholder="Search..." [ngModel]="searchQuery()"
-                        (ngModelChange)="onSearchInput($event)" (focus)="searchExpanded.set(true)" #searchInput>
-                    <button class="search-btn" (click)="toggleSearch()">
+                        (ngModelChange)="onSearchInput($event)" (keyup.enter)="submitSearch()"
+                        (focus)="searchExpanded.set(true)" #searchInput>
+                    <button class="search-btn" (click)="onSearchButtonClick()">
                         <i class="bi" [class.bi-search]="!searchExpanded()" [class.bi-x-lg]="searchExpanded()"></i>
                     </button>
                 </div>

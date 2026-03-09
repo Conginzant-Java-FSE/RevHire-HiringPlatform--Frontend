@@ -7,7 +7,13 @@
     <div class="profile-card">Seeker profile not found.</div>
     } @else {
     <div class="profile-card hero">
-        <div class="avatar">{{ profile()!.name?.charAt(0) || 'S' }}</div>
+        <div class="avatar">
+            @if (profileImage()) {
+            <img [src]="profileImage()!" alt="Seeker profile image" class="avatar-img">
+            } @else {
+            {{ profile()!.name?.charAt(0) || 'S' }}
+            }
+        </div>
         <div>
             <h1 class="page-title">{{ profile()!.name || 'Seeker Profile' }}</h1>
             <p class="page-sub">{{ profile()!.headline || profile()!.employmentStatus || 'Job Seeker' }}</p>

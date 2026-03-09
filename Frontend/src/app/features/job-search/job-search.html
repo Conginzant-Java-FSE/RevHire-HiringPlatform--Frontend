@@ -66,7 +66,7 @@
                 <div class="filter-group">
                     <h4>Min Salary</h4>
                     <div class="salary-input-group">
-                        <span class="salary-val">₹{{ (salaryMin/1000) }}k/yr</span>
+                        <span class="salary-val">{{ minSalaryLabel() }}</span>
                         <input type="range" min="0" max="250000" step="10000" [(ngModel)]="salaryMin"
                             (change)="doSearch()">
                     </div>

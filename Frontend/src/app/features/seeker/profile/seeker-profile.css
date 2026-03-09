@@ -601,6 +601,34 @@ input:checked+.slider:before {
     margin-top: 0.25rem;
 }
 
+.password-field {
+    position: relative;
+}
+
+.password-field .form-control-custom {
+    padding-right: 2.5rem;
+}
+
+.pwd-toggle-btn {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    width: 1.75rem;
+    height: 1.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pwd-toggle-btn:hover {
+    color: var(--color-primary);
+}
+
 .animate-fade-in {
     animation: fadeIn 0.35s ease-out;
 }

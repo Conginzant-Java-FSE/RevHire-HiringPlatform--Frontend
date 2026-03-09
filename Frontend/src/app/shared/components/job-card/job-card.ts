@@ -31,6 +31,26 @@ export class JobCardComponent {
         this.saveToggle.emit(this.job.id);
     }
 
+    formatSalaryDisplay(): string {
+        const raw = (this.job.salary || '').trim();
+        if (!raw) return '';
+
+        const values = raw.match(/\d+(\.\d+)?/g)?.map(v => Number(v)) || [];
+        if (values.length === 0) {
+            return raw.includes('₹') ? raw : `₹${raw}`;
+        }
+
+        // Heuristic: values <= 2,00,000 are treated as monthly and converted to LPA.
+        const annualValues = values.map(v => (v <= 200000 ? v * 12 : v));
+        const lpaValues = annualValues.map(v => v / 100000);
+
+        if (lpaValues.length >= 2) {
+            return `₹${lpaValues[0].toFixed(1)} - ₹${lpaValues[1].toFixed(1)} LPA`;
+        }
+
+        return `₹${lpaValues[0].toFixed(1)} LPA`;
+    }
+
     displayEducation(): string {
         const raw = (this.job.education || '').trim();
         if (raw) {

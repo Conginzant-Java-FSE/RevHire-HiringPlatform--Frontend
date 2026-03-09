@@ -131,6 +131,8 @@ export class JobService {
     }
 
     deleteJob(jobId: number): Observable<void> {
-        return this.http.delete<void>(`${this.API_URL}/${jobId}`);
+        return this.http.delete(`${this.API_URL}/${jobId}`, { responseType: 'text' }).pipe(
+            map(() => void 0)
+        );
     }
 }

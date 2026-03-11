@@ -1279,6 +1279,1852 @@
                 "difficulty": "ADVANCED",
                 "answer": "MLOps (Machine Learning Operations) is the practice of applying DevOps principles to machine learning systems to automate model development, deployment, monitoring, and maintenance. MLOps helps manage the entire lifecycle of machine learning models and ensures that models remain reliable and up-to-date."
             }
+        ],
+        "Medical AI Deployment": [
+            {
+                "id": "r_maid_1",
+                "question": "What is Medical AI Deployment?",
+                "hint": "Implementing AI models into real healthcare environments and workflows.",
+                "difficulty": "BASIC",
+                "answer": "Medical AI deployment refers to the process of implementing artificial intelligence models and systems into real healthcare environments such as hospitals, clinics, or healthcare platforms. It involves integrating AI algorithms with medical systems so that they can assist healthcare professionals in diagnosis, treatment planning, patient monitoring, and medical data analysis. Deployment ensures that AI solutions work reliably, securely, and efficiently in clinical workflows."
+            },
+            {
+                "id": "r_maid_2",
+                "question": "Why is Medical AI Deployment important?",
+                "hint": "Helps healthcare organizations use AI safely, reliably, and effectively.",
+                "difficulty": "BASIC",
+                "answer": "Medical AI deployment is important because it helps healthcare organizations use AI technologies to improve patient care, diagnostic accuracy, and operational efficiency. AI can analyze large amounts of medical data quickly, helping doctors make faster and more accurate decisions. Proper deployment ensures that AI systems are safe, reliable, and compliant with healthcare regulations."
+            },
+            {
+                "id": "r_maid_3",
+                "question": "What are the main applications of AI in healthcare?",
+                "hint": "Imaging, diagnosis, drug discovery, monitoring, and clinical decision support.",
+                "difficulty": "BASIC",
+                "answer": "AI in healthcare is used in many areas, including medical image analysis, disease prediction and diagnosis, drug discovery and development, patient monitoring systems, and clinical decision support systems. These applications help improve healthcare outcomes and efficiency."
+            },
+            {
+                "id": "r_maid_4",
+                "question": "What is Machine Learning in Medical AI?",
+                "hint": "Algorithms learning patterns from medical data to improve predictions.",
+                "difficulty": "BASIC",
+                "answer": "Machine learning is a branch of artificial intelligence where algorithms learn patterns from medical data and improve their performance without explicit programming. In healthcare, machine learning is used to predict diseases, analyze medical images, and assist in diagnosis."
+            },
+            {
+                "id": "r_maid_5",
+                "question": "What is Medical Data?",
+                "hint": "Health-related information like records, lab results, images, and clinical notes.",
+                "difficulty": "BASIC",
+                "answer": "Medical data refers to health-related information collected from patients, including medical records, laboratory results, imaging data, and clinical notes. This data is used by AI systems to train models and generate insights."
+            },
+            {
+                "id": "r_maid_6",
+                "question": "What is Clinical Decision Support System (CDSS)?",
+                "hint": "A system that provides data-driven recommendations for clinical decisions.",
+                "difficulty": "BASIC",
+                "answer": "A Clinical Decision Support System is a technology that helps healthcare professionals make clinical decisions by providing data-driven recommendations and insights based on patient data and medical knowledge."
+            },
+            {
+                "id": "r_maid_7",
+                "question": "What is Data Privacy in Medical AI?",
+                "hint": "Protecting patient information from unauthorized access or misuse.",
+                "difficulty": "BASIC",
+                "answer": "Data privacy refers to protecting patient health information from unauthorized access or misuse. Medical AI systems must follow strict privacy regulations to ensure patient data remains secure."
+            },
+            {
+                "id": "r_maid_8",
+                "question": "What is Medical Image Analysis in AI?",
+                "hint": "Using AI to analyze X-rays, MRIs, CT scans, and other images.",
+                "difficulty": "MODERATE",
+                "answer": "Medical image analysis involves using AI algorithms to analyze medical images such as X-rays, MRIs, and CT scans to detect diseases or abnormalities. AI can help radiologists identify patterns that may be difficult to detect manually."
+            },
+            {
+                "id": "r_maid_9",
+                "question": "What is Model Training in Medical AI?",
+                "hint": "Feeding medical datasets into machine learning algorithms to learn patterns.",
+                "difficulty": "MODERATE",
+                "answer": "Model training is the process of feeding medical datasets into machine learning algorithms so that they can learn patterns and make predictions."
+            },
+            {
+                "id": "r_maid_10",
+                "question": "What is Model Validation?",
+                "hint": "Testing a model with separate data before deployment.",
+                "difficulty": "MODERATE",
+                "answer": "Model validation is the process of testing an AI model using separate data to ensure that it performs accurately and reliably before deployment."
+            },
+            {
+                "id": "r_maid_11",
+                "question": "What is Healthcare Data Integration?",
+                "hint": "Combining EHR, lab, and imaging data into a unified system.",
+                "difficulty": "MODERATE",
+                "answer": "Healthcare data integration refers to combining data from multiple healthcare systems such as electronic health records, laboratory systems, and imaging systems into a unified platform."
+            },
+            {
+                "id": "r_maid_12",
+                "question": "What is AI Model Deployment?",
+                "hint": "Integrating trained AI models into live healthcare systems.",
+                "difficulty": "MODERATE",
+                "answer": "AI model deployment involves integrating trained machine learning models into healthcare systems so they can be used in real-time clinical environments."
+            },
+            {
+                "id": "r_maid_13",
+                "question": "What is Model Monitoring?",
+                "hint": "Continuously checking deployed model performance over time.",
+                "difficulty": "MODERATE",
+                "answer": "Model monitoring refers to continuously evaluating the performance of deployed AI models to ensure they remain accurate and effective over time."
+            },
+            {
+                "id": "r_maid_14",
+                "question": "What is Bias in Medical AI?",
+                "hint": "Unfair or inaccurate results caused by imbalanced or incomplete data.",
+                "difficulty": "MODERATE",
+                "answer": "Bias in medical AI occurs when AI models produce unfair or inaccurate predictions due to imbalanced or incomplete training data. Addressing bias is important for ethical AI deployment."
+            },
+            {
+                "id": "r_maid_15",
+                "question": "What is Regulatory Compliance in Medical AI?",
+                "hint": "Ensuring AI systems meet healthcare regulations and standards.",
+                "difficulty": "ADVANCED",
+                "answer": "Regulatory compliance involves ensuring that AI systems meet healthcare regulations and standards established by authorities such as the FDA or medical regulatory bodies."
+            },
+            {
+                "id": "r_maid_16",
+                "question": "What is Explainable AI in Healthcare?",
+                "hint": "AI that can explain its predictions so clinicians can trust it.",
+                "difficulty": "ADVANCED",
+                "answer": "Explainable AI refers to AI systems that provide clear explanations for their predictions or decisions so that healthcare professionals can understand and trust the results."
+            },
+            {
+                "id": "r_maid_17",
+                "question": "What is Edge AI in Healthcare?",
+                "hint": "Running AI models directly on medical devices or local systems.",
+                "difficulty": "ADVANCED",
+                "answer": "Edge AI refers to deploying AI models directly on medical devices or local systems instead of relying solely on cloud-based processing. This improves response time and data privacy."
+            },
+            {
+                "id": "r_maid_18",
+                "question": "What is Federated Learning in Medical AI?",
+                "hint": "Training across institutions without sharing raw patient data.",
+                "difficulty": "ADVANCED",
+                "answer": "Federated learning is a technique where AI models are trained across multiple healthcare institutions without sharing sensitive patient data directly. This improves privacy while enabling collaborative learning."
+            },
+            {
+                "id": "r_maid_19",
+                "question": "What challenges exist in Medical AI Deployment?",
+                "hint": "Privacy, integration, regulation, accuracy, reliability, and ethics.",
+                "difficulty": "ADVANCED",
+                "answer": "Some common challenges include data privacy and security concerns, integration with existing healthcare systems, regulatory compliance requirements, model accuracy and reliability, and ethical considerations in AI usage. These challenges must be addressed for successful AI deployment."
+            },
+            {
+                "id": "r_maid_20",
+                "question": "What skills are required for Medical AI Deployment?",
+                "hint": "Machine learning, healthcare data, integration, regulations, ethics, and monitoring.",
+                "difficulty": "ADVANCED",
+                "answer": "Professionals involved in medical AI deployment require skills such as machine learning and data science knowledge, healthcare data management, software engineering and system integration, understanding of medical regulations and ethics, and AI model monitoring and evaluation."
+            }
+        ],
+        "Medical Coding": [
+            {
+                "id": "r_mc_1",
+                "question": "What is Medical Coding?",
+                "hint": "Converting diagnoses, procedures, and services into standardized codes.",
+                "difficulty": "BASIC",
+                "answer": "Medical coding is the process of converting medical diagnoses, procedures, treatments, and healthcare services into standardized codes. These codes are used for medical billing, insurance claims, and healthcare documentation. Medical coders review patient records and assign appropriate codes based on the services provided. This ensures accurate communication between healthcare providers, insurance companies, and government agencies."
+            },
+            {
+                "id": "r_mc_2",
+                "question": "Why is Medical Coding important?",
+                "hint": "Supports accurate documentation, reimbursement, analysis, and compliance.",
+                "difficulty": "BASIC",
+                "answer": "Medical coding is important because it ensures accurate documentation of healthcare services and enables healthcare providers to receive proper reimbursement from insurance companies. It also helps maintain organized medical records and supports healthcare data analysis. Accurate coding reduces billing errors and ensures compliance with healthcare regulations."
+            },
+            {
+                "id": "r_mc_3",
+                "question": "What are the responsibilities of a Medical Coder?",
+                "hint": "Review records, assign codes, support billing, follow guidelines, and collaborate.",
+                "difficulty": "BASIC",
+                "answer": "Medical coders perform several tasks related to healthcare documentation and coding. Their responsibilities include reviewing patient medical records and documentation, assigning appropriate medical codes for diagnoses and procedures, ensuring accuracy in medical billing and insurance claims, maintaining compliance with coding guidelines and healthcare regulations, and collaborating with healthcare providers and billing teams. These responsibilities ensure proper healthcare documentation and reimbursement."
+            },
+            {
+                "id": "r_mc_4",
+                "question": "What are medical codes?",
+                "hint": "Standardized numeric or alphanumeric representations of diagnoses and services.",
+                "difficulty": "BASIC",
+                "answer": "Medical codes are standardized numeric or alphanumeric codes used to represent diagnoses, medical procedures, and healthcare services. These codes help simplify communication between healthcare providers and insurance companies."
+            },
+            {
+                "id": "r_mc_5",
+                "question": "What are the main coding systems used in medical coding?",
+                "hint": "ICD for diagnoses, CPT for procedures, HCPCS for extra services and equipment.",
+                "difficulty": "BASIC",
+                "answer": "The main medical coding systems include ICD (International Classification of Diseases) used for coding diagnoses, CPT (Current Procedural Terminology) used for coding medical procedures and services, and HCPCS (Healthcare Common Procedure Coding System) used for additional healthcare services and equipment. These coding systems ensure consistency in healthcare documentation."
+            },
+            {
+                "id": "r_mc_6",
+                "question": "What is ICD in Medical Coding?",
+                "hint": "Diagnosis coding system widely used as ICD-10.",
+                "difficulty": "BASIC",
+                "answer": "ICD stands for International Classification of Diseases, and it is used to code medical diagnoses and health conditions. The latest version widely used is ICD-10."
+            },
+            {
+                "id": "r_mc_7",
+                "question": "What is CPT in Medical Coding?",
+                "hint": "Code set for medical procedures and services.",
+                "difficulty": "BASIC",
+                "answer": "CPT stands for Current Procedural Terminology, which is used to code medical procedures and services performed by healthcare professionals."
+            },
+            {
+                "id": "r_mc_8",
+                "question": "What is HCPCS?",
+                "hint": "Code set for services, equipment, and supplies not covered by CPT.",
+                "difficulty": "MODERATE",
+                "answer": "HCPCS (Healthcare Common Procedure Coding System) is used to code healthcare services, medical equipment, and supplies not included in CPT codes."
+            },
+            {
+                "id": "r_mc_9",
+                "question": "What is Medical Billing?",
+                "hint": "Submitting and following up on insurance claims for payment.",
+                "difficulty": "MODERATE",
+                "answer": "Medical billing is the process of submitting and following up on insurance claims to receive payment for healthcare services provided by medical professionals."
+            },
+            {
+                "id": "r_mc_10",
+                "question": "What is a Medical Claim?",
+                "hint": "A request to an insurer for payment of healthcare services.",
+                "difficulty": "MODERATE",
+                "answer": "A medical claim is a request submitted to an insurance company for payment of healthcare services provided to a patient."
+            },
+            {
+                "id": "r_mc_11",
+                "question": "What is Upcoding?",
+                "hint": "Assigning a higher-level code than the service provided.",
+                "difficulty": "MODERATE",
+                "answer": "Upcoding occurs when a higher-level code is assigned than the actual service provided to receive higher reimbursement. This practice is considered unethical and illegal."
+            },
+            {
+                "id": "r_mc_12",
+                "question": "What is Downcoding?",
+                "hint": "Assigning a lower-level code than the service actually provided.",
+                "difficulty": "MODERATE",
+                "answer": "Downcoding refers to assigning a lower-level code than the actual service provided, which may result in reduced reimbursement."
+            },
+            {
+                "id": "r_mc_13",
+                "question": "What is Compliance in Medical Coding?",
+                "hint": "Following laws, guidelines, and ethical standards when coding.",
+                "difficulty": "MODERATE",
+                "answer": "Compliance in medical coding refers to following healthcare laws, coding guidelines, and ethical standards when assigning medical codes."
+            },
+            {
+                "id": "r_mc_14",
+                "question": "What is Medical Documentation?",
+                "hint": "Detailed patient records that support proper coding.",
+                "difficulty": "MODERATE",
+                "answer": "Medical documentation refers to detailed records of a patient's diagnosis, treatment, procedures, and healthcare services. Accurate documentation is essential for proper coding."
+            },
+            {
+                "id": "r_mc_15",
+                "question": "What is Auditing in Medical Coding?",
+                "hint": "Reviewing codes and records for accuracy and compliance.",
+                "difficulty": "ADVANCED",
+                "answer": "Auditing in medical coding involves reviewing medical codes and documentation to ensure accuracy and compliance with coding standards."
+            },
+            {
+                "id": "r_mc_16",
+                "question": "What is DRG in Medical Coding?",
+                "hint": "Classification system for hospital case reimbursement.",
+                "difficulty": "ADVANCED",
+                "answer": "DRG (Diagnosis-Related Group) is a system used to classify hospital cases into groups for payment and reimbursement purposes."
+            },
+            {
+                "id": "r_mc_17",
+                "question": "What is HIPAA in Medical Coding?",
+                "hint": "Law protecting patient health information and privacy.",
+                "difficulty": "ADVANCED",
+                "answer": "HIPAA (Health Insurance Portability and Accountability Act) is a law that protects patient health information and ensures privacy and security in healthcare data management."
+            },
+            {
+                "id": "r_mc_18",
+                "question": "What is Medical Coding Accuracy?",
+                "hint": "Correctly assigning codes based on records and guidelines.",
+                "difficulty": "ADVANCED",
+                "answer": "Medical coding accuracy refers to correctly assigning codes based on medical documentation and coding guidelines. High accuracy is important for proper reimbursement and compliance."
+            },
+            {
+                "id": "r_mc_19",
+                "question": "What tools are used in Medical Coding?",
+                "hint": "EHR, coding software, manuals, and billing systems.",
+                "difficulty": "ADVANCED",
+                "answer": "Common tools used in medical coding include Electronic Health Record (EHR) systems, medical coding software, ICD, CPT, and HCPCS coding manuals, and healthcare billing systems. These tools help coders perform accurate coding tasks."
+            },
+            {
+                "id": "r_mc_20",
+                "question": "What skills are required for Medical Coding?",
+                "hint": "Terminology, coding systems, detail, compliance, and analysis.",
+                "difficulty": "ADVANCED",
+                "answer": "A medical coder requires several important skills, including knowledge of medical terminology and anatomy, understanding of coding systems like ICD, CPT, and HCPCS, attention to detail and accuracy, knowledge of healthcare regulations and compliance, and analytical and problem-solving skills."
+            }
+        ],
+        "Healthcare Administrator": [
+            {
+                "id": "r_ha_1",
+                "question": "Who is a Healthcare Administrator?",
+                "hint": "Professional managing healthcare operations, resources, compliance, and service quality.",
+                "difficulty": "BASIC",
+                "answer": "A Healthcare Administrator is a professional responsible for managing the operations of healthcare organizations such as hospitals, clinics, nursing homes, and healthcare facilities. They ensure that healthcare services run smoothly by coordinating staff, managing resources, and overseeing administrative tasks. Healthcare administrators focus on improving healthcare delivery, maintaining regulatory compliance, and ensuring patient satisfaction."
+            },
+            {
+                "id": "r_ha_2",
+                "question": "What are the responsibilities of a Healthcare Administrator?",
+                "hint": "Managing staff, policies, budgets, compliance, and service quality.",
+                "difficulty": "BASIC",
+                "answer": "Healthcare administrators handle many operational and management tasks in healthcare institutions. Their responsibilities include managing hospital staff and healthcare departments, planning and implementing healthcare policies, managing budgets and financial resources, ensuring compliance with healthcare regulations, and improving patient care and service quality. These responsibilities help maintain efficient healthcare operations."
+            },
+            {
+                "id": "r_ha_3",
+                "question": "Why is the role of a Healthcare Administrator important?",
+                "hint": "Keeps healthcare organizations efficient, compliant, and patient-focused.",
+                "difficulty": "BASIC",
+                "answer": "The role of a healthcare administrator is important because they ensure that healthcare organizations operate efficiently and provide high-quality patient care. They manage resources, coordinate healthcare professionals, and maintain compliance with healthcare regulations. Their work helps healthcare institutions deliver effective and organized medical services."
+            },
+            {
+                "id": "r_ha_4",
+                "question": "What is Healthcare Management?",
+                "hint": "Planning, organizing, and supervising healthcare services.",
+                "difficulty": "BASIC",
+                "answer": "Healthcare management refers to the process of planning, organizing, and supervising healthcare services within medical institutions. It focuses on ensuring efficient operations and quality patient care."
+            },
+            {
+                "id": "r_ha_5",
+                "question": "What is Hospital Administration?",
+                "hint": "Managing hospital staff, services, budgets, and policies.",
+                "difficulty": "BASIC",
+                "answer": "Hospital administration is the management of hospital operations, including staff management, patient services, budgeting, and healthcare policies. It ensures hospitals function effectively and meet healthcare standards."
+            },
+            {
+                "id": "r_ha_6",
+                "question": "What is Healthcare Policy?",
+                "hint": "Rules and guidelines that shape healthcare systems and services.",
+                "difficulty": "BASIC",
+                "answer": "Healthcare policy refers to rules, regulations, and guidelines designed to improve healthcare services and manage healthcare systems. These policies are established by governments and healthcare organizations."
+            },
+            {
+                "id": "r_ha_7",
+                "question": "What is Healthcare Compliance?",
+                "hint": "Following laws, regulations, and ethical standards in healthcare.",
+                "difficulty": "BASIC",
+                "answer": "Healthcare compliance refers to following healthcare laws, regulations, and ethical standards when providing medical services. Compliance ensures patient safety and proper healthcare practices."
+            },
+            {
+                "id": "r_ha_8",
+                "question": "What is Healthcare Operations Management?",
+                "hint": "Overseeing daily activities like scheduling, allocation, and coordination.",
+                "difficulty": "MODERATE",
+                "answer": "Healthcare operations management involves overseeing daily healthcare activities such as patient scheduling, resource allocation, and staff coordination. It ensures efficient healthcare service delivery."
+            },
+            {
+                "id": "r_ha_9",
+                "question": "What is Healthcare Quality Management?",
+                "hint": "Monitoring and improving healthcare service quality and safety.",
+                "difficulty": "MODERATE",
+                "answer": "Healthcare quality management focuses on monitoring and improving healthcare services to ensure patients receive safe, effective, and high-quality treatment."
+            },
+            {
+                "id": "r_ha_10",
+                "question": "What is Patient Care Management?",
+                "hint": "Coordinating diagnosis, treatment, and follow-up care for patients.",
+                "difficulty": "MODERATE",
+                "answer": "Patient care management involves coordinating healthcare services to ensure patients receive proper diagnosis, treatment, and follow-up care."
+            },
+            {
+                "id": "r_ha_11",
+                "question": "What is Healthcare Financial Management?",
+                "hint": "Managing budgets, planning, and cost control in healthcare.",
+                "difficulty": "MODERATE",
+                "answer": "Healthcare financial management refers to managing budgets, financial planning, and cost control within healthcare organizations. It ensures financial sustainability."
+            },
+            {
+                "id": "r_ha_12",
+                "question": "What is Healthcare Information Management?",
+                "hint": "Managing records, healthcare data, and medical information systems.",
+                "difficulty": "MODERATE",
+                "answer": "Healthcare information management involves managing patient records, healthcare data, and medical information systems to support healthcare services."
+            },
+            {
+                "id": "r_ha_13",
+                "question": "What is Healthcare Workforce Management?",
+                "hint": "Recruiting, training, and managing healthcare staff.",
+                "difficulty": "MODERATE",
+                "answer": "Healthcare workforce management involves recruiting, training, and managing healthcare professionals such as doctors, nurses, and administrative staff."
+            },
+            {
+                "id": "r_ha_14",
+                "question": "What is Healthcare Risk Management?",
+                "hint": "Identifying and reducing risks to safety and operations.",
+                "difficulty": "MODERATE",
+                "answer": "Healthcare risk management is the process of identifying and reducing risks that may affect patient safety or healthcare operations."
+            },
+            {
+                "id": "r_ha_15",
+                "question": "What is Strategic Planning in Healthcare Administration?",
+                "hint": "Developing long-term plans to improve services and performance.",
+                "difficulty": "ADVANCED",
+                "answer": "Strategic planning involves developing long-term plans to improve healthcare services, expand facilities, and enhance organizational performance."
+            },
+            {
+                "id": "r_ha_16",
+                "question": "What is Healthcare Leadership?",
+                "hint": "Guiding teams and organizations to improve healthcare outcomes.",
+                "difficulty": "ADVANCED",
+                "answer": "Healthcare leadership refers to guiding healthcare teams and organizations toward achieving healthcare goals and improving patient outcomes."
+            },
+            {
+                "id": "r_ha_17",
+                "question": "What is Healthcare Resource Management?",
+                "hint": "Efficient use of staff, equipment, and finances in healthcare.",
+                "difficulty": "ADVANCED",
+                "answer": "Healthcare resource management involves efficient use of medical equipment, staff, and financial resources to improve healthcare services."
+            },
+            {
+                "id": "r_ha_18",
+                "question": "What is Healthcare Performance Management?",
+                "hint": "Evaluating healthcare using metrics like outcomes and satisfaction.",
+                "difficulty": "ADVANCED",
+                "answer": "Healthcare performance management involves evaluating healthcare services using performance indicators such as patient satisfaction and treatment outcomes."
+            },
+            {
+                "id": "r_ha_19",
+                "question": "What is Healthcare Governance?",
+                "hint": "Leadership, policies, and processes ensuring accountability and quality.",
+                "difficulty": "ADVANCED",
+                "answer": "Healthcare governance refers to the system of leadership, policies, and processes used to ensure accountability and quality in healthcare organizations."
+            },
+            {
+                "id": "r_ha_20",
+                "question": "What skills are required for a Healthcare Administrator?",
+                "hint": "Management, leadership, finance, communication, compliance, and problem-solving.",
+                "difficulty": "ADVANCED",
+                "answer": "A healthcare administrator requires several important skills, including healthcare management and leadership skills, financial and operational management abilities, communication and decision-making skills, knowledge of healthcare regulations and policies, and problem-solving and organizational skills."
+            }
+        ],
+        "IT Operation Manager": [
+            {
+                "id": "r_itom_1",
+                "question": "Who is an IT Operations Manager?",
+                "hint": "Professional overseeing daily IT infrastructure, systems, services, and continuity.",
+                "difficulty": "BASIC",
+                "answer": "An IT Operations Manager is a professional responsible for overseeing the daily operations of an organization's IT infrastructure, systems, and services. They ensure that technology systems run smoothly, securely, and efficiently. Their responsibilities include managing IT teams, maintaining servers and networks, monitoring system performance, and ensuring minimal downtime. IT operations managers play a key role in maintaining business continuity and supporting organizational technology needs."
+            },
+            {
+                "id": "r_itom_2",
+                "question": "What are the responsibilities of an IT Operations Manager?",
+                "hint": "Managing infrastructure, monitoring performance, leading teams, securing systems, and maintenance.",
+                "difficulty": "BASIC",
+                "answer": "An IT operations manager performs several important tasks related to managing IT systems and teams. Their responsibilities include managing IT infrastructure and systems, monitoring system performance and availability, leading IT support and operations teams, ensuring data security and system reliability, and managing software updates and system maintenance. These responsibilities help maintain efficient IT operations within an organization."
+            },
+            {
+                "id": "r_itom_3",
+                "question": "Why is the role of an IT Operations Manager important?",
+                "hint": "Ensures reliable and secure systems that support business continuity and productivity.",
+                "difficulty": "BASIC",
+                "answer": "The role of an IT operations manager is important because organizations depend heavily on IT systems to support business processes and communication. The IT operations manager ensures that these systems operate reliably and securely. By managing infrastructure and troubleshooting issues, they help minimize downtime and maintain productivity."
+            },
+            {
+                "id": "r_itom_4",
+                "question": "What is IT Operations?",
+                "hint": "Management and maintenance of infrastructure, applications, and supporting systems.",
+                "difficulty": "BASIC",
+                "answer": "IT operations refer to the management and maintenance of an organization's IT infrastructure, including servers, networks, databases, and applications. IT operations ensure that technology systems support business functions effectively."
+            },
+            {
+                "id": "r_itom_5",
+                "question": "What is IT Infrastructure?",
+                "hint": "Hardware, software, networks, and data centers supporting IT services.",
+                "difficulty": "BASIC",
+                "answer": "IT infrastructure includes the hardware, software, networks, and data centers that support IT services within an organization. It forms the foundation of IT operations."
+            },
+            {
+                "id": "r_itom_6",
+                "question": "What is System Monitoring?",
+                "hint": "Continuous observation of systems and networks for issues and failures.",
+                "difficulty": "BASIC",
+                "answer": "System monitoring is the process of continuously observing IT systems, servers, and networks to detect performance issues or failures. Monitoring tools help IT teams identify problems quickly."
+            },
+            {
+                "id": "r_itom_7",
+                "question": "What is IT Service Management (ITSM)?",
+                "hint": "Designing, delivering, and managing IT services to meet business needs.",
+                "difficulty": "BASIC",
+                "answer": "IT Service Management is the process of designing, delivering, and managing IT services to meet business needs. ITSM focuses on providing reliable and efficient IT services."
+            },
+            {
+                "id": "r_itom_8",
+                "question": "What is Incident Management?",
+                "hint": "Resolving IT disruptions quickly to restore normal service.",
+                "difficulty": "MODERATE",
+                "answer": "Incident management is the process of identifying, analyzing, and resolving IT service disruptions as quickly as possible to restore normal operations."
+            },
+            {
+                "id": "r_itom_9",
+                "question": "What is Problem Management?",
+                "hint": "Finding root causes of recurring incidents and preventing them.",
+                "difficulty": "MODERATE",
+                "answer": "Problem management involves identifying the root causes of recurring IT incidents and implementing solutions to prevent future occurrences."
+            },
+            {
+                "id": "r_itom_10",
+                "question": "What is Change Management in IT Operations?",
+                "hint": "Structured handling of IT changes to reduce risk and disruption.",
+                "difficulty": "MODERATE",
+                "answer": "Change management refers to the structured process of managing modifications to IT systems, applications, or infrastructure to minimize risks and disruptions."
+            },
+            {
+                "id": "r_itom_11",
+                "question": "What is IT Automation?",
+                "hint": "Using tools and scripts to automate repetitive IT tasks.",
+                "difficulty": "MODERATE",
+                "answer": "IT automation refers to using software tools and scripts to automate repetitive IT tasks such as system monitoring, backups, and deployments."
+            },
+            {
+                "id": "r_itom_12",
+                "question": "What is IT Asset Management?",
+                "hint": "Tracking and managing hardware and software through their lifecycle.",
+                "difficulty": "MODERATE",
+                "answer": "IT asset management involves tracking and managing hardware and software assets throughout their lifecycle within an organization."
+            },
+            {
+                "id": "r_itom_13",
+                "question": "What is Capacity Management?",
+                "hint": "Planning resources to handle current and future workloads.",
+                "difficulty": "MODERATE",
+                "answer": "Capacity management involves planning and monitoring IT resources to ensure systems can handle current and future workloads effectively."
+            },
+            {
+                "id": "r_itom_14",
+                "question": "What is IT Security Management?",
+                "hint": "Protecting systems, networks, and data from threats and unauthorized access.",
+                "difficulty": "MODERATE",
+                "answer": "IT security management focuses on protecting IT systems, networks, and data from cyber threats and unauthorized access."
+            },
+            {
+                "id": "r_itom_15",
+                "question": "What is Disaster Recovery?",
+                "hint": "Restoring systems and data after major failures or disasters.",
+                "difficulty": "ADVANCED",
+                "answer": "Disaster recovery is the process of restoring IT systems and data after major failures such as cyberattacks, hardware failures, or natural disasters."
+            },
+            {
+                "id": "r_itom_16",
+                "question": "What is Business Continuity in IT Operations?",
+                "hint": "Keeping critical IT systems operational during disruptions.",
+                "difficulty": "ADVANCED",
+                "answer": "Business continuity refers to ensuring that critical IT systems remain operational during unexpected disruptions."
+            },
+            {
+                "id": "r_itom_17",
+                "question": "What is Network Operations?",
+                "hint": "Managing network infrastructure for reliable communication and transfer.",
+                "difficulty": "ADVANCED",
+                "answer": "Network operations involve managing and maintaining network infrastructure to ensure reliable communication and data transfer."
+            },
+            {
+                "id": "r_itom_18",
+                "question": "What is IT Operations Analytics?",
+                "hint": "Analyzing performance data to detect issues and improve efficiency.",
+                "difficulty": "ADVANCED",
+                "answer": "IT operations analytics is the process of analyzing IT performance data to detect issues, identify trends, and improve system efficiency."
+            },
+            {
+                "id": "r_itom_19",
+                "question": "What is IT Governance?",
+                "hint": "Framework for managing IT resources aligned with business goals.",
+                "difficulty": "ADVANCED",
+                "answer": "IT governance refers to the framework used to manage and control IT resources to align technology with business goals."
+            },
+            {
+                "id": "r_itom_20",
+                "question": "What skills are required for an IT Operations Manager?",
+                "hint": "Infrastructure, leadership, troubleshooting, security, and ITSM knowledge.",
+                "difficulty": "ADVANCED",
+                "answer": "An IT operations manager requires several important skills, including IT infrastructure and system management knowledge, leadership and team management skills, problem-solving and troubleshooting abilities, understanding of cybersecurity and IT policies, and knowledge of IT service management frameworks."
+            }
+        ],
+        "Operation Engineering": [
+            {
+                "id": "r_oe_1",
+                "question": "Who is an Operations Engineer?",
+                "hint": "Professional ensuring systems, processes, and infrastructure run efficiently and reliably.",
+                "difficulty": "BASIC",
+                "answer": "An Operations Engineer is a professional responsible for ensuring that systems, processes, and technical infrastructure operate efficiently and reliably within an organization. They monitor system performance, troubleshoot issues, and optimize operational processes to maintain smooth operations. Operations engineers often work with IT teams, development teams, and infrastructure systems to ensure that services remain available and perform well."
+            },
+            {
+                "id": "r_oe_2",
+                "question": "What are the responsibilities of an Operations Engineer?",
+                "hint": "Monitoring, troubleshooting, optimizing workflows, maintaining infrastructure, and collaborating across teams.",
+                "difficulty": "BASIC",
+                "answer": "Operations engineers perform several tasks related to system management and operational efficiency. Their responsibilities include monitoring system performance and reliability, troubleshooting technical issues and system failures, improving operational processes and workflows, maintaining system infrastructure and servers, and collaborating with development and IT teams. These responsibilities help organizations maintain stable and efficient operations."
+            },
+            {
+                "id": "r_oe_3",
+                "question": "Why is the role of an Operations Engineer important?",
+                "hint": "Reduces downtime and improves reliability of critical systems.",
+                "difficulty": "BASIC",
+                "answer": "The role of an operations engineer is important because organizations rely on complex systems and infrastructure that must operate without interruption. Operations engineers ensure that these systems run smoothly and efficiently. By monitoring performance and resolving issues quickly, they help reduce downtime and improve overall system reliability."
+            },
+            {
+                "id": "r_oe_4",
+                "question": "What is Operations Engineering?",
+                "hint": "Managing and optimizing systems, infrastructure, and processes for reliable operations.",
+                "difficulty": "BASIC",
+                "answer": "Operations engineering refers to the process of managing and optimizing technical systems, processes, and infrastructure to ensure efficient and reliable operations. It focuses on system performance, maintenance, and continuous improvement."
+            },
+            {
+                "id": "r_oe_5",
+                "question": "What is System Monitoring?",
+                "hint": "Tracking performance, health, and availability with monitoring tools.",
+                "difficulty": "BASIC",
+                "answer": "System monitoring is the process of tracking system performance, availability, and health using monitoring tools. It helps identify potential issues before they affect operations."
+            },
+            {
+                "id": "r_oe_6",
+                "question": "What is Incident Management?",
+                "hint": "Detecting, responding to, and resolving system failures quickly.",
+                "difficulty": "BASIC",
+                "answer": "Incident management is the process of detecting, responding to, and resolving operational issues or system failures as quickly as possible."
+            },
+            {
+                "id": "r_oe_7",
+                "question": "What is Infrastructure Management?",
+                "hint": "Managing servers, networks, storage, and technical resources.",
+                "difficulty": "BASIC",
+                "answer": "Infrastructure management involves maintaining and managing servers, networks, storage systems, and other technical resources used by an organization."
+            },
+            {
+                "id": "r_oe_8",
+                "question": "What is Performance Optimization?",
+                "hint": "Improving efficiency by identifying bottlenecks and optimizing resources.",
+                "difficulty": "MODERATE",
+                "answer": "Performance optimization refers to improving system efficiency and response time by identifying bottlenecks and optimizing system resources."
+            },
+            {
+                "id": "r_oe_9",
+                "question": "What is Automation in Operations Engineering?",
+                "hint": "Using scripts and tools to automate repetitive operational tasks.",
+                "difficulty": "MODERATE",
+                "answer": "Automation involves using scripts or software tools to automate repetitive operational tasks such as deployments, monitoring, and backups."
+            },
+            {
+                "id": "r_oe_10",
+                "question": "What is Capacity Planning?",
+                "hint": "Predicting future resource needs based on current usage.",
+                "difficulty": "MODERATE",
+                "answer": "Capacity planning is the process of analyzing current system resources and predicting future requirements to ensure that systems can handle increasing workloads."
+            },
+            {
+                "id": "r_oe_11",
+                "question": "What is Root Cause Analysis?",
+                "hint": "Finding the underlying cause of a problem to prevent recurrence.",
+                "difficulty": "MODERATE",
+                "answer": "Root cause analysis is the process of identifying the underlying cause of a problem to prevent it from happening again."
+            },
+            {
+                "id": "r_oe_12",
+                "question": "What is Deployment Management?",
+                "hint": "Releasing updates into production with minimal disruption.",
+                "difficulty": "MODERATE",
+                "answer": "Deployment management involves releasing software updates or applications into production environments while ensuring minimal disruption to services."
+            },
+            {
+                "id": "r_oe_13",
+                "question": "What is System Reliability?",
+                "hint": "Ability of systems to run consistently without failure or downtime.",
+                "difficulty": "MODERATE",
+                "answer": "System reliability refers to the ability of systems and infrastructure to operate consistently without failures or downtime."
+            },
+            {
+                "id": "r_oe_14",
+                "question": "What is Configuration Management?",
+                "hint": "Maintaining system settings and versions for consistency and stability.",
+                "difficulty": "MODERATE",
+                "answer": "Configuration management involves maintaining system settings, configurations, and software versions to ensure system stability and consistency."
+            },
+            {
+                "id": "r_oe_15",
+                "question": "What is DevOps in Operations Engineering?",
+                "hint": "Combining development and operations to improve delivery and automation.",
+                "difficulty": "ADVANCED",
+                "answer": "DevOps is a methodology that integrates development and operations teams to improve collaboration, automate workflows, and accelerate software delivery."
+            },
+            {
+                "id": "r_oe_16",
+                "question": "What is High Availability?",
+                "hint": "Designing systems to stay operational even when failures occur.",
+                "difficulty": "ADVANCED",
+                "answer": "High availability refers to designing systems so that they remain operational even when failures occur. It often involves redundancy and load balancing."
+            },
+            {
+                "id": "r_oe_17",
+                "question": "What is Disaster Recovery?",
+                "hint": "Restoring systems and data after major failures or disasters.",
+                "difficulty": "ADVANCED",
+                "answer": "Disaster recovery is the process of restoring systems and data after major failures such as hardware crashes, cyberattacks, or natural disasters."
+            },
+            {
+                "id": "r_oe_18",
+                "question": "What is Operational Analytics?",
+                "hint": "Analyzing operational data to improve performance and decisions.",
+                "difficulty": "ADVANCED",
+                "answer": "Operational analytics involves analyzing system and operational data to identify patterns, optimize performance, and improve decision-making."
+            },
+            {
+                "id": "r_oe_19",
+                "question": "What tools are commonly used by Operations Engineers?",
+                "hint": "Monitoring, automation, containers, cloud, and version control tools.",
+                "difficulty": "ADVANCED",
+                "answer": "Common tools used by operations engineers include monitoring tools such as Prometheus and Nagios, automation tools such as Ansible and Terraform, container platforms such as Docker and Kubernetes, cloud platforms such as AWS and Azure, and version control tools such as Git. These tools help manage systems and infrastructure effectively."
+            },
+            {
+                "id": "r_oe_20",
+                "question": "What skills are required for an Operations Engineer?",
+                "hint": "System admin, troubleshooting, automation, networking, cloud, and communication.",
+                "difficulty": "ADVANCED",
+                "answer": "An operations engineer requires several important skills, including system administration and infrastructure management, problem-solving and troubleshooting skills, knowledge of automation and scripting, understanding of networking and cloud platforms, and strong analytical and communication skills."
+            }
+        ],
+        "System Administrator": [
+            {
+                "id": "r_sa_1",
+                "question": "Who is a System Administrator?",
+                "hint": "Professional managing systems, servers, networks, and user support.",
+                "difficulty": "BASIC",
+                "answer": "A System Administrator (SysAdmin) is a professional responsible for managing, maintaining, and monitoring an organization's computer systems, servers, and networks. Their main role is to ensure that IT infrastructure runs smoothly and securely. System administrators install software, manage user accounts, perform system updates, and troubleshoot technical issues. They play an important role in maintaining system availability and supporting users within an organization."
+            },
+            {
+                "id": "r_sa_2",
+                "question": "What are the responsibilities of a System Administrator?",
+                "hint": "Installing software, managing servers, monitoring systems, controlling access, and troubleshooting.",
+                "difficulty": "BASIC",
+                "answer": "A system administrator performs several tasks related to system management and maintenance. Their responsibilities include installing and configuring operating systems and software, managing servers and network systems, monitoring system performance and security, managing user accounts and permissions, and troubleshooting hardware and software issues. These responsibilities help ensure reliable IT operations."
+            },
+            {
+                "id": "r_sa_3",
+                "question": "Why is the role of a System Administrator important?",
+                "hint": "Keeps IT systems available, secure, and productive for daily business operations.",
+                "difficulty": "BASIC",
+                "answer": "The role of a system administrator is important because organizations rely on IT systems for daily operations, communication, and data management. System administrators ensure that these systems are available, secure, and functioning properly. By managing infrastructure and resolving technical problems quickly, they help prevent system downtime and maintain productivity."
+            },
+            {
+                "id": "r_sa_4",
+                "question": "What is System Administration?",
+                "hint": "Managing and maintaining systems, servers, and infrastructure securely and efficiently.",
+                "difficulty": "BASIC",
+                "answer": "System administration refers to the process of managing and maintaining computer systems, servers, and IT infrastructure to ensure they operate efficiently and securely."
+            },
+            {
+                "id": "r_sa_5",
+                "question": "What is a Server?",
+                "hint": "A system that provides services, resources, or data to clients over a network.",
+                "difficulty": "BASIC",
+                "answer": "A server is a computer or system that provides services, resources, or data to other computers (clients) over a network. Servers may host websites, applications, databases, or file storage."
+            },
+            {
+                "id": "r_sa_6",
+                "question": "What is an Operating System?",
+                "hint": "Software managing hardware and providing a platform for applications.",
+                "difficulty": "BASIC",
+                "answer": "An operating system is software that manages computer hardware and software resources and provides a platform for running applications. Examples include Windows Server, Linux, and macOS."
+            },
+            {
+                "id": "r_sa_7",
+                "question": "What is User Account Management?",
+                "hint": "Creating, modifying, deleting accounts and controlling access to resources.",
+                "difficulty": "BASIC",
+                "answer": "User account management involves creating, modifying, and deleting user accounts while controlling their access to systems and resources."
+            },
+            {
+                "id": "r_sa_8",
+                "question": "What is Network Administration?",
+                "hint": "Managing routers, switches, and communication infrastructure for reliable connectivity.",
+                "difficulty": "MODERATE",
+                "answer": "Network administration involves managing and maintaining network infrastructure such as routers, switches, and communication systems to ensure reliable connectivity."
+            },
+            {
+                "id": "r_sa_9",
+                "question": "What is System Monitoring?",
+                "hint": "Tracking performance, resource usage, and health to detect issues early.",
+                "difficulty": "MODERATE",
+                "answer": "System monitoring is the process of tracking system performance, resource usage, and system health to detect issues or failures early."
+            },
+            {
+                "id": "r_sa_10",
+                "question": "What is Backup and Recovery?",
+                "hint": "Creating data copies and restoring them after failures or loss.",
+                "difficulty": "MODERATE",
+                "answer": "Backup and recovery refer to creating copies of important data and restoring them in case of data loss, system failure, or cyberattacks."
+            },
+            {
+                "id": "r_sa_11",
+                "question": "What is Virtualization?",
+                "hint": "Running multiple virtual machines on a single physical server.",
+                "difficulty": "MODERATE",
+                "answer": "Virtualization is a technology that allows multiple virtual machines to run on a single physical server, improving resource utilization and flexibility."
+            },
+            {
+                "id": "r_sa_12",
+                "question": "What is Patch Management?",
+                "hint": "Installing updates and security fixes to improve systems and close vulnerabilities.",
+                "difficulty": "MODERATE",
+                "answer": "Patch management is the process of installing updates and security patches to operating systems and software to fix vulnerabilities and improve performance."
+            },
+            {
+                "id": "r_sa_13",
+                "question": "What is Access Control?",
+                "hint": "Granting or restricting resource access based on permissions and policy.",
+                "difficulty": "MODERATE",
+                "answer": "Access control refers to restricting or granting user access to system resources based on permissions and security policies."
+            },
+            {
+                "id": "r_sa_14",
+                "question": "What is System Security?",
+                "hint": "Protecting systems and networks from unauthorized access and cyber threats.",
+                "difficulty": "MODERATE",
+                "answer": "System security involves protecting computer systems and networks from unauthorized access, malware, and cyber threats."
+            },
+            {
+                "id": "r_sa_15",
+                "question": "What is Disaster Recovery in System Administration?",
+                "hint": "Restoring systems, servers, and data after major failures.",
+                "difficulty": "ADVANCED",
+                "answer": "Disaster recovery is the process of restoring systems, servers, and data after major failures such as cyberattacks, hardware failures, or natural disasters."
+            },
+            {
+                "id": "r_sa_16",
+                "question": "What is High Availability?",
+                "hint": "Designing systems to remain operational even if components fail.",
+                "difficulty": "ADVANCED",
+                "answer": "High availability refers to designing systems so that they remain operational even if certain components fail. This is often achieved using redundancy and failover mechanisms."
+            },
+            {
+                "id": "r_sa_17",
+                "question": "What is Load Balancing?",
+                "hint": "Distributing traffic across servers to improve reliability and performance.",
+                "difficulty": "ADVANCED",
+                "answer": "Load balancing is the process of distributing network traffic across multiple servers to improve system performance and reliability."
+            },
+            {
+                "id": "r_sa_18",
+                "question": "What is Configuration Management?",
+                "hint": "Maintaining consistent system configurations across servers and environments.",
+                "difficulty": "ADVANCED",
+                "answer": "Configuration management involves maintaining system configurations and ensuring consistency across servers and systems."
+            },
+            {
+                "id": "r_sa_19",
+                "question": "What tools are commonly used by System Administrators?",
+                "hint": "OS, scripting, monitoring, virtualization, and configuration tools.",
+                "difficulty": "ADVANCED",
+                "answer": "Common tools used by system administrators include Linux or Windows Server, PowerShell or Bash scripting, monitoring tools such as Nagios and Zabbix, virtualization tools such as VMware and VirtualBox, and configuration tools such as Ansible and Puppet. These tools help manage systems effectively."
+            },
+            {
+                "id": "r_sa_20",
+                "question": "What skills are required for a System Administrator?",
+                "hint": "Operating systems, networking, troubleshooting, security, and scripting knowledge.",
+                "difficulty": "ADVANCED",
+                "answer": "A system administrator requires several important skills, including knowledge of operating systems such as Linux and Windows, networking and server management skills, troubleshooting and problem-solving abilities, understanding of security practices, and automation and scripting knowledge."
+            }
+        ],
+        "Database Administrator": [
+            {
+                "id": "r_dba_1",
+                "question": "Who is a Database Administrator?",
+                "hint": "Professional managing, maintaining, securing, and optimizing databases.",
+                "difficulty": "BASIC",
+                "answer": "A Database Administrator (DBA) is a professional responsible for managing, maintaining, and securing an organization?s databases. They ensure that databases are available, efficient, and protected from unauthorized access. DBAs monitor database performance, perform backups, and troubleshoot database-related issues. Their role is important in maintaining data integrity and ensuring that applications can access data reliably."
+            },
+            {
+                "id": "r_dba_2",
+                "question": "What are the responsibilities of a Database Administrator?",
+                "hint": "Installing DBMS, monitoring performance, handling backups, ensuring integrity, and optimizing queries.",
+                "difficulty": "BASIC",
+                "answer": "A database administrator performs several tasks related to database management. Their responsibilities include installing and configuring database management systems, monitoring database performance and security, managing database backups and recovery processes, ensuring data integrity and availability, and optimizing database queries and performance. These responsibilities help organizations manage data efficiently."
+            },
+            {
+                "id": "r_dba_3",
+                "question": "Why is the role of a Database Administrator important?",
+                "hint": "Protects data, prevents loss, and keeps database systems fast and accessible.",
+                "difficulty": "BASIC",
+                "answer": "The role of a database administrator is important because organizations rely on databases to store and manage critical information. DBAs ensure that data is secure, accurate, and easily accessible. They also help prevent data loss and improve database performance to support business operations."
+            },
+            {
+                "id": "r_dba_4",
+                "question": "What is a Database?",
+                "hint": "Structured electronic collection of data for easy access and analysis.",
+                "difficulty": "BASIC",
+                "answer": "A database is a structured collection of data that is stored and managed electronically so it can be easily accessed, updated, and analyzed."
+            },
+            {
+                "id": "r_dba_5",
+                "question": "What is a Database Management System (DBMS)?",
+                "hint": "Software used to create, manage, and manipulate databases.",
+                "difficulty": "BASIC",
+                "answer": "A Database Management System is software that allows users to create, manage, and manipulate databases. Examples include MySQL, Oracle, SQL Server, and PostgreSQL."
+            },
+            {
+                "id": "r_dba_6",
+                "question": "What is SQL?",
+                "hint": "Language used to query, update, and manage relational databases.",
+                "difficulty": "BASIC",
+                "answer": "SQL (Structured Query Language) is a programming language used to manage and retrieve data from relational databases. It allows users to perform operations such as querying, updating, and deleting data."
+            },
+            {
+                "id": "r_dba_7",
+                "question": "What is Data Integrity?",
+                "hint": "Accuracy, consistency, and reliability of data throughout its lifecycle.",
+                "difficulty": "BASIC",
+                "answer": "Data integrity refers to maintaining the accuracy, consistency, and reliability of data within a database throughout its lifecycle."
+            },
+            {
+                "id": "r_dba_8",
+                "question": "What is Database Backup?",
+                "hint": "Creating copies of database data to prevent permanent data loss.",
+                "difficulty": "MODERATE",
+                "answer": "Database backup is the process of creating copies of database data to prevent data loss in case of system failures or disasters."
+            },
+            {
+                "id": "r_dba_9",
+                "question": "What is Database Recovery?",
+                "hint": "Restoring a database after failure, corruption, or unexpected issues.",
+                "difficulty": "MODERATE",
+                "answer": "Database recovery is the process of restoring a database to its previous state after a system failure, data corruption, or other unexpected issues."
+            },
+            {
+                "id": "r_dba_10",
+                "question": "What is Database Indexing?",
+                "hint": "Using indexes to speed up data retrieval operations.",
+                "difficulty": "MODERATE",
+                "answer": "Indexing is a technique used to improve the speed of data retrieval operations in a database by creating indexes on columns."
+            },
+            {
+                "id": "r_dba_11",
+                "question": "What is Normalization?",
+                "hint": "Organizing tables to reduce redundancy and improve consistency.",
+                "difficulty": "MODERATE",
+                "answer": "Normalization is the process of organizing database tables to reduce data redundancy and improve data consistency."
+            },
+            {
+                "id": "r_dba_12",
+                "question": "What is a Primary Key?",
+                "hint": "Unique identifier for each row in a database table.",
+                "difficulty": "MODERATE",
+                "answer": "A primary key is a unique identifier for each record in a database table. It ensures that every row in a table can be uniquely identified."
+            },
+            {
+                "id": "r_dba_13",
+                "question": "What is a Foreign Key?",
+                "hint": "Field that links one table to another table's primary key.",
+                "difficulty": "MODERATE",
+                "answer": "A foreign key is a field in one table that refers to the primary key in another table, creating a relationship between the tables."
+            },
+            {
+                "id": "r_dba_14",
+                "question": "What is Query Optimization?",
+                "hint": "Improving query performance for faster and more efficient retrieval.",
+                "difficulty": "MODERATE",
+                "answer": "Query optimization is the process of improving the performance of database queries so that data can be retrieved more efficiently."
+            },
+            {
+                "id": "r_dba_15",
+                "question": "What is Database Replication?",
+                "hint": "Copying and maintaining data across multiple servers for reliability.",
+                "difficulty": "ADVANCED",
+                "answer": "Database replication is the process of copying and maintaining database data across multiple servers to improve availability and reliability."
+            },
+            {
+                "id": "r_dba_16",
+                "question": "What is Database Clustering?",
+                "hint": "Connecting multiple database servers to improve performance and fault tolerance.",
+                "difficulty": "ADVANCED",
+                "answer": "Database clustering involves connecting multiple database servers to work together as a single system to improve performance and fault tolerance."
+            },
+            {
+                "id": "r_dba_17",
+                "question": "What is Database Security?",
+                "hint": "Protecting databases with authentication, encryption, and access control.",
+                "difficulty": "ADVANCED",
+                "answer": "Database security refers to protecting databases from unauthorized access, data breaches, and cyber threats through authentication, encryption, and access control."
+            },
+            {
+                "id": "r_dba_18",
+                "question": "What is High Availability in Databases?",
+                "hint": "Keeping databases accessible even when hardware or software failures occur.",
+                "difficulty": "ADVANCED",
+                "answer": "High availability ensures that databases remain accessible and operational even when hardware or software failures occur."
+            },
+            {
+                "id": "r_dba_19",
+                "question": "What tools are commonly used by Database Administrators?",
+                "hint": "Popular DBMS platforms used to manage and maintain databases.",
+                "difficulty": "ADVANCED",
+                "answer": "Common tools used by DBAs include MySQL, Oracle Database, Microsoft SQL Server, PostgreSQL, and MongoDB. These tools help manage and maintain databases effectively."
+            },
+            {
+                "id": "r_dba_20",
+                "question": "What skills are required for a Database Administrator?",
+                "hint": "SQL, optimization, backup, security, and analytical problem-solving.",
+                "difficulty": "ADVANCED",
+                "answer": "A database administrator requires several important skills, including strong knowledge of SQL and database systems, database performance tuning and optimization, backup and recovery management, database security practices, and problem-solving and analytical skills."
+            }
+        ],
+        "Cloud Architect": [
+            {
+                "id": "r_ca_1",
+                "question": "Who is a Cloud Architect?",
+                "hint": "Professional designing and overseeing scalable, secure cloud systems and infrastructure.",
+                "difficulty": "BASIC",
+                "answer": "A Cloud Architect is a professional responsible for designing, managing, and overseeing cloud computing systems and infrastructure for organizations. They create cloud architecture solutions that support applications, storage, networking, and security in cloud environments. Cloud architects ensure that cloud systems are scalable, reliable, and secure while meeting business requirements."
+            },
+            {
+                "id": "r_ca_2",
+                "question": "What are the responsibilities of a Cloud Architect?",
+                "hint": "Designing infrastructure, selecting services, ensuring security, optimizing cost, and collaborating across teams.",
+                "difficulty": "BASIC",
+                "answer": "A cloud architect performs several tasks related to cloud system design and management. Their responsibilities include designing cloud infrastructure and architecture, selecting appropriate cloud services and platforms, ensuring cloud security and compliance, optimizing cloud performance and cost efficiency, and collaborating with development and operations teams. These responsibilities help organizations build reliable cloud solutions."
+            },
+            {
+                "id": "r_ca_3",
+                "question": "Why is the role of a Cloud Architect important?",
+                "hint": "Helps organizations scale, secure systems, reduce costs, and maintain availability.",
+                "difficulty": "BASIC",
+                "answer": "The role of a cloud architect is important because organizations increasingly rely on cloud platforms to host applications, store data, and run services. Cloud architects ensure that cloud environments are designed efficiently and securely. Their work helps organizations scale their systems, reduce infrastructure costs, and maintain high availability."
+            },
+            {
+                "id": "r_ca_4",
+                "question": "What is Cloud Computing?",
+                "hint": "Delivering servers, storage, databases, networking, and software over the internet.",
+                "difficulty": "BASIC",
+                "answer": "Cloud computing is the delivery of computing services such as servers, storage, databases, networking, and software over the internet instead of using local infrastructure."
+            },
+            {
+                "id": "r_ca_5",
+                "question": "What are the main types of Cloud Deployment Models?",
+                "hint": "Public, private, hybrid, and community cloud models.",
+                "difficulty": "BASIC",
+                "answer": "Cloud deployment models describe how cloud services are deployed and accessed. The main models include Public Cloud, where services are provided over the internet by cloud providers; Private Cloud, where cloud infrastructure is dedicated to a single organization; Hybrid Cloud, which combines public and private cloud environments; and Community Cloud, which is shared cloud infrastructure for specific organizations."
+            },
+            {
+                "id": "r_ca_6",
+                "question": "What are the Cloud Service Models?",
+                "hint": "IaaS, PaaS, and SaaS service categories.",
+                "difficulty": "BASIC",
+                "answer": "Cloud service models define the types of services provided by cloud platforms. Infrastructure as a Service (IaaS) provides virtual machines and infrastructure, Platform as a Service (PaaS) provides a platform for application development, and Software as a Service (SaaS) provides software applications over the internet."
+            },
+            {
+                "id": "r_ca_7",
+                "question": "What is Scalability in Cloud Architecture?",
+                "hint": "Ability to increase or decrease resources based on workload demand.",
+                "difficulty": "BASIC",
+                "answer": "Scalability refers to the ability of cloud systems to increase or decrease resources depending on workload demand. This allows applications to handle increased traffic efficiently."
+            },
+            {
+                "id": "r_ca_8",
+                "question": "What is High Availability in Cloud Systems?",
+                "hint": "Designing services to remain operational during failures or disruptions.",
+                "difficulty": "MODERATE",
+                "answer": "High availability refers to designing systems so that services remain operational even during failures or disruptions. It often involves redundancy and load balancing."
+            },
+            {
+                "id": "r_ca_9",
+                "question": "What is Load Balancing?",
+                "hint": "Distributing traffic across multiple servers for better performance and stability.",
+                "difficulty": "MODERATE",
+                "answer": "Load balancing is the process of distributing incoming network traffic across multiple servers to ensure optimal performance and prevent system overload."
+            },
+            {
+                "id": "r_ca_10",
+                "question": "What is Virtualization?",
+                "hint": "Creating virtual hardware resources so multiple VMs can share one system.",
+                "difficulty": "MODERATE",
+                "answer": "Virtualization is a technology that creates virtual versions of hardware resources such as servers and storage so that multiple virtual machines can run on a single physical system."
+            },
+            {
+                "id": "r_ca_11",
+                "question": "What is Cloud Storage?",
+                "hint": "Storing data on remote internet-accessible servers instead of local devices.",
+                "difficulty": "MODERATE",
+                "answer": "Cloud storage allows data to be stored on remote servers that can be accessed through the internet instead of local storage devices."
+            },
+            {
+                "id": "r_ca_12",
+                "question": "What is Cloud Networking?",
+                "hint": "Managing virtual networks, routing, and security controls in the cloud.",
+                "difficulty": "MODERATE",
+                "answer": "Cloud networking involves managing network infrastructure within cloud environments, including virtual networks, routing, and security controls."
+            },
+            {
+                "id": "r_ca_13",
+                "question": "What is Multi-Tenant Architecture?",
+                "hint": "Shared infrastructure with secure separation between customers' data.",
+                "difficulty": "MODERATE",
+                "answer": "Multi-tenant architecture is a system design where multiple customers share the same cloud infrastructure while maintaining secure separation of their data."
+            },
+            {
+                "id": "r_ca_14",
+                "question": "What is Elasticity in Cloud Computing?",
+                "hint": "Automatic scaling up or down based on workload requirements.",
+                "difficulty": "MODERATE",
+                "answer": "Elasticity refers to the automatic adjustment of cloud resources based on workload requirements, allowing systems to scale up or down as needed."
+            },
+            {
+                "id": "r_ca_15",
+                "question": "What is Microservices Architecture in Cloud?",
+                "hint": "Building applications as small independent services communicating through APIs.",
+                "difficulty": "ADVANCED",
+                "answer": "Microservices architecture is an approach where applications are built as small, independent services that communicate with each other through APIs."
+            },
+            {
+                "id": "r_ca_16",
+                "question": "What is Serverless Computing?",
+                "hint": "Running applications without managing servers directly.",
+                "difficulty": "ADVANCED",
+                "answer": "Serverless computing is a cloud model where developers can run applications without managing server infrastructure, as cloud providers automatically handle scaling and resource management."
+            },
+            {
+                "id": "r_ca_17",
+                "question": "What is Disaster Recovery in Cloud?",
+                "hint": "Restoring cloud systems and data after unexpected failures.",
+                "difficulty": "ADVANCED",
+                "answer": "Disaster recovery refers to restoring cloud systems and data after unexpected failures such as cyberattacks, hardware failures, or natural disasters."
+            },
+            {
+                "id": "r_ca_18",
+                "question": "What is Cloud Security?",
+                "hint": "Protecting cloud systems and data with encryption, authentication, and policies.",
+                "difficulty": "ADVANCED",
+                "answer": "Cloud security involves protecting cloud systems, data, and applications from unauthorized access and cyber threats through encryption, authentication, and security policies."
+            },
+            {
+                "id": "r_ca_19",
+                "question": "What cloud platforms are commonly used?",
+                "hint": "AWS, Azure, and GCP are the major cloud platforms.",
+                "difficulty": "ADVANCED",
+                "answer": "Common cloud platforms include Amazon Web Services (AWS), Microsoft Azure, and Google Cloud Platform (GCP). These platforms provide various cloud services for application development and infrastructure management."
+            },
+            {
+                "id": "r_ca_20",
+                "question": "What skills are required for a Cloud Architect?",
+                "hint": "Cloud platforms, system design, networking, security, automation, and problem-solving.",
+                "difficulty": "ADVANCED",
+                "answer": "A cloud architect requires several important skills, including knowledge of cloud platforms and services, system architecture and infrastructure design, networking and security expertise, automation and DevOps practices, and problem-solving and analytical skills."
+            }
+        ],
+        "Technical Support Specialist": [
+            {
+                "id": "r_tss_1",
+                "question": "Who is a Technical Support Specialist?",
+                "hint": "Professional helping users resolve technical issues with systems, software, networks, and devices.",
+                "difficulty": "BASIC",
+                "answer": "A Technical Support Specialist is a professional responsible for assisting users with technical issues related to computer systems, software applications, networks, or hardware devices. They help diagnose problems, provide solutions, and ensure that systems operate efficiently. Technical support specialists often communicate with users through phone, email, chat, or remote support tools to resolve issues."
+            },
+            {
+                "id": "r_tss_2",
+                "question": "What are the responsibilities of a Technical Support Specialist?",
+                "hint": "Diagnosing issues, guiding users, installing systems, documenting solutions, and maintaining reliability.",
+                "difficulty": "BASIC",
+                "answer": "A technical support specialist performs several tasks related to troubleshooting and user assistance. Their responsibilities include diagnosing and resolving technical issues, providing guidance to users on system usage, installing and configuring software and hardware, documenting technical problems and solutions, and maintaining system performance and reliability. These responsibilities help ensure smooth technology operations."
+            },
+            {
+                "id": "r_tss_3",
+                "question": "Why is the role of a Technical Support Specialist important?",
+                "hint": "Reduces downtime and keeps business technology functioning efficiently.",
+                "difficulty": "BASIC",
+                "answer": "The role of a technical support specialist is important because organizations rely on technology systems to perform daily operations. When technical problems occur, productivity can be affected. Technical support specialists help resolve these issues quickly, ensuring minimal downtime and efficient system performance."
+            },
+            {
+                "id": "r_tss_4",
+                "question": "What is Technical Support?",
+                "hint": "Services that help users resolve technical issues with systems, software, and hardware.",
+                "difficulty": "BASIC",
+                "answer": "Technical support refers to services provided to assist users in resolving technical problems related to computer systems, software applications, or hardware devices."
+            },
+            {
+                "id": "r_tss_5",
+                "question": "What is Troubleshooting?",
+                "hint": "Identifying, analyzing, and resolving technical problems in systems and devices.",
+                "difficulty": "BASIC",
+                "answer": "Troubleshooting is the process of identifying, analyzing, and resolving technical problems in systems, networks, or devices."
+            },
+            {
+                "id": "r_tss_6",
+                "question": "What is a Help Desk?",
+                "hint": "First point of contact for users facing technical issues.",
+                "difficulty": "BASIC",
+                "answer": "A help desk is a support service that provides assistance to users experiencing technical issues with IT systems or software. It acts as the first point of contact for technical support."
+            },
+            {
+                "id": "r_tss_7",
+                "question": "What is Remote Support?",
+                "hint": "Accessing a user's system remotely to diagnose and resolve issues.",
+                "difficulty": "BASIC",
+                "answer": "Remote support is a method where technical support specialists access a user?s system remotely to diagnose and fix issues without being physically present."
+            },
+            {
+                "id": "r_tss_8",
+                "question": "What is a Ticketing System?",
+                "hint": "Tool for tracking and managing support requests using ticket numbers.",
+                "difficulty": "MODERATE",
+                "answer": "A ticketing system is a software tool used to track and manage technical support requests submitted by users. Each issue is assigned a ticket number for tracking and resolution."
+            },
+            {
+                "id": "r_tss_9",
+                "question": "What is Level 1 Technical Support?",
+                "hint": "First line support handling basic issues and user guidance.",
+                "difficulty": "MODERATE",
+                "answer": "Level 1 support is the first level of technical assistance that handles basic issues such as password resets, simple troubleshooting, and user guidance."
+            },
+            {
+                "id": "r_tss_10",
+                "question": "What is Level 2 Technical Support?",
+                "hint": "Support for more complex problems requiring deeper technical expertise.",
+                "difficulty": "MODERATE",
+                "answer": "Level 2 support handles more complex technical problems that require deeper technical knowledge or specialized expertise."
+            },
+            {
+                "id": "r_tss_11",
+                "question": "What is Level 3 Technical Support?",
+                "hint": "Highest level support handling advanced system, architecture, and infrastructure issues.",
+                "difficulty": "MODERATE",
+                "answer": "Level 3 support is the highest level of technical support that addresses advanced technical issues related to system architecture, software bugs, or complex infrastructure problems."
+            },
+            {
+                "id": "r_tss_12",
+                "question": "What is System Maintenance?",
+                "hint": "Regular updates, repairs, and optimizations to keep systems efficient.",
+                "difficulty": "MODERATE",
+                "answer": "System maintenance refers to regular updates, repairs, and optimizations performed on computer systems to ensure they operate efficiently."
+            },
+            {
+                "id": "r_tss_13",
+                "question": "What is Network Troubleshooting?",
+                "hint": "Identifying and resolving network connectivity, performance, or configuration issues.",
+                "difficulty": "MODERATE",
+                "answer": "Network troubleshooting involves identifying and resolving problems related to network connectivity, performance, or configuration."
+            },
+            {
+                "id": "r_tss_14",
+                "question": "What is Software Installation?",
+                "hint": "Setting up applications so they can run properly on systems.",
+                "difficulty": "MODERATE",
+                "answer": "Software installation is the process of setting up applications on computer systems so they can function properly."
+            },
+            {
+                "id": "r_tss_15",
+                "question": "What is Incident Management?",
+                "hint": "Detecting, recording, and resolving incidents disrupting normal operations.",
+                "difficulty": "ADVANCED",
+                "answer": "Incident management is the process of detecting, recording, and resolving IT incidents that disrupt normal system operations."
+            },
+            {
+                "id": "r_tss_16",
+                "question": "What is Root Cause Analysis?",
+                "hint": "Finding the underlying cause of a technical issue for permanent resolution.",
+                "difficulty": "ADVANCED",
+                "answer": "Root cause analysis is the process of identifying the underlying cause of a technical problem so it can be permanently resolved."
+            },
+            {
+                "id": "r_tss_17",
+                "question": "What is Knowledge Base in Technical Support?",
+                "hint": "Centralized documentation and solutions for resolving common issues quickly.",
+                "difficulty": "ADVANCED",
+                "answer": "A knowledge base is a centralized collection of technical documentation, guides, and solutions used to resolve common issues quickly."
+            },
+            {
+                "id": "r_tss_18",
+                "question": "What is Service Level Agreement (SLA)?",
+                "hint": "Agreement defining expected service quality, response times, and resolution times.",
+                "difficulty": "ADVANCED",
+                "answer": "A Service Level Agreement is a contract that defines the expected level of service between a service provider and customers, including response and resolution times."
+            },
+            {
+                "id": "r_tss_19",
+                "question": "What tools are commonly used by Technical Support Specialists?",
+                "hint": "Remote access, ticketing, monitoring, and help desk tools.",
+                "difficulty": "ADVANCED",
+                "answer": "Common tools used by technical support specialists include remote access tools such as TeamViewer and AnyDesk, ticketing systems such as Zendesk and ServiceNow, system monitoring tools, and help desk software. These tools help manage support requests efficiently."
+            },
+            {
+                "id": "r_tss_20",
+                "question": "What skills are required for a Technical Support Specialist?",
+                "hint": "Troubleshooting, OS knowledge, communication, networking, analytical thinking, and patience.",
+                "difficulty": "ADVANCED",
+                "answer": "A technical support specialist requires several important skills, including troubleshooting and problem-solving skills, knowledge of operating systems and software, communication and customer service skills, understanding of networking and system configuration, and analytical thinking and patience."
+            }
+        ],
+        "Sales Development Representative": [
+            {
+                "id": "r_sdr_1",
+                "question": "Who is a Sales Development Representative?",
+                "hint": "Professional who identifies prospects, qualifies leads, and initiates the sales process.",
+                "difficulty": "BASIC",
+                "answer": "A Sales Development Representative (SDR) is a professional responsible for identifying potential customers, generating leads, and initiating the sales process for a company?s products or services. SDRs typically focus on prospecting and outreach activities such as emails, calls, and social media communication. Their main goal is to qualify leads and schedule meetings for account executives or sales teams. SDRs help organizations expand their customer base and improve sales opportunities."
+            },
+            {
+                "id": "r_sdr_2",
+                "question": "What are the responsibilities of an SDR?",
+                "hint": "Researching prospects, outreach, qualification, scheduling meetings, and CRM updates.",
+                "difficulty": "BASIC",
+                "answer": "The responsibilities of a Sales Development Representative include identifying and researching potential customers, contacting prospects through calls, emails, and social media, qualifying leads to determine interest and suitability, scheduling meetings or product demonstrations, and maintaining records of sales activities in CRM systems. These responsibilities help sales teams focus on closing deals."
+            },
+            {
+                "id": "r_sdr_3",
+                "question": "Why is the role of an SDR important?",
+                "hint": "Creates a steady pipeline of qualified opportunities for the sales team.",
+                "difficulty": "BASIC",
+                "answer": "The role of an SDR is important because they generate and qualify leads that help sales teams increase revenue. By identifying potential customers and building relationships early in the sales process, SDRs create opportunities for successful sales conversions. Their work helps companies maintain a steady pipeline of potential customers."
+            },
+            {
+                "id": "r_sdr_4",
+                "question": "What is Lead Generation?",
+                "hint": "Identifying and attracting potential customers interested in a product or service.",
+                "difficulty": "BASIC",
+                "answer": "Lead generation is the process of identifying and attracting potential customers who may be interested in a product or service. SDRs often use marketing campaigns, networking, and outreach strategies to generate leads."
+            },
+            {
+                "id": "r_sdr_5",
+                "question": "What is a Sales Lead?",
+                "hint": "Potential customer showing interest in a company?s product or service.",
+                "difficulty": "BASIC",
+                "answer": "A sales lead is a potential customer who has shown interest in a company?s product or service. Leads are evaluated to determine whether they are likely to become paying customers."
+            },
+            {
+                "id": "r_sdr_6",
+                "question": "What is Prospecting?",
+                "hint": "Searching for potential customers and initiating first contact.",
+                "difficulty": "BASIC",
+                "answer": "Prospecting is the process of searching for potential customers and initiating contact with them to introduce a product or service."
+            },
+            {
+                "id": "r_sdr_7",
+                "question": "What is Lead Qualification?",
+                "hint": "Evaluating if a lead fits based on need, budget, authority, and relevance.",
+                "difficulty": "BASIC",
+                "answer": "Lead qualification is the process of evaluating potential customers to determine whether they are suitable for the company?s product or service based on criteria such as budget, need, and authority."
+            },
+            {
+                "id": "r_sdr_8",
+                "question": "What is a Sales Pipeline?",
+                "hint": "Visual view of sales stages from lead generation to closing.",
+                "difficulty": "MODERATE",
+                "answer": "A sales pipeline is a visual representation of the stages in the sales process, from lead generation to closing a deal. It helps sales teams track progress and manage opportunities."
+            },
+            {
+                "id": "r_sdr_9",
+                "question": "What is CRM in Sales?",
+                "hint": "Software used to manage customer interactions, leads, and sales activity.",
+                "difficulty": "MODERATE",
+                "answer": "CRM stands for Customer Relationship Management, which refers to software systems used to manage customer interactions, track leads, and monitor sales activities. Examples include Salesforce and HubSpot."
+            },
+            {
+                "id": "r_sdr_10",
+                "question": "What is Cold Calling?",
+                "hint": "Calling prospects who have not yet shown prior interest.",
+                "difficulty": "MODERATE",
+                "answer": "Cold calling is the practice of contacting potential customers who have not previously expressed interest in a product or service."
+            },
+            {
+                "id": "r_sdr_11",
+                "question": "What is Cold Emailing?",
+                "hint": "Sending outreach emails to prospects with no prior interaction.",
+                "difficulty": "MODERATE",
+                "answer": "Cold emailing involves sending emails to potential customers who have not interacted with the company before to introduce products or services."
+            },
+            {
+                "id": "r_sdr_12",
+                "question": "What is Sales Outreach?",
+                "hint": "Contacting prospects through channels like email, calls, and social media.",
+                "difficulty": "MODERATE",
+                "answer": "Sales outreach refers to the process of contacting potential customers through various channels such as email, phone calls, or social media to build relationships and generate interest."
+            },
+            {
+                "id": "r_sdr_13",
+                "question": "What is B2B Sales?",
+                "hint": "Selling products or services from one business to another business.",
+                "difficulty": "MODERATE",
+                "answer": "B2B (Business-to-Business) sales refer to selling products or services from one business to another business rather than to individual consumers."
+            },
+            {
+                "id": "r_sdr_14",
+                "question": "What is B2C Sales?",
+                "hint": "Selling products or services directly to individual customers.",
+                "difficulty": "MODERATE",
+                "answer": "B2C (Business-to-Consumer) sales refer to selling products or services directly to individual customers."
+            },
+            {
+                "id": "r_sdr_15",
+                "question": "What is a Sales Funnel?",
+                "hint": "Customer journey from awareness to purchase decision.",
+                "difficulty": "ADVANCED",
+                "answer": "A sales funnel represents the journey of a customer from awareness of a product to making a purchase. The stages usually include awareness, interest, consideration, and decision."
+            },
+            {
+                "id": "r_sdr_16",
+                "question": "What is Lead Nurturing?",
+                "hint": "Building relationships with leads until they are ready to buy.",
+                "difficulty": "ADVANCED",
+                "answer": "Lead nurturing is the process of building relationships with potential customers by providing relevant information and support until they are ready to make a purchase."
+            },
+            {
+                "id": "r_sdr_17",
+                "question": "What is Sales Conversion?",
+                "hint": "Turning a lead into a paying customer.",
+                "difficulty": "ADVANCED",
+                "answer": "Sales conversion refers to the process of turning a potential lead into a paying customer."
+            },
+            {
+                "id": "r_sdr_18",
+                "question": "What is Sales KPI?",
+                "hint": "Metrics used to measure sales activity and performance.",
+                "difficulty": "ADVANCED",
+                "answer": "Sales KPIs (Key Performance Indicators) are metrics used to measure the performance of sales activities, such as number of calls made, leads generated, and deals closed."
+            },
+            {
+                "id": "r_sdr_19",
+                "question": "What tools are commonly used by SDRs?",
+                "hint": "CRM, outreach, lead generation, and analytics tools.",
+                "difficulty": "ADVANCED",
+                "answer": "Common tools used by Sales Development Representatives include CRM tools such as Salesforce and HubSpot, email outreach tools, lead generation platforms such as LinkedIn Sales Navigator, and sales analytics tools. These tools help manage sales activities efficiently."
+            },
+            {
+                "id": "r_sdr_20",
+                "question": "What skills are required for a Sales Development Representative?",
+                "hint": "Communication, relationship management, research, negotiation, and sales strategy understanding.",
+                "difficulty": "ADVANCED",
+                "answer": "An SDR requires several important skills, including communication and persuasion skills, customer relationship management, research and prospecting abilities, problem-solving and negotiation skills, and understanding of sales strategies."
+            }
+        ],
+        "Business Development Representative": [
+            {
+                "id": "r_bdr_1",
+                "question": "Who is a Business Development Representative?",
+                "hint": "Professional focused on finding opportunities, generating leads, and supporting business growth.",
+                "difficulty": "BASIC",
+                "answer": "A Business Development Representative (BDR) is a professional responsible for identifying new business opportunities, generating leads, and building relationships with potential customers to support company growth. BDRs focus on prospecting, outreach, and market research to identify potential clients. They work closely with sales and marketing teams to expand the company?s customer base and create opportunities for revenue growth."
+            },
+            {
+                "id": "r_bdr_2",
+                "question": "What are the responsibilities of a Business Development Representative?",
+                "hint": "Finding prospects, outreach, qualification, scheduling meetings, and CRM tracking.",
+                "difficulty": "BASIC",
+                "answer": "A BDR performs several tasks related to business growth and customer acquisition. Their responsibilities include identifying potential customers and business opportunities, contacting prospects through calls, emails, and networking, qualifying leads and understanding customer needs, scheduling meetings for the sales team, and maintaining records of customer interactions in CRM systems. These responsibilities help companies expand their market reach."
+            },
+            {
+                "id": "r_bdr_3",
+                "question": "Why is the role of a Business Development Representative important?",
+                "hint": "Builds a steady opportunity pipeline that supports growth and revenue generation.",
+                "difficulty": "BASIC",
+                "answer": "The role of a BDR is important because they help organizations discover new customers and expand business opportunities. By identifying potential clients and building relationships early in the sales process, BDRs help create a steady pipeline of opportunities for the sales team. This supports business growth and revenue generation."
+            },
+            {
+                "id": "r_bdr_4",
+                "question": "What is Business Development?",
+                "hint": "Identifying growth opportunities and building strategies to increase revenue and market presence.",
+                "difficulty": "BASIC",
+                "answer": "Business development is the process of identifying growth opportunities, building relationships, and developing strategies to increase revenue and market presence."
+            },
+            {
+                "id": "r_bdr_5",
+                "question": "What is Lead Generation in Business Development?",
+                "hint": "Finding and attracting potential customers for products or services.",
+                "difficulty": "BASIC",
+                "answer": "Lead generation is the process of finding and attracting potential customers who may be interested in a company?s products or services."
+            },
+            {
+                "id": "r_bdr_6",
+                "question": "What is Prospecting?",
+                "hint": "Researching and identifying potential clients who could benefit from an offering.",
+                "difficulty": "BASIC",
+                "answer": "Prospecting is the activity of researching and identifying potential clients or businesses that could benefit from a company?s products or services."
+            },
+            {
+                "id": "r_bdr_7",
+                "question": "What is Lead Qualification?",
+                "hint": "Evaluating whether a lead fits the company?s offering and buying criteria.",
+                "difficulty": "BASIC",
+                "answer": "Lead qualification is the process of evaluating potential leads to determine whether they are suitable for a company?s products or services based on factors such as need, budget, and authority."
+            },
+            {
+                "id": "r_bdr_8",
+                "question": "What is a Sales Pipeline?",
+                "hint": "Visual representation of sales stages from first contact to closed deal.",
+                "difficulty": "MODERATE",
+                "answer": "A sales pipeline is a visual representation of the stages in the sales process, from initial contact with a prospect to closing a deal."
+            },
+            {
+                "id": "r_bdr_9",
+                "question": "What is CRM in Business Development?",
+                "hint": "Software for tracking interactions, managing leads, and maintaining relationships.",
+                "difficulty": "MODERATE",
+                "answer": "CRM (Customer Relationship Management) refers to software systems used to track customer interactions, manage leads, and maintain customer relationships. Examples include Salesforce and HubSpot."
+            },
+            {
+                "id": "r_bdr_10",
+                "question": "What is Cold Calling?",
+                "hint": "Calling prospects with no prior expressed interest.",
+                "difficulty": "MODERATE",
+                "answer": "Cold calling is the process of contacting potential customers who have not previously expressed interest in a product or service."
+            },
+            {
+                "id": "r_bdr_11",
+                "question": "What is Cold Emailing?",
+                "hint": "Sending initial outreach emails to create interest in a product or service.",
+                "difficulty": "MODERATE",
+                "answer": "Cold emailing involves sending emails to potential customers to introduce a product or service and generate interest."
+            },
+            {
+                "id": "r_bdr_12",
+                "question": "What is Networking in Business Development?",
+                "hint": "Building professional relationships to create future business opportunities.",
+                "difficulty": "MODERATE",
+                "answer": "Networking is the practice of building professional relationships with potential clients, partners, and industry professionals to create business opportunities."
+            },
+            {
+                "id": "r_bdr_13",
+                "question": "What is Market Research?",
+                "hint": "Analyzing trends, competitors, and customer needs to find opportunities.",
+                "difficulty": "MODERATE",
+                "answer": "Market research involves analyzing market trends, competitors, and customer needs to identify business opportunities."
+            },
+            {
+                "id": "r_bdr_14",
+                "question": "What is Customer Relationship Building?",
+                "hint": "Developing trust and long-term connections with customers.",
+                "difficulty": "MODERATE",
+                "answer": "Customer relationship building involves developing long-term relationships with potential and existing customers to encourage trust and loyalty."
+            },
+            {
+                "id": "r_bdr_15",
+                "question": "What is Business Growth Strategy?",
+                "hint": "Plan for increasing revenue, reach, and overall business performance.",
+                "difficulty": "ADVANCED",
+                "answer": "A business growth strategy is a plan developed to increase revenue, expand market reach, and improve business performance."
+            },
+            {
+                "id": "r_bdr_16",
+                "question": "What is Sales Conversion?",
+                "hint": "Turning a potential lead into a paying customer.",
+                "difficulty": "ADVANCED",
+                "answer": "Sales conversion refers to the process of turning potential leads into paying customers."
+            },
+            {
+                "id": "r_bdr_17",
+                "question": "What is Partnership Development?",
+                "hint": "Building strategic relationships with organizations for mutual business benefit.",
+                "difficulty": "ADVANCED",
+                "answer": "Partnership development involves building strategic partnerships with other organizations to create mutual business benefits."
+            },
+            {
+                "id": "r_bdr_18",
+                "question": "What is Business Opportunity Analysis?",
+                "hint": "Evaluating markets, clients, or partnerships for value and feasibility.",
+                "difficulty": "ADVANCED",
+                "answer": "Business opportunity analysis is the process of evaluating potential markets, clients, or partnerships to determine their value and feasibility."
+            },
+            {
+                "id": "r_bdr_19",
+                "question": "What tools are commonly used by Business Development Representatives?",
+                "hint": "CRM, lead generation, outreach, and market research tools.",
+                "difficulty": "ADVANCED",
+                "answer": "Common tools used by BDRs include CRM platforms such as Salesforce and HubSpot, lead generation tools such as LinkedIn Sales Navigator, email outreach tools, and market research platforms. These tools help manage leads and business opportunities effectively."
+            },
+            {
+                "id": "r_bdr_20",
+                "question": "What skills are required for a Business Development Representative?",
+                "hint": "Communication, negotiation, prospecting, CRM, strategy, and analytical thinking.",
+                "difficulty": "ADVANCED",
+                "answer": "A Business Development Representative requires several important skills, including strong communication and negotiation skills, research and prospecting abilities, customer relationship management, understanding of sales and marketing strategies, and problem-solving and analytical thinking."
+            }
+        ],
+        "Account Executive": [
+            {
+                "id": "r_ae_1",
+                "question": "Who is an Account Executive?",
+                "hint": "Professional who manages client accounts, builds relationships, and closes sales deals.",
+                "difficulty": "BASIC",
+                "answer": "An Account Executive is a professional responsible for managing client accounts, building relationships with customers, and closing sales deals for a company?s products or services. They work directly with clients to understand their needs and provide appropriate solutions. Account executives play an important role in generating revenue and maintaining long-term customer relationships."
+            },
+            {
+                "id": "r_ae_2",
+                "question": "What are the responsibilities of an Account Executive?",
+                "hint": "Managing client relationships, finding opportunities, presenting solutions, negotiating, and tracking sales.",
+                "difficulty": "BASIC",
+                "answer": "An account executive performs several tasks related to sales and client management. Their responsibilities include managing relationships with existing clients, identifying new sales opportunities, presenting products or services to potential clients, negotiating contracts and closing deals, and maintaining records of sales activities in CRM systems. These responsibilities help businesses increase revenue and customer satisfaction."
+            },
+            {
+                "id": "r_ae_3",
+                "question": "Why is the role of an Account Executive important?",
+                "hint": "Directly drives revenue and maintains long-term customer partnerships.",
+                "difficulty": "BASIC",
+                "answer": "The role of an account executive is important because they directly contribute to a company?s revenue by managing client relationships and closing sales deals. They ensure that customers receive the right solutions and maintain long-term partnerships with clients."
+            },
+            {
+                "id": "r_ae_4",
+                "question": "What is Account Management?",
+                "hint": "Maintaining and growing relationships with existing clients.",
+                "difficulty": "BASIC",
+                "answer": "Account management is the process of maintaining and developing relationships with existing clients to ensure satisfaction and encourage continued business."
+            },
+            {
+                "id": "r_ae_5",
+                "question": "What is Sales Closing?",
+                "hint": "Finalizing a sales agreement and completing the transaction.",
+                "difficulty": "BASIC",
+                "answer": "Sales closing is the process of finalizing a sales agreement with a customer and completing the transaction."
+            },
+            {
+                "id": "r_ae_6",
+                "question": "What is Customer Relationship Management (CRM)?",
+                "hint": "Systems and strategies used to manage customer interactions and sales activities.",
+                "difficulty": "BASIC",
+                "answer": "Customer Relationship Management refers to systems and strategies used to manage interactions with customers and track sales activities."
+            },
+            {
+                "id": "r_ae_7",
+                "question": "What is Client Retention?",
+                "hint": "Keeping customers engaged and returning for future business.",
+                "difficulty": "BASIC",
+                "answer": "Client retention refers to the ability of a company to maintain long-term relationships with customers and keep them returning for additional products or services."
+            },
+            {
+                "id": "r_ae_8",
+                "question": "What is Sales Negotiation?",
+                "hint": "Discussing terms, pricing, and agreements to reach a mutually beneficial deal.",
+                "difficulty": "MODERATE",
+                "answer": "Sales negotiation is the process of discussing terms, pricing, and agreements with clients to reach a mutually beneficial deal."
+            },
+            {
+                "id": "r_ae_9",
+                "question": "What is Sales Pipeline?",
+                "hint": "Visual representation of stages in the sales process.",
+                "difficulty": "MODERATE",
+                "answer": "A sales pipeline is a visual representation of different stages in the sales process from lead generation to closing a deal."
+            },
+            {
+                "id": "r_ae_10",
+                "question": "What is Lead Conversion?",
+                "hint": "Turning a prospect into a paying customer.",
+                "difficulty": "MODERATE",
+                "answer": "Lead conversion refers to turning a potential customer into an actual paying customer."
+            },
+            {
+                "id": "r_ae_11",
+                "question": "What is Product Presentation?",
+                "hint": "Explaining and demonstrating a product?s value to clients.",
+                "difficulty": "MODERATE",
+                "answer": "Product presentation is the process of demonstrating and explaining a product or service to potential clients to highlight its value and benefits."
+            },
+            {
+                "id": "r_ae_12",
+                "question": "What is Sales Forecasting?",
+                "hint": "Predicting future sales using historical data and market trends.",
+                "difficulty": "MODERATE",
+                "answer": "Sales forecasting is the process of predicting future sales performance based on past sales data and market trends."
+            },
+            {
+                "id": "r_ae_13",
+                "question": "What is Customer Needs Analysis?",
+                "hint": "Understanding a client?s problems or requirements to recommend the right solution.",
+                "difficulty": "MODERATE",
+                "answer": "Customer needs analysis involves understanding a client?s problems or requirements to provide suitable products or services."
+            },
+            {
+                "id": "r_ae_14",
+                "question": "What is Contract Management?",
+                "hint": "Handling client agreements, negotiations, and documentation.",
+                "difficulty": "MODERATE",
+                "answer": "Contract management refers to handling agreements between a company and its clients, including negotiations and documentation."
+            },
+            {
+                "id": "r_ae_15",
+                "question": "What is Strategic Account Management?",
+                "hint": "Building long-term partnerships with key clients to maximize opportunity.",
+                "difficulty": "ADVANCED",
+                "answer": "Strategic account management focuses on developing long-term partnerships with key clients to maximize business opportunities."
+            },
+            {
+                "id": "r_ae_16",
+                "question": "What is Sales Performance Measurement?",
+                "hint": "Evaluating sales success using metrics like revenue and conversion rate.",
+                "difficulty": "ADVANCED",
+                "answer": "Sales performance measurement involves evaluating sales results using metrics such as revenue generated, deals closed, and conversion rates."
+            },
+            {
+                "id": "r_ae_17",
+                "question": "What is Customer Lifetime Value (CLV)?",
+                "hint": "Total revenue expected from a customer over the full relationship.",
+                "difficulty": "ADVANCED",
+                "answer": "Customer Lifetime Value refers to the total revenue a business expects to earn from a customer during the entire relationship."
+            },
+            {
+                "id": "r_ae_18",
+                "question": "What is Upselling?",
+                "hint": "Encouraging customers to buy higher-value products or extra services.",
+                "difficulty": "ADVANCED",
+                "answer": "Upselling is the practice of encouraging customers to purchase higher-value products or additional services."
+            },
+            {
+                "id": "r_ae_19",
+                "question": "What tools are commonly used by Account Executives?",
+                "hint": "CRM, analytics, communication, and presentation tools.",
+                "difficulty": "ADVANCED",
+                "answer": "Common tools used by account executives include CRM systems such as Salesforce and HubSpot, sales analytics tools, communication tools such as email and video conferencing, and presentation software. These tools help manage client relationships and track sales activities."
+            },
+            {
+                "id": "r_ae_20",
+                "question": "What skills are required for an Account Executive?",
+                "hint": "Communication, negotiation, sales, relationship management, customer service, and CRM knowledge.",
+                "difficulty": "ADVANCED",
+                "answer": "An account executive requires several important skills, including communication and negotiation skills, sales and relationship management skills, problem-solving and analytical abilities, customer service and persuasion skills, and knowledge of sales tools and CRM systems."
+            }
+        ],
+        "Solution Consultant": [
+            {
+                "id": "r_sc_1",
+                "question": "Who is a Solution Consultant?",
+                "hint": "Professional who analyzes customer needs and recommends technical or business solutions.",
+                "difficulty": "BASIC",
+                "answer": "A Solution Consultant is a professional who analyzes customer requirements and recommends appropriate technical or business solutions using a company?s products or services. They work closely with sales teams and clients to understand business problems and demonstrate how solutions can address those challenges. Solution consultants often provide product demonstrations, technical guidance, and implementation support."
+            },
+            {
+                "id": "r_sc_2",
+                "question": "What are the responsibilities of a Solution Consultant?",
+                "hint": "Understanding requirements, recommending solutions, demos, collaboration, and technical support.",
+                "difficulty": "BASIC",
+                "answer": "A solution consultant performs several tasks related to customer solutions and technical guidance. Their responsibilities include understanding customer business requirements, recommending suitable products or solutions, conducting product demonstrations and presentations, collaborating with sales and technical teams, and providing technical support during the sales process. These responsibilities help customers understand and adopt solutions effectively."
+            },
+            {
+                "id": "r_sc_3",
+                "question": "Why is the role of a Solution Consultant important?",
+                "hint": "Bridges technical teams and business clients to improve adoption and confidence.",
+                "difficulty": "BASIC",
+                "answer": "The role of a solution consultant is important because they bridge the gap between technical teams and business clients. They help customers understand how a product or technology can solve their problems. Their expertise helps increase customer confidence and improves the chances of successful product adoption."
+            },
+            {
+                "id": "r_sc_4",
+                "question": "What is Solution Consulting?",
+                "hint": "Analyzing business problems and recommending suitable technical or business solutions.",
+                "difficulty": "BASIC",
+                "answer": "Solution consulting refers to the process of analyzing business problems and recommending technical or business solutions that meet customer requirements."
+            },
+            {
+                "id": "r_sc_5",
+                "question": "What is a Business Requirement?",
+                "hint": "Specific need or objective a company wants to achieve through a solution.",
+                "difficulty": "BASIC",
+                "answer": "A business requirement is a specific need or objective that a company wants to achieve through a solution or system."
+            },
+            {
+                "id": "r_sc_6",
+                "question": "What is a Technical Solution?",
+                "hint": "System, application, or technology used to solve a business problem.",
+                "difficulty": "BASIC",
+                "answer": "A technical solution refers to a system, application, or technology designed to solve a particular business problem."
+            },
+            {
+                "id": "r_sc_7",
+                "question": "What is Product Demonstration?",
+                "hint": "Showing how a product works and explaining its benefits to prospects.",
+                "difficulty": "BASIC",
+                "answer": "A product demonstration is the process of showing how a product or solution works and explaining its features and benefits to potential customers."
+            },
+            {
+                "id": "r_sc_8",
+                "question": "What is Solution Design?",
+                "hint": "Creating a detailed implementation plan that meets customer and technical needs.",
+                "difficulty": "MODERATE",
+                "answer": "Solution design is the process of creating a detailed plan for implementing a solution that meets customer requirements and technical specifications."
+            },
+            {
+                "id": "r_sc_9",
+                "question": "What is Customer Needs Analysis?",
+                "hint": "Understanding a client?s problems, goals, and expectations before recommending solutions.",
+                "difficulty": "MODERATE",
+                "answer": "Customer needs analysis involves understanding the problems, goals, and expectations of a client to recommend suitable solutions."
+            },
+            {
+                "id": "r_sc_10",
+                "question": "What is Pre-Sales Support?",
+                "hint": "Technical help provided before a sale to explain product capabilities and benefits.",
+                "difficulty": "MODERATE",
+                "answer": "Pre-sales support refers to technical assistance provided before a product or service is sold, helping customers understand its capabilities and benefits."
+            },
+            {
+                "id": "r_sc_11",
+                "question": "What is Proof of Concept (POC)?",
+                "hint": "Demonstration that validates whether a solution can solve a specific problem.",
+                "difficulty": "MODERATE",
+                "answer": "A Proof of Concept is a demonstration used to validate that a proposed solution can successfully solve a specific problem."
+            },
+            {
+                "id": "r_sc_12",
+                "question": "What is Solution Implementation?",
+                "hint": "Deploying and configuring a solution in the customer environment.",
+                "difficulty": "MODERATE",
+                "answer": "Solution implementation is the process of deploying and configuring a solution within a customer?s environment."
+            },
+            {
+                "id": "r_sc_13",
+                "question": "What is Stakeholder Communication?",
+                "hint": "Coordinating with customers, managers, and technical teams for successful delivery.",
+                "difficulty": "MODERATE",
+                "answer": "Stakeholder communication involves interacting with various stakeholders such as customers, project managers, and technical teams to ensure project success."
+            },
+            {
+                "id": "r_sc_14",
+                "question": "What is Technical Documentation?",
+                "hint": "Written materials explaining architecture, design, and implementation processes.",
+                "difficulty": "MODERATE",
+                "answer": "Technical documentation refers to written materials that explain system architecture, solution design, and implementation processes."
+            },
+            {
+                "id": "r_sc_15",
+                "question": "What is Solution Architecture?",
+                "hint": "Design and structure of systems and components used in a solution.",
+                "difficulty": "ADVANCED",
+                "answer": "Solution architecture refers to the design and structure of systems, technologies, and components used to implement a solution."
+            },
+            {
+                "id": "r_sc_16",
+                "question": "What is Integration in Solution Consulting?",
+                "hint": "Connecting systems and applications so they share data and work together.",
+                "difficulty": "ADVANCED",
+                "answer": "Integration involves connecting different systems or applications so they can share data and work together effectively."
+            },
+            {
+                "id": "r_sc_17",
+                "question": "What is Customer Success in Solution Consulting?",
+                "hint": "Ensuring customers achieve desired outcomes after adopting a solution.",
+                "difficulty": "ADVANCED",
+                "answer": "Customer success focuses on ensuring that customers achieve their desired outcomes after adopting a product or solution."
+            },
+            {
+                "id": "r_sc_18",
+                "question": "What is Change Management?",
+                "hint": "Helping organizations transition smoothly when implementing new solutions.",
+                "difficulty": "ADVANCED",
+                "answer": "Change management is the process of helping organizations transition smoothly when implementing new systems or solutions."
+            },
+            {
+                "id": "r_sc_19",
+                "question": "What tools are commonly used by Solution Consultants?",
+                "hint": "CRM, presentation, documentation, and collaboration tools.",
+                "difficulty": "ADVANCED",
+                "answer": "Common tools used by solution consultants include CRM systems such as Salesforce and HubSpot, presentation tools such as PowerPoint and demo platforms, technical documentation tools, and collaboration tools. These tools help manage customer interactions and solution design."
+            },
+            {
+                "id": "r_sc_20",
+                "question": "What skills are required for a Solution Consultant?",
+                "hint": "Communication, presentation, technical problem-solving, business understanding, and solution design.",
+                "difficulty": "ADVANCED",
+                "answer": "A solution consultant requires several important skills, including strong communication and presentation skills, technical knowledge and problem-solving abilities, understanding of business processes, customer relationship management skills, and ability to analyze requirements and design solutions."
+            }
         ]
     },
     "skills": {
@@ -7541,5 +9387,3 @@
         }
     ]
 }
-
-

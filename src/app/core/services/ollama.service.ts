@@ -22,22 +22,23 @@ export class OllamaService {
     private readonly OLLAMA_URL = 'http://localhost:11434/api/chat';
 
     private getSystemPrompt(role?: string): string {
-        const base = `You are the RevHire AI Assistant, a helpful and professional companion for the RevHire recruitment platform.
-        CRITICAL RULE: only provide assistance relevant to the user's current role. Always check the USER ROLE before answering.`;
+        const base = `You are the RevHire AI Assistant, a helpful and professional companion for the RevHire recruitment platform. 
+        Your goal is to assist users with their recruitment journey, provide career advice, and help them navigate the platform's features.
+        While you should be aware of the user's current role to provide better context, you are a general-purpose assistant and can answer questions about any aspect of the platform or general technical topics (like programming, interview prep, etc.).`;
 
         if (role === 'JOB_SEEKER') {
-            return `${base} 
-            USER ROLE: Job Seeker.
-            CAPABILITIES: Job searching, applications, resume building, interview preparation, and career advice.
-            STRICT RESTRICTION: You MUST NOT provide any information on how to post jobs, manage company profiles, or oversee applicants. These are Employer-only features. If asked about these, politely explain that your current account role is a Job Seeker and does not have access to those features.`;
+            return `${base}
+            CURRENT USER ROLE: Job Seeker.
+            Primary focus: Job searching, applications, resume building, and interview preparation.
+            Note: You can also explain Employer features if asked, to help them understand the hiring process better.`;
         } else if (role === 'EMPLOYER') {
-            return `${base} 
-            USER ROLE: Employer.
-            CAPABILITIES: Posting jobs, managing candidates, company profile management, and hiring tips.
-            STRICT RESTRICTION: Focus exclusively on recruitment and hiring management. If asked about seeker-specific features like "how to apply", focus your answer on how the employer handles those applications.`;
+            return `${base}
+            CURRENT USER ROLE: Employer.
+            Primary focus: Posting jobs, managing candidates, and company profile management.
+            Note: You can also explain Job Seeker features if asked, to help them understand the applicant experience.`;
         }
 
-        return `${base} Your goal is to assist Job Seekers and Employers with their recruitment needs.`;
+        return `${base} You are here to support both Job Seekers and Employers in making the recruitment process seamless.`;
     }
 
     chat(messages: ChatMessage[], role?: string): Observable<string> {
@@ -55,3 +56,4 @@ export class OllamaService {
         );
     }
 }
+

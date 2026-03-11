@@ -854,6 +854,397 @@
                 "answer": "UX metrics are measurable indicators used to evaluate the effectiveness of a user experience design. Examples include task completion rate, user satisfaction, error rate, and time taken to complete tasks. These metrics help designers understand whether the design successfully meets user needs."
             }
         ],
+        "Product Designer": [
+            {
+                "id": "r_pd_1",
+                "question": "What does a Product Designer do?",
+                "hint": "Combines user needs, business goals, and product usability.",
+                "difficulty": "BASIC",
+                "answer": "A product designer is responsible for shaping how a digital product looks, works, and feels. The role combines user research, problem-solving, interaction design, visual design, and collaboration with product managers and engineers. Product designers focus on solving user problems while also supporting business goals such as engagement, conversion, and retention."
+            },
+            {
+                "id": "r_pd_2",
+                "question": "How do you balance user needs with business goals in product design?",
+                "hint": "Prioritize solutions that improve user experience and measurable outcomes.",
+                "difficulty": "MODERATE",
+                "answer": "Balancing user needs with business goals starts by clearly understanding both sides. A product designer identifies user pain points through research and maps them against product metrics such as activation, retention, or revenue. The best solutions are the ones that reduce friction for users while also moving a business metric in the right direction. Trade-offs are discussed openly with stakeholders, and prototypes are tested before full implementation."
+            },
+            {
+                "id": "r_pd_3",
+                "question": "How do product designers work with engineers and product managers?",
+                "hint": "Cross-functional collaboration from discovery through delivery.",
+                "difficulty": "ADVANCED",
+                "answer": "Product designers work closely with product managers to define the problem, success metrics, and user outcomes. They collaborate with engineers to ensure the design is technically feasible and implemented correctly. This usually includes sharing wireframes, prototypes, design specifications, edge cases, and accessibility considerations. Strong collaboration helps avoid misalignment and ensures the final product delivers the intended experience."
+            }
+        ],
+        "UX Designer": [
+            {
+                "id": "r_uxd_1",
+                "question": "What is the role of a UX Designer?",
+                "hint": "Focuses on improving usability, flows, and user satisfaction.",
+                "difficulty": "BASIC",
+                "answer": "A UX designer focuses on creating products that are useful, usable, and enjoyable. The role involves understanding user behavior, defining user flows, planning information architecture, creating wireframes and prototypes, and validating decisions through testing. UX designers aim to reduce friction so users can complete tasks efficiently."
+            },
+            {
+                "id": "r_uxd_2",
+                "question": "How do you conduct usability testing in UX design?",
+                "hint": "Observe real users completing realistic tasks and capture pain points.",
+                "difficulty": "MODERATE",
+                "answer": "Usability testing involves asking representative users to complete realistic tasks using a prototype or live product. The UX designer observes where users hesitate, make mistakes, or get confused. Findings are grouped into themes, prioritized by severity, and translated into design improvements. The goal is to validate assumptions and improve the experience before or after release."
+            },
+            {
+                "id": "r_uxd_3",
+                "question": "Why are user journeys important in UX design?",
+                "hint": "They reveal steps, emotions, friction points, and opportunities.",
+                "difficulty": "ADVANCED",
+                "answer": "User journeys help UX designers understand the full experience from the user's perspective across different touchpoints. They show what users are trying to achieve, what actions they take, and where problems occur. This makes it easier to identify friction, missed expectations, and opportunities to improve the flow. User journeys are especially valuable when designing complex products or multi-step tasks."
+            }
+        ],
+        "UI Designer": [
+            {
+                "id": "r_uid_1",
+                "question": "What is the role of a UI Designer?",
+                "hint": "Designs the visual interface and interactive elements.",
+                "difficulty": "BASIC",
+                "answer": "A UI designer is responsible for the visual layer of a product, including layouts, typography, colors, buttons, icons, spacing, and component states. The goal is to create interfaces that are clear, attractive, and easy to interact with. UI designers also ensure consistency across screens so users can understand the product quickly."
+            },
+            {
+                "id": "r_uid_2",
+                "question": "What is visual hierarchy in UI design?",
+                "hint": "Use size, contrast, spacing, and placement to guide attention.",
+                "difficulty": "MODERATE",
+                "answer": "Visual hierarchy is the arrangement of interface elements so that users naturally notice the most important content first. UI designers create hierarchy using font size, color contrast, spacing, alignment, and element placement. A strong visual hierarchy improves readability, reduces confusion, and helps users complete actions faster."
+            },
+            {
+                "id": "r_uid_3",
+                "question": "Why are design systems important for UI designers?",
+                "hint": "Improve consistency, speed, and scalability of interfaces.",
+                "difficulty": "ADVANCED",
+                "answer": "Design systems provide reusable components, style rules, and interaction standards that help teams build interfaces consistently. For UI designers, a design system reduces repetitive work and ensures that buttons, forms, colors, and spacing behave predictably across the product. This improves collaboration with developers and makes large products easier to maintain."
+            }
+        ],
+        "UX Researcher": [
+            {
+                "id": "r_uxr_1",
+                "question": "What does a UX Researcher do?",
+                "hint": "Studies user behavior, needs, and decision-making.",
+                "difficulty": "BASIC",
+                "answer": "A UX researcher gathers insights about users through methods such as interviews, surveys, usability tests, and observation. The goal is to understand user needs, motivations, behaviors, and pain points. These insights help product teams make evidence-based design decisions instead of relying on assumptions."
+            },
+            {
+                "id": "r_uxr_2",
+                "question": "What is the difference between qualitative and quantitative research?",
+                "hint": "Qualitative explains why; quantitative measures how much or how often.",
+                "difficulty": "MODERATE",
+                "answer": "Qualitative research focuses on understanding why users behave in certain ways and usually involves interviews, observation, and open-ended feedback. Quantitative research measures patterns numerically using surveys, analytics, or experiments. UX researchers often use both methods together so they can understand both user motivations and the scale of a problem."
+            },
+            {
+                "id": "r_uxr_3",
+                "question": "How do you turn research findings into design decisions?",
+                "hint": "Synthesize patterns, prioritize issues, and translate them into actions.",
+                "difficulty": "ADVANCED",
+                "answer": "After collecting data, a UX researcher synthesizes the findings by grouping themes, identifying repeated pain points, and mapping results to user goals and business outcomes. The researcher then shares actionable insights with designers and product teams, often using reports, affinity maps, or journey maps. The strongest research output is not just information, but clear recommendations the team can implement."
+            }
+        ],
+        "UX Writer": [
+            {
+                "id": "r_uxw_1",
+                "question": "What is UX Writing?",
+                "hint": "Writing interface text that helps users complete tasks clearly.",
+                "difficulty": "BASIC",
+                "answer": "UX writing is the practice of creating the text users see inside digital products, such as button labels, form instructions, onboarding messages, and error messages. The purpose is to guide users clearly and reduce confusion. Good UX writing is concise, useful, and aligned with the product's tone and voice."
+            },
+            {
+                "id": "r_uxw_2",
+                "question": "Why is microcopy important in product design?",
+                "hint": "Small pieces of text shape clarity, trust, and task completion.",
+                "difficulty": "MODERATE",
+                "answer": "Microcopy includes short pieces of interface text such as CTA labels, helper text, confirmations, and warnings. Even though it is brief, it has a large impact on usability because it tells users what to do, what will happen next, and how to recover from mistakes. Clear microcopy reduces friction and improves trust in the product."
+            },
+            {
+                "id": "r_uxw_3",
+                "question": "How do UX writers create effective error messages?",
+                "hint": "State the issue clearly and tell the user how to fix it.",
+                "difficulty": "ADVANCED",
+                "answer": "An effective error message explains what went wrong in simple language and gives the user a clear next step. It should avoid blame, avoid technical jargon, and be specific enough to help the user recover quickly. UX writers also ensure error messages match the product tone and appear at the right moment in the flow."
+            }
+        ],
+        "Graphics Designer": [
+            {
+                "id": "r_gfx_1",
+                "question": "What does a Graphics Designer do?",
+                "hint": "Creates visual assets for communication, branding, and marketing.",
+                "difficulty": "BASIC",
+                "answer": "A graphics designer creates visual content such as posters, banners, logos, social media creatives, presentations, and brand assets. The goal is to communicate ideas clearly and attractively through layout, typography, color, and imagery. Graphic designers often work across digital and print formats."
+            },
+            {
+                "id": "r_gfx_2",
+                "question": "What is the difference between raster and vector graphics?",
+                "hint": "Raster is pixel-based; vector is shape-based and scalable.",
+                "difficulty": "MODERATE",
+                "answer": "Raster graphics are made of pixels and are best for photographs and detailed images, but they lose quality when enlarged. Vector graphics are made of mathematical paths and can scale without losing sharpness, making them ideal for logos, icons, and illustrations. Choosing the correct format depends on how the asset will be used."
+            },
+            {
+                "id": "r_gfx_3",
+                "question": "How do typography and color affect graphic design?",
+                "hint": "They shape readability, mood, hierarchy, and brand perception.",
+                "difficulty": "ADVANCED",
+                "answer": "Typography and color strongly influence how a design is perceived and understood. Typography affects readability, emphasis, and personality, while color affects attention, mood, and brand recognition. A strong graphic designer uses both intentionally to support the message, maintain consistency, and create visual impact."
+            }
+        ],
+        "Brand Designer": [
+            {
+                "id": "r_bd_1",
+                "question": "What is brand design?",
+                "hint": "Creating a visual identity that represents a brand consistently.",
+                "difficulty": "BASIC",
+                "answer": "Brand design is the process of creating the visual identity of a company or product. It includes elements such as logos, typography, colors, imagery, and brand guidelines. The purpose is to make the brand recognizable, consistent, and aligned with its values and audience."
+            },
+            {
+                "id": "r_bd_2",
+                "question": "Why is consistency important in brand design?",
+                "hint": "Consistency builds trust, recognition, and a unified experience.",
+                "difficulty": "MODERATE",
+                "answer": "Consistency ensures that a brand looks and feels the same across websites, packaging, social media, advertisements, and other touchpoints. This helps audiences recognize the brand quickly and builds trust over time. Without consistency, brand communication becomes fragmented and less memorable."
+            },
+            {
+                "id": "r_bd_3",
+                "question": "How do brand designers translate strategy into visual identity?",
+                "hint": "Convert positioning, values, and audience insights into design choices.",
+                "difficulty": "ADVANCED",
+                "answer": "Brand designers start by understanding the brand's mission, target audience, market position, and personality. They then translate those strategic inputs into visual decisions such as tone of imagery, color palette, typography style, and logo direction. A successful visual identity does not just look appealing; it clearly reflects what the brand stands for."
+            }
+        ],
+        "Finance Analyst": [
+            {
+                "id": "r_fa_1",
+                "question": "What does a Finance Analyst do?",
+                "hint": "Evaluates financial data to support business decisions.",
+                "difficulty": "BASIC",
+                "answer": "A finance analyst studies financial statements, budgets, forecasts, and business performance data to help an organization make informed decisions. The role often includes analyzing trends, preparing reports, identifying risks, and supporting planning activities. Finance analysts help management understand profitability, cost drivers, and future financial outlook."
+            },
+            {
+                "id": "r_fa_2",
+                "question": "What is variance analysis?",
+                "hint": "Compare actual results with budget or forecast and explain the gap.",
+                "difficulty": "MODERATE",
+                "answer": "Variance analysis is the process of comparing actual financial results with planned figures such as budgets or forecasts. The purpose is to identify where performance was better or worse than expected and understand the reasons behind the difference. This helps businesses take corrective action and improve future planning."
+            },
+            {
+                "id": "r_fa_3",
+                "question": "How do finance analysts build reliable forecasts?",
+                "hint": "Use historical data, business drivers, assumptions, and scenario analysis.",
+                "difficulty": "ADVANCED",
+                "answer": "Reliable forecasts are built by combining historical trends with current business conditions, operational drivers, and clear assumptions. Finance analysts often create base, best-case, and worst-case scenarios to account for uncertainty. A strong forecast is regularly updated, explained clearly to stakeholders, and tied to measurable business inputs."
+            }
+        ],
+        "Quantitative Analyst": [
+            {
+                "id": "r_qa_1",
+                "question": "What does a Quantitative Analyst do?",
+                "hint": "Uses mathematics, statistics, and programming to solve financial problems.",
+                "difficulty": "BASIC",
+                "answer": "A quantitative analyst, or quant, develops mathematical and statistical models for pricing, risk management, trading, and portfolio analysis. The role often involves working with large financial datasets and using programming languages such as Python, R, or C++. Quantitative analysts support data-driven decision-making in financial institutions."
+            },
+            {
+                "id": "r_qa_2",
+                "question": "What is backtesting in quantitative finance?",
+                "hint": "Test a model or strategy on historical data.",
+                "difficulty": "MODERATE",
+                "answer": "Backtesting is the process of applying a trading or risk model to historical market data to evaluate how it would have performed in the past. It helps analysts estimate effectiveness, identify weaknesses, and compare alternative strategies. Good backtesting also accounts for issues such as transaction costs, slippage, and unrealistic assumptions."
+            },
+            {
+                "id": "r_qa_3",
+                "question": "Why is model risk important for quants?",
+                "hint": "Bad assumptions or misuse can lead to costly decisions.",
+                "difficulty": "ADVANCED",
+                "answer": "Model risk refers to the possibility that a financial model produces inaccurate results because of flawed assumptions, poor data, coding errors, or incorrect usage. For quantitative analysts, managing model risk is critical because trading, pricing, or risk decisions may rely heavily on model outputs. Validation, stress testing, and documentation help reduce model risk."
+            }
+        ],
+        "Banking Financial Service": [
+            {
+                "id": "r_bfs_1",
+                "question": "What are banking financial services?",
+                "hint": "Services such as deposits, loans, payments, investments, and advisory support.",
+                "difficulty": "BASIC",
+                "answer": "Banking financial services include products and services offered by financial institutions to individuals and businesses. These services commonly include savings and current accounts, loans, credit facilities, payment processing, wealth management, and advisory support. The sector plays a central role in managing money flow and supporting economic activity."
+            },
+            {
+                "id": "r_bfs_2",
+                "question": "Why are KYC and AML important in banking?",
+                "hint": "They help verify customers and prevent illegal financial activity.",
+                "difficulty": "MODERATE",
+                "answer": "KYC, or Know Your Customer, is the process of verifying the identity of customers before providing financial services. AML, or Anti-Money Laundering, refers to controls used to detect and prevent illegal movement of money. These practices are essential for regulatory compliance, fraud prevention, and reducing financial crime risk."
+            },
+            {
+                "id": "r_bfs_3",
+                "question": "How do banks manage financial risk?",
+                "hint": "Monitor credit, market, liquidity, and operational risks.",
+                "difficulty": "ADVANCED",
+                "answer": "Banks manage financial risk by identifying, measuring, and controlling different types of exposure such as credit risk, market risk, liquidity risk, and operational risk. This includes setting policies, monitoring limits, stress testing portfolios, and maintaining capital reserves. Strong risk management helps protect both the institution and its customers."
+            }
+        ],
+        "Financial Advisor": [
+            {
+                "id": "r_fadv_1",
+                "question": "What does a Financial Advisor do?",
+                "hint": "Helps clients plan investments, savings, insurance, and long-term goals.",
+                "difficulty": "BASIC",
+                "answer": "A financial advisor helps individuals or businesses make decisions about money management. This can include investment planning, retirement planning, budgeting, insurance, tax-aware planning, and wealth preservation. The advisor's role is to align financial recommendations with the client's goals, timeline, and risk tolerance."
+            },
+            {
+                "id": "r_fadv_2",
+                "question": "Why is risk tolerance important in financial advice?",
+                "hint": "Investment recommendations must match the client's comfort with volatility.",
+                "difficulty": "MODERATE",
+                "answer": "Risk tolerance reflects how much uncertainty or short-term loss a client is willing and able to accept. It affects asset allocation, product selection, and investment strategy. A financial advisor must assess risk tolerance carefully because even a strong return strategy can fail if it does not suit the client's financial situation or behavior."
+            },
+            {
+                "id": "r_fadv_3",
+                "question": "What is diversification and why does it matter for clients?",
+                "hint": "Spread investments across asset types to reduce concentration risk.",
+                "difficulty": "ADVANCED",
+                "answer": "Diversification means spreading investments across different asset classes, sectors, or instruments rather than putting everything in one place. The purpose is to reduce concentration risk and make a portfolio more resilient to market changes. Financial advisors use diversification to help clients balance risk and return over time."
+            }
+        ],
+        "Accounting Manager": [
+            {
+                "id": "r_am_1",
+                "question": "What does an Accounting Manager do?",
+                "hint": "Oversees accounting operations, reporting, controls, and team output.",
+                "difficulty": "BASIC",
+                "answer": "An accounting manager supervises the accounting function of an organization. The role includes reviewing financial records, managing reconciliations, overseeing month-end and year-end closing, ensuring compliance, and guiding the accounting team. Accounting managers help maintain accurate financial reporting and strong internal controls."
+            },
+            {
+                "id": "r_am_2",
+                "question": "Why are reconciliations important in accounting?",
+                "hint": "They verify accuracy by matching records across sources.",
+                "difficulty": "MODERATE",
+                "answer": "Reconciliations are used to compare different sets of financial records, such as bank statements and internal ledgers, to ensure that balances match. They help detect errors, missing entries, fraud risks, and timing differences. Regular reconciliations are essential for accurate reporting and audit readiness."
+            },
+            {
+                "id": "r_am_3",
+                "question": "What are internal controls in accounting?",
+                "hint": "Processes that protect assets and improve accuracy and compliance.",
+                "difficulty": "ADVANCED",
+                "answer": "Internal controls are policies and procedures designed to safeguard assets, prevent fraud, ensure accurate reporting, and support regulatory compliance. Examples include segregation of duties, approval workflows, access restrictions, and review mechanisms. Accounting managers rely on strong internal controls to reduce risk and improve financial reliability."
+            }
+        ],
+        "Marketing Manager": [
+            {
+                "id": "r_mm_1",
+                "question": "What does a Marketing Manager do?",
+                "hint": "Plans campaigns, positioning, messaging, and performance tracking.",
+                "difficulty": "BASIC",
+                "answer": "A marketing manager is responsible for planning and executing marketing strategies that increase brand awareness, generate demand, and support business growth. The role often includes campaign planning, budgeting, channel selection, team coordination, and performance analysis. Marketing managers align messaging with the target audience and business goals."
+            },
+            {
+                "id": "r_mm_2",
+                "question": "How do marketing managers define campaign success?",
+                "hint": "Use KPIs tied to awareness, engagement, leads, or revenue.",
+                "difficulty": "MODERATE",
+                "answer": "Campaign success is defined using measurable KPIs that match the objective of the campaign. These can include reach, impressions, click-through rate, lead volume, conversion rate, customer acquisition cost, or revenue influenced. A marketing manager chooses the right metrics before launch so the team can evaluate results clearly."
+            },
+            {
+                "id": "r_mm_3",
+                "question": "Why is audience segmentation important in marketing strategy?",
+                "hint": "Different customer groups respond to different messages and channels.",
+                "difficulty": "ADVANCED",
+                "answer": "Audience segmentation allows marketing teams to group customers by characteristics such as demographics, behavior, location, or needs. This helps create more relevant messaging, select the right channels, and improve campaign efficiency. Without segmentation, marketing becomes too generic and usually performs worse."
+            }
+        ],
+        "Digital Marketing Manager": [
+            {
+                "id": "r_dmm_1",
+                "question": "What does a Digital Marketing Manager do?",
+                "hint": "Runs online acquisition and engagement across digital channels.",
+                "difficulty": "BASIC",
+                "answer": "A digital marketing manager plans and manages online marketing activities across channels such as search, social media, email, paid ads, and websites. The role focuses on driving traffic, leads, conversions, and engagement through measurable campaigns. Digital marketing managers also optimize performance using analytics and experimentation."
+            },
+            {
+                "id": "r_dmm_2",
+                "question": "What are common KPIs in digital marketing?",
+                "hint": "Traffic, CTR, CPC, conversions, CAC, ROAS, and retention metrics.",
+                "difficulty": "MODERATE",
+                "answer": "Common digital marketing KPIs include website traffic, click-through rate, cost per click, conversion rate, customer acquisition cost, return on ad spend, email open rate, and retention rate. The right KPI depends on the campaign goal and channel. Strong digital marketing managers focus on metrics that connect activity to business outcomes."
+            },
+            {
+                "id": "r_dmm_3",
+                "question": "How do you optimize a digital campaign after launch?",
+                "hint": "Use data to improve targeting, creatives, bids, and landing pages.",
+                "difficulty": "ADVANCED",
+                "answer": "Campaign optimization involves monitoring performance data and making iterative improvements. A digital marketing manager may adjust audience targeting, keywords, bids, creatives, calls to action, or landing page content based on what the data shows. Continuous testing and refinement are essential because digital channels change quickly and performance can vary across segments."
+            }
+        ],
+        "Content Marketer": [
+            {
+                "id": "r_cm_1",
+                "question": "What does a Content Marketer do?",
+                "hint": "Creates and distributes content to attract, educate, and convert audiences.",
+                "difficulty": "BASIC",
+                "answer": "A content marketer develops content such as blogs, videos, emails, case studies, guides, and social posts to attract and engage the target audience. The goal is not only visibility but also trust, education, and conversion. Content marketers align content topics with user intent and business objectives."
+            },
+            {
+                "id": "r_cm_2",
+                "question": "Why is content strategy important?",
+                "hint": "It connects audience needs, formats, channels, and business goals.",
+                "difficulty": "MODERATE",
+                "answer": "A content strategy defines what content will be created, for whom, why, where it will be distributed, and how success will be measured. Without a strategy, content efforts become inconsistent and hard to evaluate. A strong strategy ensures that each content piece supports a clear stage of the customer journey."
+            },
+            {
+                "id": "r_cm_3",
+                "question": "How do content marketers measure performance?",
+                "hint": "Track engagement, traffic, lead quality, and conversion impact.",
+                "difficulty": "ADVANCED",
+                "answer": "Content performance can be measured using metrics such as page views, engagement time, bounce rate, shares, email signups, lead generation, assisted conversions, and revenue influence. The most useful metrics depend on the purpose of the content. Content marketers should evaluate both audience engagement and business impact rather than focusing on traffic alone."
+            }
+        ],
+        "Social Media Manager": [
+            {
+                "id": "r_smm_1",
+                "question": "What does a Social Media Manager do?",
+                "hint": "Plans content, manages communities, and grows brand presence on social platforms.",
+                "difficulty": "BASIC",
+                "answer": "A social media manager is responsible for managing a brand's presence on platforms such as Instagram, LinkedIn, X, Facebook, and YouTube. The role includes content planning, publishing, community engagement, campaign coordination, and performance reporting. Social media managers help brands stay visible, relevant, and connected to their audience."
+            },
+            {
+                "id": "r_smm_2",
+                "question": "Why is a content calendar important for social media?",
+                "hint": "It improves planning, consistency, coordination, and campaign timing.",
+                "difficulty": "MODERATE",
+                "answer": "A content calendar helps social media teams organize posts by platform, theme, format, and timing. It improves consistency, avoids last-minute publishing, and makes it easier to align posts with campaigns, events, and product launches. Good planning also creates space for approvals and performance reviews."
+            },
+            {
+                "id": "r_smm_3",
+                "question": "How do social media managers evaluate success?",
+                "hint": "Measure engagement, reach, audience growth, traffic, and conversions.",
+                "difficulty": "ADVANCED",
+                "answer": "Success on social media is measured using metrics such as reach, engagement rate, follower growth, click-through rate, website traffic, lead generation, and conversions. The most important metrics depend on whether the goal is awareness, engagement, or direct response. Social media managers also look at qualitative signals such as sentiment and community feedback."
+            }
+        ],
+        "Market Research": [
+            {
+                "id": "r_mr_1",
+                "question": "What is market research?",
+                "hint": "Collecting and analyzing information about customers, competitors, and markets.",
+                "difficulty": "BASIC",
+                "answer": "Market research is the process of gathering and analyzing data about customers, competitors, industry trends, and market conditions. Businesses use it to understand demand, identify opportunities, reduce uncertainty, and make better strategic decisions. Market research can support product development, pricing, positioning, and campaign planning."
+            },
+            {
+                "id": "r_mr_2",
+                "question": "What is the difference between primary and secondary research?",
+                "hint": "Primary is collected directly; secondary uses existing data sources.",
+                "difficulty": "MODERATE",
+                "answer": "Primary research is data collected directly for a specific objective, such as surveys, interviews, focus groups, or field studies. Secondary research uses data that already exists, such as industry reports, government publications, analytics, or competitor information. Good market research often combines both to save time while still answering the right questions."
+            },
+            {
+                "id": "r_mr_3",
+                "question": "How is market research used in business decision-making?",
+                "hint": "Turn data into insights for targeting, positioning, pricing, and product choices.",
+                "difficulty": "ADVANCED",
+                "answer": "Market research supports decision-making by helping businesses understand what customers need, how competitors are positioned, and where opportunities or risks exist. Teams use these insights to refine target segments, validate product ideas, choose messaging, adjust pricing, and prioritize investments. Research is most valuable when it leads to clear actions rather than just descriptive reports."
+            }
+        ],
         "Game Developer": [
             {
                 "id": "r_gd_1",
